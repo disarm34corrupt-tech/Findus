@@ -1,0 +1,429 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #181411;
+    color: #fff;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(20, 14, 10, 0.58),
+            rgba(20, 14, 10, 0.72)
+        ),
+        url("Background.jpg") center / cover;
+
+    padding: 30px;
+}
+
+.intro > p:first-child {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 18px;
+}
+
+.intro h1 {
+    margin: 0;
+
+    font-size: clamp(48px, 10vw, 90px);
+    line-height: 0.92;
+    font-weight: 400;
+    letter-spacing: -3px;
+}
+
+.intro h1 i {
+    font-weight: 400;
+}
+
+.intro > p:not(:first-child) {
+    margin: 28px 0;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.8;
+    opacity: 0.75;
+}
+
+.intro button {
+    margin-top: 10px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+    border: 1px solid rgba(255,255,255,0.35);
+    background: rgba(255,255,255,0.12);
+    color: white;
+
+    padding: 13px 24px;
+
+    border-radius: 50px;
+
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(10px);
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+button:hover {
+    background: rgba(255,255,255,0.22);
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   ROOM
+========================= */
+
+.room {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+
+    background:
+        url("Background.jpg")
+        center center /
+        cover
+        no-repeat;
+}
+
+
+/*
+   Sedikit warm overlay supaya
+   orang-orang terasa menyatu
+   dengan foto.
+*/
+
+.room::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(20, 10, 5, 0.08),
+            rgba(20, 10, 5, 0.18)
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   TITLE DALAM ROOM
+========================= */
+
+.room h2 {
+    position: absolute;
+
+    z-index: 5;
+
+    top: 25px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    margin: 0;
+
+    font-size: 20px;
+    font-weight: 400;
+
+    letter-spacing: 2px;
+
+    text-shadow: 0 2px 15px rgba(0,0,0,0.5);
+}
+
+
+/* =========================
+   PEOPLE
+========================= */
+
+.people {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+}
+
+
+/* Semua orang */
+
+.person {
+    position: absolute;
+
+    z-index: 2;
+
+    width: auto;
+
+    cursor: pointer;
+
+    pointer-events: auto;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 8px 8px rgba(0,0,0,0.35));
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease;
+}
+
+.person:hover {
+    transform: scale(1.04);
+
+    filter:
+        drop-shadow(0 10px 12px rgba(0,0,0,0.45));
+}
+
+
+/* =========================
+   POSISI DUMMY
+========================= */
+
+
+/* belakang kiri */
+
+.person1 {
+    left: 10%;
+    bottom: 43%;
+
+    height: 22vh;
+}
+
+
+/* belakang tengah */
+
+.person2 {
+    left: 39%;
+    bottom: 47%;
+
+    height: 19vh;
+}
+
+
+/* depan kanan */
+
+.person3 {
+    right: 9%;
+    bottom: 22%;
+
+    height: 34vh;
+}
+
+
+/* ARUM */
+
+.arum {
+    left: 63%;
+    bottom: 18%;
+
+    height: 39vh;
+
+    z-index: 4;
+}
+
+
+/* =========================
+   POPUP
+========================= */
+
+.popup {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 100;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    background: rgba(15, 10, 7, 0.48);
+
+    backdrop-filter: blur(8px);
+}
+
+.popup-box {
+    position: relative;
+
+    width: min(390px, 100%);
+
+    padding: 42px 30px 34px;
+
+    background: #f6f0e7;
+
+    color: #29221d;
+
+    border-radius: 3px;
+
+    text-align: center;
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,0.3);
+
+    animation: popupIn 0.3s ease;
+}
+
+.popup-box h3 {
+    margin: 8px 0 12px;
+
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.popup-box p {
+    margin: 10px 0 24px;
+
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    color: #75695f;
+}
+
+.popup-box button:last-child {
+    background: #29221d;
+    border: none;
+
+    color: white;
+}
+
+
+/* tombol X */
+
+.popup-box button:first-child {
+    position: absolute;
+
+    top: 10px;
+    right: 12px;
+
+    padding: 4px 9px;
+
+    background: transparent;
+
+    border: none;
+
+    color: #75695f;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 25px;
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes popupIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .intro h1 {
+        font-size: 50px;
+    }
+
+    .room {
+        background-position: center center;
+    }
+
+    .room h2 {
+        top: 18px;
+        font-size: 17px;
+    }
+
+    .person1 {
+        left: 3%;
+        bottom: 43%;
+        height: 17vh;
+    }
+
+    .person2 {
+        left: 34%;
+        bottom: 48%;
+        height: 15vh;
+    }
+
+    .person3 {
+        right: 2%;
+        bottom: 25%;
+        height: 26vh;
+    }
+
+    .arum {
+        left: 55%;
+        bottom: 20%;
+        height: 31vh;
+    }
+
+}
