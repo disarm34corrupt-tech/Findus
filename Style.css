@@ -1,0 +1,231 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f7f3ed;
+    color: #292522;
+}
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+}
+
+.intro > p:first-child {
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #8a7d72;
+}
+
+.intro h1 {
+    font-size: 55px;
+    line-height: 0.95;
+    font-weight: 400;
+    margin: 15px 0;
+}
+
+.intro h1 i {
+    font-family: Georgia, serif;
+}
+
+.intro > p:not(:first-child) {
+    color: #8a7d72;
+    line-height: 1.7;
+}
+
+button {
+    border: none;
+    background: #292522;
+    color: white;
+    padding: 14px 24px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+
+/* =========================
+   ROOM
+========================= */
+
+.room {
+    display: none;
+
+    min-height: 100vh;
+    padding: 25px;
+}
+
+.room h2 {
+    text-align: center;
+    font-weight: 400;
+    font-size: 35px;
+}
+
+
+/* =========================
+   PEOPLE
+========================= */
+
+.people {
+    position: relative;
+
+    width: 100%;
+    max-width: 1000px;
+    height: 650px;
+
+    margin: auto;
+
+    background-image: url("Background.jpg");
+    background-size: cover;
+    background-position: center;
+
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.person {
+    position: absolute;
+
+    width: 100px;
+
+    cursor: pointer;
+
+    transition: transform 0.2s;
+}
+
+.person:hover {
+    transform: scale(1.05);
+}
+
+
+/* posisi sementara */
+
+.person1 {
+    left: 10%;
+    bottom: 10%;
+}
+
+.person2 {
+    left: 40%;
+    bottom: 15%;
+}
+
+.person3 {
+    right: 10%;
+    bottom: 10%;
+}
+
+.arum {
+    left: 65%;
+    bottom: 15%;
+}
+
+
+/* =========================
+   POPUP
+========================= */
+
+.popup {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+.popup-box {
+    position: relative;
+
+    width: 100%;
+    max-width: 400px;
+
+    background: #f7f3ed;
+
+    padding: 40px 30px;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    animation: popup 0.25s ease;
+}
+
+.popup-box h3 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.popup-box p {
+    color: #746b64;
+    line-height: 1.7;
+}
+
+.popup-box button:first-child {
+    position: absolute;
+
+    right: 15px;
+    top: 10px;
+
+    background: transparent;
+    color: #746b64;
+
+    font-size: 25px;
+    padding: 5px;
+}
+
+@keyframes popup {
+
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================
+   HP
+========================= */
+
+@media (max-width: 600px) {
+
+    .intro h1 {
+        font-size: 43px;
+    }
+
+    .people {
+        height: 600px;
+    }
+
+    .person {
+        width: 75px;
+    }
+
+}
