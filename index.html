@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Where Your Eyes Find Me</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="intro">
+        <p>A LITTLE GAME FOR YOU</p>
+
+        <h1>
+            Where Your<br>
+            <i>Eyes Find Me</i>
+        </h1>
+
+        <p>
+            There are people in this room.<br>
+            But there's only one you're looking for.
+        </p>
+
+        <button onclick="enterRoom()">
+            ENTER THE ROOM
+        </button>
+    </div>
+
+    <div id="room" class="room">
+
+        <h2>Find me.</h2>
+
+        <div class="people">
+
+            <!-- Pengecoh -->
+            <img src="Pengecoh1.png" class="person person1" onclick="wrongPerson()">
+
+            <img src="Pengecoh2.png" class="person person2" onclick="wrongPerson()">
+
+            <img src="Pengecoh3.png" class="person person3" onclick="wrongPerson()">
+
+            <!-- Arum -->
+            <img src="Arum.png" class="person arum" onclick="foundArum()">
+
+        </div>
+
+    </div>
+
+
+    <!-- POPUP PENGECEOH -->
+
+    <div id="wrongPopup" class="popup">
+        <div class="popup-box">
+
+            <button onclick="closeWrong()">×</button>
+
+            <h3>Siapa ya?</h3>
+
+            <p>
+                Aduh jangan colek-colek!! 😭
+            </p>
+
+            <button onclick="closeWrong()">
+                OKE DEH
+            </button>
+
+        </div>
+    </div>
+
+
+    <!-- POPUP ARUM -->
+
+    <div id="foundPopup" class="popup">
+        <div class="popup-box">
+
+            <h3>Halooooo! 👋🏻</h3>
+
+            <p>
+                Terima kasih sudah menemukankuu 🥹
+            </p>
+
+            <p>
+                Even in a room full of people,
+                I wish you always set your eyes on me.
+            </p>
+
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
