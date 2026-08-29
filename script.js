@@ -102,7 +102,7 @@ const specialPeople = [
         name: "kartein",
         image: "kartein.png",
         message:
-            "Oalah, ternyata mata kamu masih jeli juga. 😌 Sekarang coba cari siapa lagi yang bersembunyi."
+            "Oalah, ternyata mata kamu masih jeli juga 😌 Sekarang coba cari siapa lagi yang bersembunyi."
     },
 
     {
@@ -158,6 +158,7 @@ const specialPeople = [
 
 /* =====================================================
    DECOYS
+   HANYA YANG BENAR-BENAR ADA
 ===================================================== */
 
 const decoyPeople = [
@@ -201,7 +202,7 @@ const decoyPeople = [
         id: "decoy6",
         image: "pengecoh6.png",
         message:
-            "Akhirnya ada juga yang ngenalin gue. 😌✨ Mau foto? Mau tanda tangan? … Bukan gue?! Oh. Yaudah. 😔"
+            "Akhirnya ada juga yang ngenalin gue 😌✨ Mau foto? Mau tanda tangan? … Bukan gue?! Oh. Yaudah. 😔"
     },
 
     {
@@ -212,17 +213,10 @@ const decoyPeople = [
     },
 
     {
-        id: "decoy8",
-        image: "pengecoh8.png",
-        message:
-            "EH?! KENAPA GUE YANG DICOLEK?! 😭 Gue cuma numpang lewat, woi!"
-    },
-
-    {
         id: "decoy9",
         image: "pengecoh9.png",
         message:
-            "Kamu pikir semudah itu menemukan orang yang kamu cari? 😏 … Ya bukan gue juga sih. Salah pencet lu 😭"
+            "Kamu pikir semudah itu menemukan orang yang kamu cari? 😏 Ya bukan gue juga sih. Salah pencet lu 😭"
     },
 
     {
@@ -230,20 +224,6 @@ const decoyPeople = [
         image: "pengecoh10.png",
         message:
             "FOTO DULU GAK SIH?! 📸😭 Mumpung udah ketemu aku! … HAH BUKAN AKU YANG DICARI?!"
-    },
-
-    {
-        id: "decoy11",
-        image: "pengecoh11.png",
-        message:
-            "WOI 😭 Gue bukan orangnya!! Jangan lihat gue kayak gitu, gue jadi salah tingkah!"
-    },
-
-    {
-        id: "decoy12",
-        image: "pengecoh12.png",
-        message:
-            "Aduh ketahuan juga 😭 Mau tanda tangan sekalian nggak? Oh… bukan gue yang dicari?!"
     }
 
 ];
@@ -251,134 +231,126 @@ const decoyPeople = [
 
 /* =====================================================
    POSITION & SIZE
-=====================================================
-
-   left   = posisi dari kiri
-   bottom = posisi dari bawah
-   width  = ukuran karakter
-   z      = urutan layer
-
 ===================================================== */
 
 const layout = {
 
-
-    /* ---------------------------------
+    /* ================================
        BACK LAYER
-    --------------------------------- */
+    ================================ */
 
     atlas: {
         left: "3%",
         bottom: "42%",
-        width: "15%",
+        width: "10%",
         z: 2
     },
 
     sanly: {
         left: "17%",
         bottom: "42%",
-        width: "13%",
+        width: "9%",
         z: 2
     },
 
     kartein: {
         left: "32%",
         bottom: "44%",
-        width: "12%",
+        width: "9%",
         z: 2
     },
 
     leon: {
         left: "72%",
         bottom: "43%",
-        width: "14%",
+        width: "10%",
         z: 2
     },
 
     josh: {
         left: "45%",
         bottom: "42%",
-        width: "11%",
+        width: "9%",
         z: 3
     },
 
     hana: {
         left: "56%",
         bottom: "40%",
-        width: "12%",
+        width: "9%",
         z: 3
     },
 
 
-    /* ---------------------------------
+    /* ================================
        MIDDLE LAYER
-    --------------------------------- */
+    ================================ */
 
     amora: {
         left: "6%",
         bottom: "20%",
-        width: "15%",
-        z: 7
-    },
-
-    arga: {
-        left: "40%",
-        bottom: "21%",
-        width: "15%",
+        width: "11%",
         z: 7
     },
 
     ayes: {
         left: "25%",
         bottom: "22%",
-        width: "14%",
+        width: "11%",
+        z: 7
+    },
+
+    arga: {
+        left: "40%",
+        bottom: "21%",
+        width: "11%",
         z: 7
     },
 
     jevan: {
         left: "60%",
         bottom: "22%",
-        width: "14%",
+        width: "11%",
         z: 7
     },
 
     sana: {
         left: "80%",
         bottom: "20%",
-        width: "14%",
+        width: "10%",
         z: 7
     },
 
     jemi: {
         left: "13%",
         bottom: "31%",
-        width: "13%",
+        width: "10%",
         z: 8
     },
 
     juan: {
         left: "69%",
         bottom: "30%",
-        width: "13%",
+        width: "10%",
         z: 8
     },
 
     rendy: {
         left: "2%",
         bottom: "31%",
-        width: "12%",
+        width: "9%",
         z: 6
     },
 
     kyungie: {
         left: "86%",
         bottom: "31%",
-        width: "11%",
+        width: "8%",
         z: 6
     },
 
 
-    /* ---------------------------------
+    /* ================================
        FRONT
        LEFT → RIGHT
 
@@ -387,122 +359,106 @@ const layout = {
        Pengecoh 5
        Jivan
        Pengecoh 4
-       Pengecoh 8
-    --------------------------------- */
+       Pengecoh 8 ❌
+       
+       CATATAN:
+       Pengecoh 8 SUDAH DIHAPUS.
+       Jadi posisi terakhir hanya sampai
+       Pengecoh 4.
+    ================================ */
 
     decoy7: {
-        left: "-5%",
+        left: "-4%",
         bottom: "0%",
-        width: "27%",
+        width: "20%",
         z: 20
     },
 
     vel: {
-        left: "20%",
-        bottom: "1%",
-        width: "17%",
+        left: "17%",
+        bottom: "0%",
+        width: "14%",
         z: 22
     },
 
     decoy5: {
-        left: "34%",
+        left: "31%",
         bottom: "0%",
-        width: "24%",
+        width: "19%",
         z: 20
     },
 
     jivan: {
-        left: "53%",
-        bottom: "2%",
-        width: "16%",
+        left: "52%",
+        bottom: "0%",
+        width: "14%",
         z: 23
     },
 
     decoy4: {
-        left: "64%",
-        bottom: "0%",
-        width: "24%",
-        z: 20
-    },
-
-    decoy8: {
-        left: "82%",
+        left: "68%",
         bottom: "0%",
         width: "19%",
         z: 20
     },
 
 
-    /* ---------------------------------
+    /* ================================
        ARUM
-    --------------------------------- */
+    ================================ */
 
     arum: {
-        left: "47%",
+        left: "46%",
         bottom: "7%",
-        width: "15%",
-        z: 15
+        width: "13%",
+        z: 25
     },
 
 
-    /* ---------------------------------
+    /* ================================
        OTHER DECOYS
-    --------------------------------- */
+    ================================ */
 
     decoy1: {
-        left: "16%",
+        left: "15%",
         bottom: "17%",
-        width: "13%",
+        width: "10%",
         z: 7
     },
 
     decoy2: {
-        left: "30%",
+        left: "29%",
         bottom: "17%",
-        width: "12%",
+        width: "9%",
         z: 7
     },
 
     decoy3: {
         left: "70%",
         bottom: "17%",
-        width: "13%",
+        width: "10%",
         z: 7
     },
 
     decoy6: {
         left: "77%",
         bottom: "33%",
-        width: "13%",
+        width: "9%",
         z: 5
     },
 
     decoy9: {
         left: "42%",
         bottom: "38%",
-        width: "12%",
+        width: "9%",
         z: 4
     },
 
     decoy10: {
-        left: "86%",
-        bottom: "18%",
-        width: "14%",
+        left: "87%",
+        bottom: "17%",
+        width: "10%",
         z: 8
-    },
-
-    decoy11: {
-        left: "52%",
-        bottom: "24%",
-        width: "12%",
-        z: 8
-    },
-
-    decoy12: {
-        left: "34%",
-        bottom: "29%",
-        width: "12%",
-        z: 6
     }
 
 };
@@ -562,12 +518,6 @@ const closeDecoy =
    ENTER ROOM
 ===================================================== */
 
-enterButton.addEventListener(
-    "click",
-    enterRoom
-);
-
-
 function enterRoom() {
 
     intro.classList.add("hidden");
@@ -594,316 +544,4 @@ function createCharacter(
         person.image;
 
 
-    image.alt =
-        person.name || "Person";
-
-
-    image.classList.add(
-        "person"
-    );
-
-
-    if (isSpecial) {
-
-        image.classList.add(
-            "special"
-        );
-
-    }
-
-
-    const position =
-        layout[person.id];
-
-
-    if (position) {
-
-        image.style.left =
-            position.left;
-
-        image.style.bottom =
-            position.bottom;
-
-        image.style.width =
-            position.width;
-
-        image.style.zIndex =
-            position.z;
-
-    }
-
-
-    image.addEventListener(
-        "click",
-        function () {
-
-            if (isSpecial) {
-
-                findSpecial(
-                    person,
-                    image
-                );
-
-            }
-
-            else {
-
-                clickDecoy(
-                    person
-                );
-
-            }
-
-        }
-    );
-
-
-    gameArea.appendChild(
-        image
-    );
-
-}
-
-
-/* =====================================================
-   SPECIAL PERSON
-===================================================== */
-
-function findSpecial(
-    person,
-    element
-) {
-
-    if (
-        element.classList.contains(
-            "found"
-        )
-    ) {
-
-        return;
-
-    }
-
-
-    activePerson = {
-
-        person:
-            person,
-
-        element:
-            element
-
-    };
-
-
-    foundTitle.textContent =
-        person.name;
-
-
-    foundMessage.textContent =
-        person.message;
-
-
-    popup.classList.remove(
-        "hidden"
-    );
-
-}
-
-
-/* =====================================================
-   CLOSE SPECIAL
-===================================================== */
-
-function closeFoundPopup() {
-
-    popup.classList.add(
-        "hidden"
-    );
-
-
-    if (!activePerson) {
-
-        return;
-
-    }
-
-
-    const element =
-        activePerson.element;
-
-
-    if (
-        !element.classList.contains(
-            "found"
-        )
-    ) {
-
-        element.classList.add(
-            "found"
-        );
-
-
-        foundCount++;
-
-
-        counter.textContent =
-            foundCount;
-
-    }
-
-
-    activePerson = null;
-
-
-    if (
-        foundCount ===
-        specialPeople.length
-    ) {
-
-        setTimeout(
-            function () {
-
-                completePopup.classList.remove(
-                    "hidden"
-                );
-
-            },
-            500
-        );
-
-    }
-
-}
-
-
-/* =====================================================
-   DECOY
-===================================================== */
-
-function clickDecoy(person) {
-
-    document.querySelector(
-        "#decoyPopup .popup-box p:last-child"
-    ).textContent =
-        person.message;
-
-
-    decoyPopup.classList.remove(
-        "hidden"
-    );
-
-}
-
-
-/* =====================================================
-   CLOSE DECOY
-===================================================== */
-
-function closeDecoyPopup() {
-
-    decoyPopup.classList.add(
-        "hidden"
-    );
-
-}
-
-
-/* =====================================================
-   BUTTON EVENTS
-===================================================== */
-
-closeFound.addEventListener(
-    "click",
-    closeFoundPopup
-);
-
-
-closeDecoy.addEventListener(
-    "click",
-    closeDecoyPopup
-);
-
-
-/* =====================================================
-   CLICK OUTSIDE POPUP
-===================================================== */
-
-popup.addEventListener(
-    "click",
-    function (event) {
-
-        if (
-            event.target === popup
-        ) {
-
-            closeFoundPopup();
-
-        }
-
-    }
-);
-
-
-decoyPopup.addEventListener(
-    "click",
-    function (event) {
-
-        if (
-            event.target === decoyPopup
-        ) {
-
-            closeDecoyPopup();
-
-        }
-
-    }
-);
-
-
-/* =====================================================
-   BUILD GAME
-===================================================== */
-
-function buildGame() {
-
-
-    /*
-       SPECIAL PEOPLE
-    */
-
-    specialPeople.forEach(
-        function (person) {
-
-            createCharacter(
-                person,
-                true
-            );
-
-        }
-    );
-
-
-    /*
-       DECOYS
-    */
-
-    decoyPeople.forEach(
-        function (person) {
-
-            createCharacter(
-                person,
-                false
-            );
-
-        }
-    );
-
-}
-
-
-/* =====================================================
-   START GAME
-===================================================== */
-
-buildGame();
+    image
