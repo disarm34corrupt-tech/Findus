@@ -164,84 +164,84 @@ const decoyPeople = [
 
     {
         id: "decoy1",
-        image: "pengcoh1.png",
+        image: "pengecoh1.png",
         message:
             "HEH?! 😭 Kok nyolek gue?! Gue bukan yang lo cari, tau! Sana cari orang lain!!"
     },
 
     {
         id: "decoy2",
-        image: "pengcoh2.png",
+        image: "pengecoh2.png",
         message:
             "Loh… kamu nyari aku? 👀 HAH BUKAN?! Terus kenapa gue yang dicoooolek 😭"
     },
 
     {
         id: "decoy3",
-        image: "pengcoh3.png",
+        image: "pengecoh3.png",
         message:
             "Oh, ketemu aku ya? 😌 Mau foto bareng? Sini-sini, gue siap pose 📸 … LAH SALAH ORANG?! 😭"
     },
 
     {
         id: "decoy4",
-        image: "pengcoh4.png",
+        image: "pengecoh4.png",
         message:
             "WOI WOI WOI 😭 Jangan asal colek orang dong!! Emang muka gue keliatan kayak orang yang lo cari?!"
     },
 
     {
         id: "decoy5",
-        image: "pengcoh5.png",
+        image: "pengecoh5.png",
         message:
             "OH?! FANS?! 😳 Mau tanda tangan di mana? ✍🏻 … Bentar. GUE BUKAN ORANG YANG LO CARI?! 😭"
     },
 
     {
         id: "decoy6",
-        image: "pengcoh6.png",
+        image: "pengecoh6.png",
         message:
             "Akhirnya ada juga yang ngenalin gue. 😌✨ Mau foto? Mau tanda tangan? … Bukan gue?! Oh. Yaudah. 😔"
     },
 
     {
         id: "decoy7",
-        image: "pengcoh7.png",
+        image: "pengecoh7.png",
         message:
             "SALAH ORANG WOI 😭 Gue bukan targetnya! Tapi kalau mau foto sih... ayo aja 📸"
     },
 
     {
         id: "decoy8",
-        image: "pengcoh8.png",
+        image: "pengecoh8.png",
         message:
             "EH?! KENAPA GUE YANG DICOLEK?! 😭 Gue cuma numpang lewat, woi!"
     },
 
     {
         id: "decoy9",
-        image: "pengcoh9.png",
+        image: "pengecoh9.png",
         message:
             "Kamu pikir semudah itu menemukan orang yang kamu cari? 😏 … Ya bukan gue juga sih. Salah pencet lu 😭"
     },
 
     {
         id: "decoy10",
-        image: "pengcoh10.png",
+        image: "pengecoh10.png",
         message:
             "FOTO DULU GAK SIH?! 📸😭 Mumpung udah ketemu aku! … HAH BUKAN AKU YANG DICARI?!"
     },
 
     {
         id: "decoy11",
-        image: "pengcoh11.png",
+        image: "pengecoh11.png",
         message:
             "WOI 😭 Gue bukan orangnya!! Jangan lihat gue kayak gitu, gue jadi salah tingkah!"
     },
 
     {
         id: "decoy12",
-        image: "pengcoh12.png",
+        image: "pengecoh12.png",
         message:
             "Aduh ketahuan juga 😭 Mau tanda tangan sekalian nggak? Oh… bukan gue yang dicari?!"
     }
