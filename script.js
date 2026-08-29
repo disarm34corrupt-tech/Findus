@@ -227,7 +227,6 @@ const decoyPeople = [
 
 ];
 
-
 /* =====================================================
    POSITION & SIZE
    COMPACT MIXED CROWD
@@ -236,48 +235,205 @@ const decoyPeople = [
 const layout = {
 
     /* =================================================
-       BARIS BELAKANG (crowd jauh)
+       BACK ROW
     ================================================= */
 
-    atlas:    { left: "1%",  bottom: "43%", width: "8%",  z: 2 },
-    decoy6:   { left: "7%",  bottom: "51%", width: "9%",  z: 3 },
-    sanly:    { left: "14%", bottom: "40%", width: "8%",  z: 2 },
-    kartein:  { left: "21%", bottom: "49%", width: "9%",  z: 4 },
-    decoy9:   { left: "28%", bottom: "42%", width: "8%",  z: 2 },
-    josh:     { left: "35%", bottom: "53%", width: "8%",  z: 3 },
-    decoy3:   { left: "42%", bottom: "39%", width: "9%",  z: 2 },
-    hana:     { left: "49%", bottom: "47%", width: "8%",  z: 4 },
-    leon:     { left: "56%", bottom: "52%", width: "9%",  z: 3 },
+    atlas: {
+        left: "1%",
+        bottom: "45%",
+        width: "8%",
+        z: 2
+    },
 
+    decoy6: {
+        left: "8%",
+        bottom: "50%",
+        width: "8%",
+        z: 3
+    },
+
+    sanly: {
+        left: "15%",
+        bottom: "43%",
+        width: "8%",
+        z: 2
+    },
+
+    kartein: {
+        left: "23%",
+        bottom: "49%",
+        width: "8%",
+        z: 4
+    },
+
+    decoy9: {
+        left: "31%",
+        bottom: "43%",
+        width: "8%",
+        z: 2
+    },
+
+    josh: {
+        left: "39%",
+        bottom: "50%",
+        width: "8%",
+        z: 3
+    },
+
+    decoy3: {
+        left: "47%",
+        bottom: "42%",
+        width: "8%",
+        z: 2
+    },
+
+    hana: {
+        left: "55%",
+        bottom: "48%",
+        width: "8%",
+        z: 4
+    },
+
+    leon: {
+        left: "64%",
+        bottom: "44%",
+        width: "8%",
+        z: 3
+    },
 
     /* =================================================
-       BARIS TENGAH (crowd tengah, sedikit overlap ke belakang)
+       MIDDLE ROW
     ================================================= */
 
-    amora:    { left: "3%",  bottom: "27%", width: "10%", z: 7 },
-    decoy1:   { left: "10%", bottom: "33%", width: "9%",  z: 8 },
-    rendy:    { left: "18%", bottom: "23%", width: "8%",  z: 6 },
-    ayes:     { left: "25%", bottom: "31%", width: "9%",  z: 8 },
-    decoy2:   { left: "33%", bottom: "22%", width: "8%",  z: 6 },
-    arga:     { left: "40%", bottom: "34%", width: "9%",  z: 8 },
-    jemi:     { left: "48%", bottom: "24%", width: "9%",  z: 6 },
-    decoy10:  { left: "56%", bottom: "32%", width: "9%",  z: 8 },
-    jevan:    { left: "64%", bottom: "21%", width: "9%",  z: 6 },
-    sana:     { left: "72%", bottom: "29%", width: "9%",  z: 8 },
-    juan:     { left: "80%", bottom: "24%", width: "9%",  z: 6 },
-    kyungie:  { left: "87%", bottom: "30%", width: "7%",  z: 8 },
+    amora: {
+        left: "2%",
+        bottom: "25%",
+        width: "10%",
+        z: 7
+    },
 
+    decoy1: {
+        left: "11%",
+        bottom: "29%",
+        width: "8%",
+        z: 8
+    },
+
+    rendy: {
+        left: "19%",
+        bottom: "23%",
+        width: "9%",
+        z: 6
+    },
+
+    ayes: {
+        left: "28%",
+        bottom: "28%",
+        width: "9%",
+        z: 8
+    },
+
+    decoy2: {
+        left: "37%",
+        bottom: "22%",
+        width: "8%",
+        z: 6
+    },
+
+    arga: {
+        left: "45%",
+        bottom: "29%",
+        width: "10%",
+        z: 8
+    },
+
+    jemi: {
+        left: "55%",
+        bottom: "23%",
+        width: "9%",
+        z: 6
+    },
+
+    decoy10: {
+        left: "64%",
+        bottom: "29%",
+        width: "8%",
+        z: 8
+    },
+
+    jevan: {
+        left: "72%",
+        bottom: "22%",
+        width: "9%",
+        z: 6
+    },
+
+    sana: {
+        left: "81%",
+        bottom: "28%",
+        width: "9%",
+        z: 8
+    },
 
     /* =================================================
-       BARIS DEPAN
+       FRONT ROW
     ================================================= */
 
-    decoy7:   { left: "0%",  bottom: "0%", width: "27%", z: 20 },
-    vel:      { left: "12%", bottom: "3%", width: "13%", z: 22 },
-    decoy5:   { left: "23%", bottom: "-1%", width: "26%", z: 20 },
-    arum:     { left: "35%", bottom: "6%", width: "12%", z: 25 },
-    jivan:    { left: "45%", bottom: "1%", width: "13%", z: 23 },
-    decoy4:   { left: "56%", bottom: "4%", width: "25%", z: 20 }
+    decoy7: {
+        left: "-2%",
+        bottom: "0%",
+        width: "15%",
+        z: 20
+    },
+
+    vel: {
+        left: "11%",
+        bottom: "1%",
+        width: "12%",
+        z: 22
+    },
+
+    decoy5: {
+        left: "22%",
+        bottom: "-1%",
+        width: "14%",
+        z: 20
+    },
+
+    arum: {
+        left: "35%",
+        bottom: "3%",
+        width: "12%",
+        z: 25
+    },
+
+    jivan: {
+        left: "47%",
+        bottom: "0%",
+        width: "13%",
+        z: 23
+    },
+
+    decoy4: {
+        left: "60%",
+        bottom: "2%",
+        width: "15%",
+        z: 20
+    },
+
+    juan: {
+        left: "74%",
+        bottom: "1%",
+        width: "11%",
+        z: 22
+    },
+
+    kyungie: {
+        left: "85%",
+        bottom: "4%",
+        width: "8%",
+        z: 21
+    }
 
 };
 
