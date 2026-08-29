@@ -7,6 +7,8 @@ let foundCount = 0;
 
 const totalSpecial = 18;
 
+let currentSpecial = null;
+
 
 /* =========================================
    ENTER THE ROOM
@@ -51,21 +53,18 @@ function closeDecoy() {
 
 function findSpecial(person) {
 
-    // Kalau sudah ditemukan, jangan dihitung lagi
+    // Jangan bisa diklik lagi kalau sudah ditemukan
     if (person.classList.contains("found")) {
         return;
     }
 
-
-    // Simpan orang yang baru ditemukan
-    person.dataset.pendingFound = "true";
-
+    // Simpan Special Person yang sedang ditemukan
+    currentSpecial = person;
 
     // Tambahkan counter
     foundCount++;
 
     document.getElementById("foundCount").textContent = foundCount;
-
 
     // Tampilkan popup
     const popup = document.getElementById("specialPopup");
@@ -85,27 +84,16 @@ function closeSpecial() {
     popup.classList.remove("show");
 
 
-    // Cari Special Person yang baru ditemukan
-    const pendingPerson =
-        document.querySelector(
-            '.special[data-pending-found="true"]'
-        );
+    // Ubah Special Person menjadi B&W
+    if (currentSpecial) {
 
+        currentSpecial.classList.add("found");
 
-    // Ubah menjadi B&W
-    if (pendingPerson) {
-
-        pendingPerson.classList.remove("pending-found");
-
-        pendingPerson.classList.add("found");
-
-        pendingPerson.removeAttribute(
-            "data-pending-found"
-        );
+        currentSpecial = null;
     }
 
 
-    // Kalau sudah menemukan 18 orang
+    // Kalau semua 18 sudah ditemukan
     if (foundCount === totalSpecial) {
 
         setTimeout(() => {
