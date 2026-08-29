@@ -319,7 +319,7 @@ body {
 .front1 {
     width: 28%;
 
-    left: 3%;
+    left: -3%;
 
     bottom: 1%;
 }
@@ -328,7 +328,7 @@ body {
 /* Pengecoh 5 */
 
 .front2 {
-    width: 20%;
+    width: 25%;
 
     left: 27%;
 
