@@ -273,12 +273,12 @@ const layout = {
        BARIS DEPAN
     ================================================= */
 
-    decoy7:   { left: "0%",  bottom: "0%", width: "17%", z: 20 },
+    decoy7:   { left: "0%",  bottom: "0%", width: "27%", z: 20 },
     vel:      { left: "12%", bottom: "3%", width: "13%", z: 22 },
-    decoy5:   { left: "23%", bottom: "-1%", width: "16%", z: 20 },
+    decoy5:   { left: "23%", bottom: "-1%", width: "26%", z: 20 },
     arum:     { left: "35%", bottom: "6%", width: "12%", z: 25 },
     jivan:    { left: "45%", bottom: "1%", width: "13%", z: 23 },
-    decoy4:   { left: "56%", bottom: "4%", width: "16%", z: 20 }
+    decoy4:   { left: "56%", bottom: "4%", width: "25%", z: 20 }
 
 };
 
