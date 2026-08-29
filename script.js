@@ -39,7 +39,7 @@ const people = [
         name: "Atlas",
         image: "atlas.png",
         message:
-            "Udah belanja di palamart belum? 😭 Oh iya, makasih udah nemuin gue!"
+            "Udah belanja di oalamart belum? 😭 Oh iya, makasih udah nemuin gue!"
     },
 
     {
