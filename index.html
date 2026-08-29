@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -15,16 +16,20 @@
         rel="stylesheet"
         href="style.css"
     >
+
 </head>
 
 
 <body>
 
-    <!-- =========================
+    <!-- =================================================
          INTRO
-    ========================== -->
+    ================================================== -->
 
-    <section id="intro" class="screen intro">
+    <section
+        id="intro"
+        class="intro"
+    >
 
         <div class="intro-content">
 
@@ -38,15 +43,16 @@
             </h1>
 
             <p class="intro-text">
-                There are people in this room.<br>
-                Some of them are waiting to be found.
+                Find the people hiding in pairs.<br>
+                Open two cards and find their match.
             </p>
 
             <button
-                id="enterButton"
-                class="enter-button"
+                id="startButton"
+                class="main-button"
+                type="button"
             >
-                ENTER THE ROOM
+                START GAME
             </button>
 
         </div>
@@ -54,149 +60,97 @@
     </section>
 
 
-
-    <!-- =========================
-         GAME ROOM
-    ========================== -->
+    <!-- =================================================
+         GAME
+    ================================================== -->
 
     <main
-        id="room"
-        class="screen room hidden"
+        id="game"
+        class="game hidden"
     >
 
-        <!-- TOP BAR -->
+        <header class="game-header">
 
-        <header class="room-top">
-
-            <div class="room-title">
+            <div>
 
                 <p class="eyebrow">
-                    FIND THEM
+                    WHERE YOUR EYES FIND ME
                 </p>
 
                 <h2>
-                    Find them.
+                    Find the pairs.
                 </h2>
 
             </div>
 
 
-            <div class="counter">
+            <div class="stats">
 
-                <span id="foundCount">
-                    0
-                </span>
+                <div>
+                    <span>PAIRS</span>
+                    <strong id="pairCount">0</strong>
+                    <small>/ 18</small>
+                </div>
 
-                <span>
-                    / 18
-                </span>
+                <div>
+                    <span>MOVES</span>
+                    <strong id="moveCount">0</strong>
+                </div>
 
             </div>
 
         </header>
 
 
-
-        <!-- =========================
-             GAME AREA
-        ========================== -->
+        <!-- CARD BOARD -->
 
         <section
-            id="gameArea"
-            class="game-area"
-        >
-
-            <!--
-                Characters will be generated
-                here automatically by script.js
-            -->
-
-        </section>
+            id="gameBoard"
+            class="game-board"
+        ></section>
 
     </main>
 
 
-
-    <!-- =========================
-         DECOY POPUP
-    ========================== -->
+    <!-- =================================================
+         MATCH POPUP
+    ================================================== -->
 
     <div
-        id="decoyPopup"
+        id="matchPopup"
         class="popup hidden"
     >
 
         <div class="popup-box">
-
-            <button
-                id="closeDecoy"
-                class="popup-close"
-                aria-label="Close"
-            >
-                ×
-            </button>
 
             <p class="popup-label">
-                EXCUSE ME?
+                MATCH ♡
             </p>
 
-            <h3>
-                Siapa ya?
-            </h3>
+            <h2 id="matchName">
+                Arum
+            </h2>
 
-            <p>
-                Aduh jangan colek-colek!! 😭
+            <p id="matchMessage">
+                You found a pair!
             </p>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- =========================
-         FOUND POPUP
-    ========================== -->
-
-    <div
-        id="foundPopup"
-        class="popup hidden"
-    >
-
-        <div class="popup-box">
 
             <button
-                id="closeFound"
-                class="popup-close"
-                aria-label="Close"
+                id="continueButton"
+                class="main-button dark-button"
+                type="button"
             >
-                ×
+                CONTINUE
             </button>
-
-            <p
-                id="foundLabel"
-                class="popup-label"
-            >
-                YOU FOUND ME ♡
-            </p>
-
-            <h3 id="foundTitle">
-                You found me!
-            </h3>
-
-            <p id="foundMessage">
-                Thank you for finding me. 🥹
-            </p>
 
         </div>
 
     </div>
 
 
-
-    <!-- =========================
+    <!-- =================================================
          COMPLETE POPUP
-    ========================== -->
+    ================================================== -->
 
     <div
         id="completePopup"
@@ -206,12 +160,12 @@
         <div class="popup-box">
 
             <p class="popup-label">
-                18 / 18 FOUND
+                18 / 18 PAIRS
             </p>
 
-            <h3>
-                You found them all.
-            </h3>
+            <h2>
+                You found them all. ♡
+            </h2>
 
             <p>
                 There's something waiting for you.
@@ -221,11 +175,6 @@
 
     </div>
 
-
-
-    <!-- =========================
-         JAVASCRIPT
-    ========================== -->
 
     <script src="script.js"></script>
 
