@@ -1,13 +1,14 @@
 /* =====================================================
    WHERE YOUR EYES FIND ME
+   MEMORY MATCHING GAME
 ===================================================== */
 
 
 /* =====================================================
-   SPECIAL PEOPLE
+   CHARACTERS
 ===================================================== */
 
-const specialPeople = [
+const people = [
 
     {
         id: "arum",
@@ -157,709 +158,406 @@ const specialPeople = [
 
 
 /* =====================================================
-   DECOYS
+   GAME STATE
 ===================================================== */
 
-const decoyPeople = [
+let cards = [];
 
-    {
-        id: "decoy1",
-        image: "pengecoh1.png",
-        message:
-            "HEH?! 😭 Kok nyolek gue?! Gue bukan yang lo cari, tau! Sana cari orang lain!!"
-    },
+let firstCard = null;
 
-    {
-        id: "decoy2",
-        image: "pengecoh2.png",
-        message:
-            "Loh… kamu nyari aku? 👀 HAH BUKAN?! Terus kenapa gue yang dicoooolek 😭"
-    },
+let secondCard = null;
 
-    {
-        id: "decoy3",
-        image: "pengecoh3.png",
-        message:
-            "Oh, ketemu aku ya? 😌 Mau foto bareng? Sini-sini, gue siap pose 📸 … LAH SALAH ORANG?! 😭"
-    },
+let lockBoard = false;
 
-    {
-        id: "decoy4",
-        image: "pengecoh4.png",
-        message:
-            "WOI WOI WOI 😭 Jangan asal colek orang dong!! Emang muka gue keliatan kayak orang yang lo cari?!"
-    },
+let matchedPairs = 0;
 
-    {
-        id: "decoy5",
-        image: "pengecoh5.png",
-        message:
-            "OH?! FANS?! 😳 Mau tanda tangan di mana? ✍🏻 … Bentar. GUE BUKAN ORANG YANG LO CARI?! 😭"
-    },
+let moves = 0;
 
-    {
-        id: "decoy6",
-        image: "pengecoh6.png",
-        message:
-            "Akhirnya ada juga yang ngenalin gue 😌✨ Mau foto? Mau tanda tangan? … Bukan gue?! Oh. Yaudah. 😔"
-    },
 
-    {
-        id: "decoy7",
-        image: "pengecoh7.png",
-        message:
-            "SALAH ORANG WOI 😭 Gue bukan targetnya! Tapi kalau mau foto sih... ayo aja 📸"
-    },
+/* =====================================================
+   ELEMENTS
+===================================================== */
 
-    {
-        id: "decoy9",
-        image: "pengecoh9.png",
-        message:
-            "Kamu pikir semudah itu menemukan orang yang kamu cari? 😏 Ya bukan gue juga sih. Salah pencet lu 😭"
-    },
+const gameBoard =
+    document.getElementById("gameBoard");
 
-    {
-        id: "decoy10",
-        image: "pengecoh10.png",
-        message:
-            "FOTO DULU GAK SIH?! 📸😭 Mumpung udah ketemu aku! … HAH BUKAN AKU YANG DICARI?!"
+const pairCount =
+    document.getElementById("pairCount");
+
+const moveCount =
+    document.getElementById("moveCount");
+
+const matchPopup =
+    document.getElementById("matchPopup");
+
+const matchName =
+    document.getElementById("matchName");
+
+const matchMessage =
+    document.getElementById("matchMessage");
+
+const continueButton =
+    document.getElementById("continueButton");
+
+const completePopup =
+    document.getElementById("completePopup");
+
+
+/* =====================================================
+   CREATE DECK
+===================================================== */
+
+function createDeck() {
+
+    const deck = [];
+
+    people.forEach(function (person) {
+
+        deck.push({
+            ...person,
+            cardId: person.id + "-1"
+        });
+
+        deck.push({
+            ...person,
+            cardId: person.id + "-2"
+        });
+
+    });
+
+    return shuffle(deck);
+}
+
+
+/* =====================================================
+   SHUFFLE
+===================================================== */
+
+function shuffle(array) {
+
+    const shuffled = [...array];
+
+    for (
+        let i = shuffled.length - 1;
+        i > 0;
+        i--
+    ) {
+
+        const j =
+            Math.floor(
+                Math.random() * (i + 1)
+            );
+
+        [
+            shuffled[i],
+            shuffled[j]
+        ] =
+        [
+            shuffled[j],
+            shuffled[i]
+        ];
+
     }
 
-];
+    return shuffled;
+}
 
 
 /* =====================================================
-   LAYOUT
-   27 PEOPLE
-   MIXED + COMPACT
+   BUILD BOARD
 ===================================================== */
 
-const layout = {
+function buildBoard() {
 
-    /* -------------------------------
-       FAR CROWD
-    ------------------------------- */
+    gameBoard.innerHTML = "";
 
-    atlas: {
-        left: "2%",
-        bottom: "45%",
-        width: "8%",
-        z: 2
-    },
+    cards = createDeck();
 
-    decoy6: {
-        left: "9%",
-        bottom: "49%",
-        width: "8%",
-        z: 3
-    },
+    cards.forEach(function (person) {
 
-    sanly: {
-        left: "16%",
-        bottom: "42%",
-        width: "8%",
-        z: 2
-    },
+        const card =
+            document.createElement("button");
 
-    decoy9: {
-        left: "23%",
-        bottom: "47%",
-        width: "8%",
-        z: 3
-    },
+        card.type = "button";
 
-    kartein: {
-        left: "30%",
-        bottom: "43%",
-        width: "8%",
-        z: 2
-    },
+        card.classList.add("memory-card");
 
-    josh: {
-        left: "37%",
-        bottom: "49%",
-        width: "8%",
-        z: 3
-    },
+        card.dataset.id =
+            person.id;
 
-    decoy3: {
-        left: "44%",
-        bottom: "42%",
-        width: "8%",
-        z: 2
-    },
-
-    hana: {
-        left: "51%",
-        bottom: "46%",
-        width: "8%",
-        z: 3
-    },
-
-    leon: {
-        left: "59%",
-        bottom: "42%",
-        width: "8%",
-        z: 2
-    },
-
-    decoy10: {
-        left: "67%",
-        bottom: "48%",
-        width: "8%",
-        z: 3
-    },
+        card.dataset.cardId =
+            person.cardId;
 
 
-    /* -------------------------------
-       MIDDLE CROWD
-    ------------------------------- */
+        /* CARD BACK */
 
-    amora: {
-        left: "1%",
-        bottom: "27%",
-        width: "9%",
-        z: 8
-    },
+        const back =
+            document.createElement("div");
 
-    decoy1: {
-        left: "8%",
-        bottom: "31%",
-        width: "8%",
-        z: 7
-    },
+        back.classList.add("card-back");
 
-    rendy: {
-        left: "16%",
-        bottom: "24%",
-        width: "9%",
-        z: 8
-    },
-
-    ayes: {
-        left: "24%",
-        bottom: "29%",
-        width: "9%",
-        z: 9
-    },
-
-    decoy2: {
-        left: "32%",
-        bottom: "23%",
-        width: "8%",
-        z: 7
-    },
-
-    arga: {
-        left: "40%",
-        bottom: "30%",
-        width: "9%",
-        z: 9
-    },
-
-    jemi: {
-        left: "48%",
-        bottom: "24%",
-        width: "9%",
-        z: 8
-    },
-
-    decoy7: {
-        left: "56%",
-        bottom: "29%",
-        width: "8%",
-        z: 7
-    },
-
-    jevan: {
-        left: "64%",
-        bottom: "23%",
-        width: "9%",
-        z: 9
-    },
-
-    sana: {
-        left: "72%",
-        bottom: "28%",
-        width: "9%",
-        z: 8
-    },
-
-    juan: {
-        left: "80%",
-        bottom: "23%",
-        width: "9%",
-        z: 9
-    },
-
-    kyungie: {
-        left: "88%",
-        bottom: "29%",
-        width: "7%",
-        z: 8
-    },
+        back.innerHTML =
+            "<span>♡</span>";
 
 
-    /* -------------------------------
-       FRONT CROWD
-    ------------------------------- */
+        /* CARD FRONT */
 
-    decoy5: {
-        left: "-2%",
-        bottom: "-1%",
-        width: "14%",
-        z: 20
-    },
+        const front =
+            document.createElement("div");
 
-    vel: {
-        left: "10%",
-        bottom: "1%",
-        width: "12%",
-        z: 23
-    },
-
-    jivan: {
-        left: "22%",
-        bottom: "-1%",
-        width: "12%",
-        z: 21
-    },
-
-    arum: {
-        left: "34%",
-        bottom: "2%",
-        width: "11%",
-        z: 24
-    },
-
-    decoy4: {
-        left: "46%",
-        bottom: "0%",
-        width: "14%",
-        z: 20
-    },
-
-    juan: {
-        left: "59%",
-        bottom: "1%",
-        width: "10%",
-        z: 22
-    },
-
-    kyungie: {
-        left: "70%",
-        bottom: "2%",
-        width: "8%",
-        z: 21
-    },
-
-    rendy: {
-        left: "79%",
-        bottom: "0%",
-        width: "10%",
-        z: 22
-    }
-
-};
+        front.classList.add("card-front");
 
 
-/* =====================================================
-   NOTE:
-   Some people above are intentionally moved again
-   in front so they appear closer.
-===================================================== */
+        const image =
+            document.createElement("img");
+
+        image.src =
+            person.image;
+
+        image.alt =
+            person.name;
 
 
-/* =====================================================
-   GAME
-===================================================== */
+        front.appendChild(image);
 
-let foundCount = 0;
+        card.appendChild(back);
 
-let activePerson = null;
+        card.appendChild(front);
 
 
-/* =====================================================
-   INITIALIZE
-===================================================== */
+        /* CLICK */
 
-document.addEventListener(
-    "DOMContentLoaded",
-    function () {
-
-        const intro =
-            document.getElementById("intro");
-
-        const room =
-            document.getElementById("room");
-
-        const gameArea =
-            document.getElementById("gameArea");
-
-        const counter =
-            document.getElementById("foundCount");
-
-        const popup =
-            document.getElementById("foundPopup");
-
-        const decoyPopup =
-            document.getElementById("decoyPopup");
-
-        const completePopup =
-            document.getElementById("completePopup");
-
-        const foundTitle =
-            document.getElementById("foundTitle");
-
-        const foundMessage =
-            document.getElementById("foundMessage");
-
-        const decoyMessage =
-            document.getElementById("decoyMessage");
-
-        const enterButton =
-            document.getElementById("enterButton");
-
-        const closeFound =
-            document.getElementById("closeFound");
-
-        const closeDecoy =
-            document.getElementById("closeDecoy");
-
-
-        /* =================================================
-           ENTER ROOM
-        ================================================= */
-
-        enterButton.addEventListener(
+        card.addEventListener(
             "click",
             function () {
 
-                intro.classList.add(
-                    "hidden"
-                );
-
-                room.classList.remove(
-                    "hidden"
+                flipCard(
+                    card,
+                    person
                 );
 
             }
         );
 
 
-        /* =================================================
-           CREATE CHARACTER
-        ================================================= */
+        gameBoard.appendChild(card);
 
-        function createCharacter(
-            person,
-            isSpecial
-        ) {
+    });
 
-            const image =
-                document.createElement("img");
+}
 
 
-            image.src =
-                person.image;
+/* =====================================================
+   FLIP CARD
+===================================================== */
 
-            image.alt =
-                person.name ||
-                "person";
+function flipCard(
+    card,
+    person
+) {
 
+    if (
+        lockBoard ||
+        card.classList.contains("flipped") ||
+        card.classList.contains("matched")
+    ) {
 
-            image.classList.add(
-                "person"
-            );
-
-
-            image.classList.add(
-                isSpecial
-                    ? "special"
-                    : "decoy"
-            );
-
-
-            const position =
-                layout[person.id];
-
-
-            if (position) {
-
-                image.style.left =
-                    position.left;
-
-                image.style.bottom =
-                    position.bottom;
-
-                image.style.width =
-                    position.width;
-
-                image.style.zIndex =
-                    position.z;
-
-            }
-
-
-            /* ---------------------------------------------
-               CLICK / TOUCH
-            --------------------------------------------- */
-
-            image.addEventListener(
-                "click",
-                function (event) {
-
-                    event.preventDefault();
-
-                    event.stopPropagation();
-
-
-                    if (isSpecial) {
-
-                        findSpecial(
-                            person,
-                            image
-                        );
-
-                    } else {
-
-                        clickDecoy(
-                            person
-                        );
-
-                    }
-
-                }
-            );
-
-
-            gameArea.appendChild(
-                image
-            );
-
-        }
-
-
-        /* =================================================
-           FIND SPECIAL
-        ================================================= */
-
-        function findSpecial(
-            person,
-            element
-        ) {
-
-            if (
-                element.classList.contains(
-                    "found"
-                )
-            ) {
-
-                return;
-
-            }
-
-
-            activePerson = {
-
-                person: person,
-
-                element: element
-
-            };
-
-
-            foundTitle.textContent =
-                person.name;
-
-            foundMessage.textContent =
-                person.message;
-
-
-            popup.classList.remove(
-                "hidden"
-            );
-
-        }
-
-
-        /* =================================================
-           CLOSE FOUND POPUP
-        ================================================= */
-
-        function closeFoundPopup() {
-
-            popup.classList.add(
-                "hidden"
-            );
-
-
-            if (!activePerson) {
-
-                return;
-
-            }
-
-
-            const element =
-                activePerson.element;
-
-
-            if (
-                !element.classList.contains(
-                    "found"
-                )
-            ) {
-
-                element.classList.add(
-                    "found"
-                );
-
-
-                foundCount++;
-
-
-                counter.textContent =
-                    foundCount;
-
-            }
-
-
-            activePerson = null;
-
-
-            if (
-                foundCount ===
-                specialPeople.length
-            ) {
-
-                setTimeout(
-                    function () {
-
-                        completePopup.classList.remove(
-                            "hidden"
-                        );
-
-                    },
-                    400
-                );
-
-            }
-
-        }
-
-
-        /* =================================================
-           DECOY
-        ================================================= */
-
-        function clickDecoy(
-            person
-        ) {
-
-            decoyMessage.textContent =
-                person.message;
-
-
-            decoyPopup.classList.remove(
-                "hidden"
-            );
-
-        }
-
-
-        /* =================================================
-           CLOSE DECOY
-        ================================================= */
-
-        function closeDecoyPopup() {
-
-            decoyPopup.classList.add(
-                "hidden"
-            );
-
-        }
-
-
-        /* =================================================
-           CLOSE BUTTONS
-        ================================================= */
-
-        closeFound.addEventListener(
-            "click",
-            closeFoundPopup
-        );
-
-
-        closeDecoy.addEventListener(
-            "click",
-            closeDecoyPopup
-        );
-
-
-        /* =================================================
-           CLICK OUTSIDE POPUPS
-        ================================================= */
-
-        popup.addEventListener(
-            "click",
-            function (event) {
-
-                if (
-                    event.target === popup
-                ) {
-
-                    closeFoundPopup();
-
-                }
-
-            }
-        );
-
-
-        decoyPopup.addEventListener(
-            "click",
-            function (event) {
-
-                if (
-                    event.target === decoyPopup
-                ) {
-
-                    closeDecoyPopup();
-
-                }
-
-            }
-        );
-
-
-        /* =================================================
-           BUILD GAME
-        ================================================= */
-
-        specialPeople.forEach(
-            function (person) {
-
-                createCharacter(
-                    person,
-                    true
-                );
-
-            }
-        );
-
-
-        decoyPeople.forEach(
-            function (person) {
-
-                createCharacter(
-                    person,
-                    false
-                );
-
-            }
-        );
-
+        return;
 
     }
+
+
+    card.classList.add("flipped");
+
+
+    if (!firstCard) {
+
+        firstCard = {
+            card: card,
+            person: person
+        };
+
+        return;
+
+    }
+
+
+    secondCard = {
+        card: card,
+        person: person
+    };
+
+
+    moves++;
+
+    moveCount.textContent =
+        moves;
+
+
+    checkMatch();
+
+}
+
+
+/* =====================================================
+   CHECK MATCH
+===================================================== */
+
+function checkMatch() {
+
+    lockBoard = true;
+
+
+    const isMatch =
+        firstCard.person.id ===
+        secondCard.person.id;
+
+
+    if (isMatch) {
+
+        handleMatch();
+
+    } else {
+
+        setTimeout(
+            function () {
+
+                unflipCards();
+
+            },
+            900
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   MATCH
+===================================================== */
+
+function handleMatch() {
+
+    firstCard.card.classList.add(
+        "matched"
+    );
+
+    secondCard.card.classList.add(
+        "matched"
+    );
+
+
+    matchedPairs++;
+
+
+    pairCount.textContent =
+        matchedPairs;
+
+
+    const person =
+        firstCard.person;
+
+
+    matchName.textContent =
+        person.name;
+
+    matchMessage.textContent =
+        person.message;
+
+
+    matchPopup.classList.remove(
+        "hidden"
+    );
+
+}
+
+
+/* =====================================================
+   CONTINUE AFTER MATCH
+===================================================== */
+
+function continueAfterMatch() {
+
+    matchPopup.classList.add(
+        "hidden"
+    );
+
+
+    resetTurn();
+
+
+    lockBoard = false;
+
+
+    if (
+        matchedPairs ===
+        people.length
+    ) {
+
+        setTimeout(
+            function () {
+
+                completePopup.classList.remove(
+                    "hidden"
+                );
+
+            },
+            400
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   WRONG MATCH
+===================================================== */
+
+function unflipCards() {
+
+    firstCard.card.classList.remove(
+        "flipped"
+    );
+
+    secondCard.card.classList.remove(
+        "flipped"
+    );
+
+
+    resetTurn();
+
+    lockBoard = false;
+
+}
+
+
+/* =====================================================
+   RESET TURN
+===================================================== */
+
+function resetTurn() {
+
+    firstCard = null;
+
+    secondCard = null;
+
+}
+
+
+/* =====================================================
+   CONTINUE BUTTON
+===================================================== */
+
+continueButton.addEventListener(
+    "click",
+    continueAfterMatch
 );
+
+
+/* =====================================================
+   START
+===================================================== */
+
+buildBoard();
