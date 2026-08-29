@@ -2,23 +2,13 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Where Your Eyes Find Me</title>
 
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
-
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
@@ -27,10 +17,7 @@
          OPENING
     ========================== -->
 
-    <section
-        class="intro"
-        id="intro"
-    >
+    <section id="intro" class="intro">
 
         <div class="intro-content">
 
@@ -38,32 +25,21 @@
                 A LITTLE GAME FOR YOU
             </p>
 
-
             <h1>
-
                 Where Your<br>
-
                 <i>Eyes Find Me</i>
-
             </h1>
 
-
             <p class="intro-text">
-
                 There are people in this room.<br>
-
-                But there are only a few you're looking for.
-
+                Some of them are waiting to be found.
             </p>
-
 
             <button
                 class="enter-button"
                 onclick="enterRoom()"
             >
-
                 ENTER THE ROOM
-
             </button>
 
         </div>
@@ -76,11 +52,10 @@
          ROOM
     ========================== -->
 
-    <section
-        class="room"
-        id="room"
-    >
+    <section id="room" class="room">
 
+
+        <!-- TOP INFORMATION -->
 
         <div class="room-top">
 
@@ -99,10 +74,7 @@
 
             <div class="counter">
 
-                <span id="foundCount">
-                    0
-                </span>
-
+                <span id="foundCount">0</span>
                 / 18
 
             </div>
@@ -111,6 +83,8 @@
 
 
 
+        <!-- PEOPLE -->
+
         <div class="people">
 
 
@@ -118,11 +92,11 @@
                  DECOYS
             ====================== -->
 
-
             <img
                 src="Pengecoh1.png"
                 class="person decoy decoy1"
                 onclick="clickDecoy()"
+                alt=""
             >
 
 
@@ -130,6 +104,7 @@
                 src="Pengecoh2.png"
                 class="person decoy decoy2"
                 onclick="clickDecoy()"
+                alt=""
             >
 
 
@@ -137,31 +112,29 @@
                 src="Pengecoh3.png"
                 class="person decoy decoy3"
                 onclick="clickDecoy()"
+                alt=""
             >
 
 
 
             <!-- =====================
                  SPECIAL PERSON
+                 ARUM
             ====================== -->
-
 
             <img
                 src="Arum.png"
                 class="person special arum"
                 onclick="findSpecial(this)"
+                alt="Special Person"
             >
 
         </div>
 
 
         <p class="room-hint">
-
-            Look closely.
-            Someone here is waiting to be found.
-
+            Look closely. Someone here is waiting to be found.
         </p>
-
 
     </section>
 
@@ -172,8 +145,9 @@
     ========================== -->
 
     <div
-        class="popup"
         id="decoyPopup"
+        class="popup"
+        onclick="closeOutside(event)"
     >
 
         <div class="popup-box">
@@ -183,9 +157,7 @@
                 class="popup-close"
                 onclick="closeDecoy()"
             >
-
                 ×
-
             </button>
 
 
@@ -203,7 +175,6 @@
                 Aduh jangan colek-colek!! 😭
             </p>
 
-
         </div>
 
     </div>
@@ -215,8 +186,9 @@
     ========================== -->
 
     <div
-        class="popup"
         id="specialPopup"
+        class="popup"
+        onclick="closeOutside(event)"
     >
 
         <div class="popup-box">
@@ -226,9 +198,7 @@
                 class="popup-close"
                 onclick="closeSpecial()"
             >
-
                 ×
-
             </button>
 
 
@@ -246,7 +216,6 @@
                 Thank you for finding me. 🥹
             </p>
 
-
         </div>
 
     </div>
@@ -258,11 +227,11 @@
     ========================== -->
 
     <div
-        class="popup"
         id="completePopup"
+        class="popup"
     >
 
-        <div class="popup-box complete">
+        <div class="popup-box">
 
 
             <p class="popup-label">
@@ -276,9 +245,8 @@
 
 
             <p>
-                But there is still something waiting for you...
+                There's something waiting for you.
             </p>
-
 
         </div>
 
@@ -287,7 +255,6 @@
 
 
     <script src="script.js"></script>
-
 
 </body>
 
