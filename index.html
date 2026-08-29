@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta
@@ -16,21 +15,16 @@
         rel="stylesheet"
         href="style.css"
     >
-
 </head>
 
 
 <body>
 
-
     <!-- =========================
-         OPENING
+         INTRO
     ========================== -->
 
-    <section
-        id="intro"
-        class="intro"
-    >
+    <section id="intro" class="screen intro">
 
         <div class="intro-content">
 
@@ -38,22 +32,19 @@
                 A LITTLE GAME FOR YOU
             </p>
 
-
             <h1>
                 Where Your<br>
                 <i>Eyes Find Me</i>
             </h1>
-
 
             <p class="intro-text">
                 There are people in this room.<br>
                 Some of them are waiting to be found.
             </p>
 
-
             <button
+                id="enterButton"
                 class="enter-button"
-                onclick="enterRoom()"
             >
                 ENTER THE ROOM
             </button>
@@ -65,25 +56,22 @@
 
 
     <!-- =========================
-         ROOM
+         GAME ROOM
     ========================== -->
 
-    <section
+    <main
         id="room"
-        class="room"
+        class="screen room hidden"
     >
 
+        <!-- TOP BAR -->
 
-        <!-- =========================
-             COUNTER
-        ========================== -->
+        <header class="room-top">
 
-        <div class="room-top">
-
-            <div>
+            <div class="room-title">
 
                 <p class="eyebrow">
-                    FINDUS
+                    FIND THEM
                 </p>
 
                 <h2>
@@ -99,95 +87,33 @@
                     0
                 </span>
 
-                / 18
+                <span>
+                    / 18
+                </span>
 
             </div>
 
-        </div>
+        </header>
 
 
 
         <!-- =========================
-             BALLROOM + PEOPLE
+             GAME AREA
         ========================== -->
 
-        <div class="people">
+        <section
+            id="gameArea"
+            class="game-area"
+        >
 
+            <!--
+                Characters will be generated
+                here automatically by script.js
+            -->
 
-            <!-- =========================
-                 FRONT LAYER
-                 LEFT → RIGHT
-                 7 | 5 | JIVAN | 4 | 8
-            ========================== -->
+        </section>
 
-
-            <!-- Pengecoh 7 -->
-
-            <img
-                src="pengecoh7.png"
-                class="person decoy front front1"
-                onclick="clickDecoy()"
-                alt=""
-            >
-
-
-            <!-- Pengecoh 5 -->
-
-            <img
-                src="pengecoh5.png"
-                class="person decoy front front2"
-                onclick="clickDecoy()"
-                alt=""
-            >
-
-
-            <!-- Jivan -->
-
-            <img
-                src="jivan.png"
-                class="person decoy jivan"
-                onclick="clickDecoy()"
-                alt=""
-            >
-
-
-            <!-- Pengecoh 4 -->
-
-            <img
-                src="pengecoh4.png"
-                class="person decoy front front3"
-                onclick="clickDecoy()"
-                alt=""
-            >
-
-
-            <!-- Pengecoh 8 -->
-
-            <img
-                src="pengecoh8.png"
-                class="person decoy front front4"
-                onclick="clickDecoy()"
-                alt=""
-            >
-
-
-            <!-- =========================
-                 SPECIAL PERSON
-                 ARUM
-            ========================== -->
-
-            <img
-                src="Arum.png"
-                class="person special arum"
-                onclick="findSpecial(this)"
-                alt="Arum"
-            >
-
-
-        </div>
-
-
-    </section>
+    </main>
 
 
 
@@ -197,35 +123,30 @@
 
     <div
         id="decoyPopup"
-        class="popup"
-        onclick="closeOutside(event)"
+        class="popup hidden"
     >
 
         <div class="popup-box">
 
-
             <button
+                id="closeDecoy"
                 class="popup-close"
-                onclick="closeDecoy()"
+                aria-label="Close"
             >
                 ×
             </button>
-
 
             <p class="popup-label">
                 EXCUSE ME?
             </p>
 
-
             <h3>
                 Siapa ya?
             </h3>
 
-
             <p>
                 Aduh jangan colek-colek!! 😭
             </p>
-
 
         </div>
 
@@ -234,40 +155,38 @@
 
 
     <!-- =========================
-         SPECIAL POPUP
+         FOUND POPUP
     ========================== -->
 
     <div
-        id="specialPopup"
-        class="popup"
-        onclick="closeOutside(event)"
+        id="foundPopup"
+        class="popup hidden"
     >
 
         <div class="popup-box">
 
-
             <button
+                id="closeFound"
                 class="popup-close"
-                onclick="closeSpecial()"
+                aria-label="Close"
             >
                 ×
             </button>
 
-
-            <p class="popup-label">
+            <p
+                id="foundLabel"
+                class="popup-label"
+            >
                 YOU FOUND ME ♡
             </p>
 
-
-            <h3>
+            <h3 id="foundTitle">
                 You found me!
             </h3>
 
-
-            <p>
+            <p id="foundMessage">
                 Thank you for finding me. 🥹
             </p>
-
 
         </div>
 
@@ -281,26 +200,22 @@
 
     <div
         id="completePopup"
-        class="popup"
+        class="popup hidden"
     >
 
         <div class="popup-box">
-
 
             <p class="popup-label">
                 18 / 18 FOUND
             </p>
 
-
             <h3>
                 You found them all.
             </h3>
 
-
             <p>
                 There's something waiting for you.
             </p>
-
 
         </div>
 
@@ -309,11 +224,10 @@
 
 
     <!-- =========================
-         SCRIPT
+         JAVASCRIPT
     ========================== -->
 
     <script src="script.js"></script>
-
 
 </body>
 
