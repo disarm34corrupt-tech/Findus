@@ -1,471 +1,508 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500&display=swap');
-
-/* ================================
+/* =========================================
    RESET
-================================ */
+========================================= */
 
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
+
 
 html,
 body {
     width: 100%;
-    height: 100%;
-    margin: 0;
+    min-height: 100%;
 }
+
 
 body {
-    overflow: hidden;
-    background: #211916;
-    color: white;
-    font-family: "DM Sans", sans-serif;
+    font-family: Georgia, "Times New Roman", serif;
+    background: #111;
+    color: #f5f1e8;
+    overflow-x: hidden;
 }
 
 
-/* ================================
-   OPENING
-================================ */
+/* =========================================
+   GENERAL
+========================================= */
+
+.screen {
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
 
 .intro {
-    position: fixed;
-    inset: 0;
-    z-index: 100;
+    min-height: 100vh;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    text-align: center;
+    position: relative;
 
     background:
         linear-gradient(
-            rgba(25, 18, 13, .52),
-            rgba(25, 18, 13, .68)
+            rgba(15, 15, 15, 0.45),
+            rgba(15, 15, 15, 0.65)
         ),
-        url("Background.jpg")
-        center / cover no-repeat;
+        url("Background.jpg");
 
-    transition:
-        opacity .7s ease,
-        visibility .7s ease;
+    background-size: cover;
+    background-position: center;
 }
 
-.intro.hide {
-    opacity: 0;
-    visibility: hidden;
+
+.intro::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            transparent 20%,
+            rgba(0, 0, 0, 0.55) 100%
+        );
+
     pointer-events: none;
 }
 
+
 .intro-content {
-    width: min(800px, 90%);
+    width: min(90%, 700px);
+
+    text-align: center;
+
+    position: relative;
+    z-index: 2;
+
+    padding: 40px 20px;
 }
 
-.eyebrow {
-    margin: 0;
 
-    font-size: 10px;
-    letter-spacing: 4px;
+.eyebrow {
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 0.28em;
 
     text-transform: uppercase;
 
-    opacity: .7;
+    opacity: 0.75;
+
+    margin-bottom: 18px;
 }
+
 
 .intro h1 {
-    margin: 18px 0 25px;
+    font-size: clamp(48px, 8vw, 88px);
 
-    font-family: "Playfair Display", serif;
-
-    font-size: clamp(55px, 9vw, 100px);
+    line-height: 0.95;
 
     font-weight: 400;
-    line-height: .9;
 
-    letter-spacing: -3px;
+    letter-spacing: -0.04em;
 
-    text-shadow:
-        0 8px 30px rgba(0, 0, 0, .35);
+    margin-bottom: 30px;
 }
+
 
 .intro h1 i {
     font-weight: 400;
 }
 
+
 .intro-text {
-    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 14px;
+
     line-height: 1.8;
-    opacity: .75;
+
+    opacity: 0.8;
+
+    margin-bottom: 38px;
 }
 
 
-/* ================================
+/* =========================================
    ENTER BUTTON
-================================ */
+========================================= */
 
 .enter-button {
-    margin-top: 20px;
+    border: 1px solid rgba(245, 241, 232, 0.55);
 
-    padding: 14px 28px;
+    background: rgba(255, 255, 255, 0.08);
 
-    border: 1px solid rgba(255, 255, 255, .35);
-    border-radius: 999px;
+    color: #f5f1e8;
 
-    background: rgba(255, 255, 255, .08);
+    padding: 15px 28px;
 
-    color: white;
+    font-family: Arial, Helvetica, sans-serif;
 
-    font-family: "DM Sans", sans-serif;
-    font-size: 10px;
-    letter-spacing: 2px;
+    font-size: 11px;
+
+    letter-spacing: 0.2em;
 
     cursor: pointer;
 
-    backdrop-filter: blur(8px);
-
-    transition: .25s ease;
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
 }
 
+
 .enter-button:hover {
-    background: rgba(255, 255, 255, .18);
+    background: #f5f1e8;
+
+    color: #111;
+
     transform: translateY(-2px);
 }
 
 
-/* ================================
-   ROOM
-================================ */
+.enter-button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   GAME ROOM
+========================================= */
 
 .room {
-    position: fixed;
-    inset: 0;
+    position: relative;
 
-    display: none;
+    min-height: 100vh;
 
-    background: #211916;
+    background:
+        linear-gradient(
+            rgba(10, 10, 10, 0.25),
+            rgba(10, 10, 10, 0.45)
+        ),
+        url("Background.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
+
+    overflow: hidden;
 }
 
-.room.show {
-    display: block;
-}
 
-
-/* ================================
-   COUNTER
-================================ */
+/* =========================================
+   ROOM TOP
+========================================= */
 
 .room-top {
-    position: absolute;
+    position: relative;
 
-    top: 24px;
-    left: 50%;
+    z-index: 20;
 
-    z-index: 30;
-
-    transform: translateX(-50%);
+    width: 100%;
 
     display: flex;
 
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    padding: 30px 35px;
 }
 
-.room-top > div:first-child {
-    display: none;
+
+.room-title .eyebrow {
+    margin-bottom: 8px;
 }
+
+
+.room-title h2 {
+    font-size: clamp(28px, 4vw, 46px);
+
+    font-weight: 400;
+
+    line-height: 1;
+}
+
 
 .counter {
-    min-width: 95px;
+    font-family: Arial, Helvetica, sans-serif;
 
-    padding: 8px 18px;
+    font-size: 14px;
 
-    border: 1px solid rgba(255, 255, 255, .45);
-    border-radius: 6px;
+    letter-spacing: 0.12em;
 
-    background: rgba(30, 22, 18, .35);
+    padding-top: 5px;
 
-    backdrop-filter: blur(6px);
-
-    color: rgba(255, 255, 255, .95);
-
-    font-family: "DM Sans", sans-serif;
-    font-size: 11px;
-
-    letter-spacing: 2px;
-
-    text-align: center;
-
-    text-shadow:
-        0 2px 10px rgba(0, 0, 0, .4);
+    opacity: 0.85;
 }
 
 
-/* ================================
-   BALLROOM FRAME
-================================ */
+#foundCount {
+    font-size: 24px;
 
-.people {
-    position: absolute;
+    font-weight: 600;
+}
 
-    left: 50%;
-    top: 52%;
 
-    width: min(92vw, 1200px);
+/* =========================================
+   GAME AREA
+========================================= */
 
-    aspect-ratio: 16 / 9;
+.game-area {
+    position: relative;
 
-    transform: translate(-50%, -50%);
+    width: 100%;
+
+    height: calc(100vh - 120px);
+
+    min-height: 550px;
 
     overflow: hidden;
-
-    border-radius: 18px;
-
-    background:
-        url("Background.jpg")
-        center / cover no-repeat;
-
-    border: 1px solid rgba(255, 255, 255, .12);
-
-    box-shadow:
-        0 25px 70px rgba(0, 0, 0, .45);
 }
 
 
-/* ================================
-   PEOPLE
-================================ */
+/*
+    Characters generated by JavaScript
+    will live inside .game-area
+*/
 
 .person {
     position: absolute;
 
-    z-index: 5;
-
-    width: auto;
+    display: block;
 
     cursor: pointer;
 
-    transform-origin: bottom center;
+    user-select: none;
 
-    filter:
-        drop-shadow(
-            0 8px 8px rgba(0, 0, 0, .28)
-        );
+    -webkit-user-drag: none;
 
     transition:
-        transform .2s ease,
-        filter .5s ease,
-        opacity .5s ease;
+        transform 0.2s ease,
+        filter 0.2s ease;
 }
+
 
 .person:hover {
-    transform:
-        translateY(-4px)
-        scale(1.025);
+    filter: brightness(1.08);
+
+    transform: scale(1.02);
 }
 
 
-/* ================================
-   FRONT LAYER
-   LEFT → RIGHT
-   7 | 5 | JIVAN | 4 | 8
-================================ */
-
-.front {
-    position: absolute;
-
-    z-index: 20;
-
-    height: auto;
-
-    cursor: pointer;
-}
-
-
-/* ================================
-   PENGECOH 7
-   ================================ */
-
-.front1 {
-    width: 28%;
-
-    /* DIGESER LEBIH KE KIRI */
-    left: -3%;
-
-    bottom: 1%;
-}
-
-
-/* ================================
-   PENGECOH 5
-================================ */
-
-.front2 {
-    width: 25%;
-
-    left: 27%;
-
-    bottom: 2%;
-}
-
-
-/* ================================
-   JIVAN
-================================ */
-
-.jivan {
-    position: absolute;
-
-    width: 28%;
-
-    left: 38%;
-
-    bottom: 1%;
-
-    z-index: 21;
-
-    cursor: pointer;
-}
-
-
-/* ================================
-   PENGECOH 4
-================================ */
-
-.front3 {
-    width: 28%;
-
-    left: 49%;
-
-    bottom: 1%;
-}
-
-
-/* ================================
-   PENGECOH 8
-================================ */
-
-.front4 {
-    width: 18%;
-
-    left: 73%;
-
-    bottom: 2%;
-}
-
-
-/* ================================
-   ARUM
-================================ */
-
-.arum {
-    width: 15%;
-
-    left: 54%;
-
-    bottom: 6%;
-
-    z-index: 10;
-}
-
-
-/* ================================
-   FOUND
-================================ */
-
-.person.found {
-    filter:
-        grayscale(100%)
-        drop-shadow(
-            0 8px 8px rgba(0, 0, 0, .28)
-        );
-
-    opacity: .72;
-
-    cursor: default;
-}
-
-.person.found:hover {
-    transform: none;
-}
-
-
-/* ================================
+/* =========================================
    POPUP
-================================ */
+========================================= */
 
 .popup {
     position: fixed;
+
     inset: 0;
 
-    z-index: 200;
+    z-index: 100;
 
-    display: none;
+    display: flex;
 
     align-items: center;
+
     justify-content: center;
 
-    padding: 25px;
+    padding: 20px;
 
-    background:
-        rgba(15, 10, 7, .48);
+    background: rgba(0, 0, 0, 0.68);
 
-    backdrop-filter: blur(7px);
+    backdrop-filter: blur(5px);
 }
 
-.popup.show {
-    display: flex;
-}
 
 .popup-box {
+    width: min(90%, 430px);
+
     position: relative;
-
-    width: min(390px, 100%);
-
-    padding: 45px 30px 35px;
-
-    border-radius: 25px;
-
-    background: #f7f1e9;
-
-    color: #332923;
 
     text-align: center;
 
-    box-shadow:
-        0 30px 90px rgba(0, 0, 0, .35);
+    background: #f5f1e8;
 
-    animation:
-        popupIn .3s ease;
+    color: #181818;
+
+    padding: 48px 35px 42px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.35);
 }
+
 
 .popup-label {
-    margin: 0 0 10px;
+    font-family: Arial, Helvetica, sans-serif;
 
-    color: #8a7669;
+    font-size: 10px;
 
-    font-size: 9px;
-
-    letter-spacing: 3px;
+    letter-spacing: 0.22em;
 
     text-transform: uppercase;
+
+    opacity: 0.55;
+
+    margin-bottom: 18px;
 }
+
 
 .popup-box h3 {
-    margin: 5px 0 12px;
-
-    font-family: "Playfair Display", serif;
-
-    font-size: 34px;
+    font-size: 32px;
 
     font-weight: 400;
+
+    margin-bottom: 15px;
 }
 
-.popup-box p:not(.popup-label) {
-    color: #766960;
 
-    font-size: 14px;
+.popup-box p:last-child {
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
 
     line-height: 1.7;
+
+    opacity: 0.7;
 }
 
+
 .popup-close {
+    position: absolute;
+
+    top: 12px;
+    right: 15px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #181818;
+
+    font-size: 28px;
+
+    font-weight: 300;
+
+    cursor: pointer;
+
+    line-height: 1;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .intro-content {
+        padding: 30px 18px;
+    }
+
+
+    .intro h1 {
+        font-size: clamp(42px, 13vw, 64px);
+
+        margin-bottom: 25px;
+    }
+
+
+    .intro-text {
+        font-size: 13px;
+
+        line-height: 1.7;
+    }
+
+
+    .enter-button {
+        padding: 14px 22px;
+
+        font-size: 10px;
+    }
+
+
+    .room-top {
+        padding: 22px 20px;
+    }
+
+
+    .room-title h2 {
+        font-size: 30px;
+    }
+
+
+    .counter {
+        font-size: 12px;
+    }
+
+
+    #foundCount {
+        font-size: 20px;
+    }
+
+
+    .game-area {
+        height: calc(100vh - 100px);
+
+        min-height: 500px;
+    }
+
+
+    .popup-box {
+        padding: 42px 25px 35px;
+    }
+
+
+    .popup-box h3 {
+        font-size: 27px;
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+    .room-top {
+        padding: 18px 15px;
+    }
+
+
+    .room-title h2 {
+        font-size: 26px;
+    }
+
+
+    .counter {
+        font-size: 10px;
+    }
+
+
+    #foundCount {
+        font-size: 18px;
+    }
+
+}
