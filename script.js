@@ -234,56 +234,53 @@ const decoyPeople = [
 ===================================================== */
 
 const layout = {
+const layout = {
 
     /* =================================================
-       BARIS BELAKANG (bottom ~46%)
-       atlas, decoy6, sanly, kartein, decoy9, josh, decoy3, hana, leon
+       BARIS BELAKANG (crowd jauh)
     ================================================= */
 
-    atlas:    { left: "2%",  bottom: "46%", width: "10%", z: 2 },
-    decoy6:   { left: "9%",  bottom: "47%", width: "9%",  z: 3 },
-    sanly:    { left: "16%", bottom: "45%", width: "9%",  z: 2 },
-    kartein:  { left: "23%", bottom: "47%", width: "9%",  z: 3 },
-    decoy9:   { left: "30%", bottom: "45%", width: "9%",  z: 2 },
-    josh:     { left: "37%", bottom: "47%", width: "9%",  z: 3 },
-    decoy3:   { left: "44%", bottom: "45%", width: "10%", z: 2 },
-    hana:     { left: "51%", bottom: "47%", width: "9%",  z: 3 },
-    leon:     { left: "58%", bottom: "45%", width: "10%", z: 2 },
-
-
-    /* =================================================
-       BARIS TENGAH (bottom ~24%)
-       amora, decoy1, rendy, ayes, decoy2, arga, jemi, decoy10, jevan, sana, juan, kyungie
-    ================================================= */
-
-    amora:    { left: "2%",  bottom: "24%", width: "11%", z: 7 },
-    decoy1:   { left: "9%",  bottom: "25%", width: "9%",  z: 8 },
-    rendy:    { left: "16%", bottom: "23%", width: "9%",  z: 7 },
-    ayes:     { left: "23%", bottom: "25%", width: "10%", z: 8 },
-    decoy2:   { left: "30%", bottom: "23%", width: "9%",  z: 7 },
-    arga:     { left: "37%", bottom: "25%", width: "10%", z: 8 },
-    jemi:     { left: "44%", bottom: "23%", width: "10%", z: 7 },
-    decoy10:  { left: "51%", bottom: "25%", width: "9%",  z: 8 },
-    jevan:    { left: "58%", bottom: "23%", width: "10%", z: 7 },
-    sana:     { left: "65%", bottom: "25%", width: "10%", z: 8 },
-    juan:     { left: "72%", bottom: "23%", width: "10%", z: 7 },
-    kyungie:  { left: "79%", bottom: "25%", width: "8%",  z: 8 },
+    atlas:    { left: "1%",  bottom: "43%", width: "8%",  z: 2 },
+    decoy6:   { left: "7%",  bottom: "51%", width: "9%",  z: 3 },
+    sanly:    { left: "14%", bottom: "40%", width: "8%",  z: 2 },
+    kartein:  { left: "21%", bottom: "49%", width: "9%",  z: 4 },
+    decoy9:   { left: "28%", bottom: "42%", width: "8%",  z: 2 },
+    josh:     { left: "35%", bottom: "53%", width: "8%",  z: 3 },
+    decoy3:   { left: "42%", bottom: "39%", width: "9%",  z: 2 },
+    hana:     { left: "49%", bottom: "47%", width: "8%",  z: 4 },
+    leon:     { left: "56%", bottom: "52%", width: "9%",  z: 3 },
 
 
     /* =================================================
-       BARIS DEPAN (bottom ~0-8%)
-       decoy7, vel, decoy5, arum, jivan, decoy4
+       BARIS TENGAH (crowd tengah, sedikit overlap ke belakang)
     ================================================= */
 
-    decoy7:   { left: "0%",  bottom: "0%", width: "18%", z: 20 },
-    vel:      { left: "13%", bottom: "0%", width: "14%", z: 22 },
-    decoy5:   { left: "24%", bottom: "0%", width: "17%", z: 20 },
-    arum:     { left: "36%", bottom: "5%", width: "13%", z: 25 },
-    jivan:    { left: "46%", bottom: "0%", width: "14%", z: 23 },
-    decoy4:   { left: "57%", bottom: "0%", width: "17%", z: 20 }
+    amora:    { left: "3%",  bottom: "27%", width: "10%", z: 7 },
+    decoy1:   { left: "10%", bottom: "33%", width: "9%",  z: 8 },
+    rendy:    { left: "18%", bottom: "23%", width: "8%",  z: 6 },
+    ayes:     { left: "25%", bottom: "31%", width: "9%",  z: 8 },
+    decoy2:   { left: "33%", bottom: "22%", width: "8%",  z: 6 },
+    arga:     { left: "40%", bottom: "34%", width: "9%",  z: 8 },
+    jemi:     { left: "48%", bottom: "24%", width: "9%",  z: 6 },
+    decoy10:  { left: "56%", bottom: "32%", width: "9%",  z: 8 },
+    jevan:    { left: "64%", bottom: "21%", width: "9%",  z: 6 },
+    sana:     { left: "72%", bottom: "29%", width: "9%",  z: 8 },
+    juan:     { left: "80%", bottom: "24%", width: "9%",  z: 6 },
+    kyungie:  { left: "87%", bottom: "30%", width: "7%",  z: 8 },
+
+
+    /* =================================================
+       BARIS DEPAN
+    ================================================= */
+
+    decoy7:   { left: "0%",  bottom: "0%", width: "17%", z: 20 },
+    vel:      { left: "12%", bottom: "3%", width: "13%", z: 22 },
+    decoy5:   { left: "23%", bottom: "-1%", width: "16%", z: 20 },
+    arum:     { left: "35%", bottom: "6%", width: "12%", z: 25 },
+    jivan:    { left: "45%", bottom: "1%", width: "13%", z: 23 },
+    decoy4:   { left: "56%", bottom: "4%", width: "16%", z: 20 }
 
 };
-
 
 /* =====================================================
    GAME VARIABLES
