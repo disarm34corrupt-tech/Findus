@@ -2,13 +2,23 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Where Your Eyes Find Me</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
 </head>
+
 
 <body>
 
@@ -17,7 +27,10 @@
          OPENING
     ========================== -->
 
-    <section id="intro" class="intro">
+    <section
+        id="intro"
+        class="intro"
+    >
 
         <div class="intro-content">
 
@@ -25,15 +38,18 @@
                 A LITTLE GAME FOR YOU
             </p>
 
+
             <h1>
                 Where Your<br>
                 <i>Eyes Find Me</i>
             </h1>
 
+
             <p class="intro-text">
                 There are people in this room.<br>
                 Some of them are waiting to be found.
             </p>
+
 
             <button
                 class="enter-button"
@@ -52,10 +68,13 @@
          ROOM
     ========================== -->
 
-    <section id="room" class="room">
+    <section
+        id="room"
+        class="room"
+    >
 
 
-        <!-- TOP INFORMATION -->
+        <!-- COUNTER -->
 
         <div class="room-top">
 
@@ -74,7 +93,10 @@
 
             <div class="counter">
 
-                <span id="foundCount">0</span>
+                <span id="foundCount">
+                    0
+                </span>
+
                 / 18
 
             </div>
@@ -83,51 +105,57 @@
 
 
 
-        <!-- PEOPLE -->
+        <!-- =========================
+             BALLROOM + PEOPLE
+        ========================== -->
 
         <div class="people">
 
-    <!-- FRONT / TOP LAYER -->
 
-    <img
-        src="Pengecoh7.png"
-        class="person decoy front front1"
-        onclick="clickDecoy()"
-        alt=""
-    >
+            <!-- =====================
+                 FRONT / TOP LAYER
 
-    <img
-        src="Pengecoh5.png"
-        class="person decoy front front2"
-        onclick="clickDecoy()"
-        alt=""
-    >
+                 LEFT → RIGHT
+                 
+                 7 | 5 | 4 | 8
+            ====================== -->
 
-    <img
-        src="Pengecoh4.png"
-        class="person decoy front front3"
-        onclick="clickDecoy()"
-        alt=""
-    >
 
-    <img
-        src="Pengecoh8.png"
-        class="person decoy front front4"
-        onclick="clickDecoy()"
-        alt=""
-    >
+            <img
+                src="Pengecoh7.png"
+                class="person decoy front front1"
+                onclick="clickDecoy()"
+                alt=""
+            >
 
-    <!-- ARUM -->
-    <img
-        src="Arum.png"
-        class="person special arum"
-        onclick="findSpecial(this)"
-        alt="Arum"
-    >
 
-        </div>
+            <img
+                src="Pengecoh5.png"
+                class="person decoy front front2"
+                onclick="clickDecoy()"
+                alt=""
+            >
+
+
+            <img
+                src="Pengecoh4.png"
+                class="person decoy front front3"
+                onclick="clickDecoy()"
+                alt=""
+            >
+
+
+            <img
+                src="Pengecoh8.png"
+                class="person decoy front front4"
+                onclick="clickDecoy()"
+                alt=""
+            >
+
+
             <!-- =====================
                  SPECIAL PERSON
+
                  ARUM
             ====================== -->
 
@@ -135,15 +163,12 @@
                 src="Arum.png"
                 class="person special arum"
                 onclick="findSpecial(this)"
-                alt="Special Person"
+                alt="Arum"
             >
+
 
         </div>
 
-
-        <p class="room-hint">
-            Look closely. Someone here is waiting to be found.
-        </p>
 
     </section>
 
@@ -183,6 +208,7 @@
             <p>
                 Aduh jangan colek-colek!! 😭
             </p>
+
 
         </div>
 
@@ -225,6 +251,7 @@
                 Thank you for finding me. 🥹
             </p>
 
+
         </div>
 
     </div>
@@ -257,6 +284,7 @@
                 There's something waiting for you.
             </p>
 
+
         </div>
 
     </div>
@@ -264,6 +292,7 @@
 
 
     <script src="script.js"></script>
+
 
 </body>
 
