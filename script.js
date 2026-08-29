@@ -1,7 +1,7 @@
 /* =========================================
    FINDUS
-   18 SPECIAL PEOPLE + 11 DECOYS
 ========================================= */
+
 
 let foundCount = 0;
 
@@ -11,39 +11,51 @@ let currentSpecial = null;
 
 
 /* =========================================
-   ENTER THE ROOM
+   ENTER ROOM
 ========================================= */
 
 function enterRoom() {
 
-    const intro = document.getElementById("intro");
-    const room = document.getElementById("room");
+    const intro =
+        document.getElementById("intro");
+
+    const room =
+        document.getElementById("room");
+
 
     intro.classList.add("hide");
 
+
     setTimeout(() => {
+
         room.classList.add("show");
+
     }, 500);
+
 }
 
 
 /* =========================================
-   DECOY / PENGECEOH
+   DECOY
 ========================================= */
 
 function clickDecoy() {
 
-    const popup = document.getElementById("decoyPopup");
+    const popup =
+        document.getElementById("decoyPopup");
 
     popup.classList.add("show");
+
 }
 
 
 function closeDecoy() {
 
-    const popup = document.getElementById("decoyPopup");
+    const popup =
+        document.getElementById("decoyPopup");
 
     popup.classList.remove("show");
+
 }
 
 
@@ -53,23 +65,37 @@ function closeDecoy() {
 
 function findSpecial(person) {
 
-    // Jangan bisa diklik lagi kalau sudah ditemukan
-    if (person.classList.contains("found")) {
+    // Jangan hitung dua kali
+
+    if (
+        person.classList.contains("found")
+    ) {
         return;
     }
 
-    // Simpan Special Person yang sedang ditemukan
+
+    // Simpan orang yang sedang ditemukan
+
     currentSpecial = person;
 
-    // Tambahkan counter
+
+    // Tambah counter
+
     foundCount++;
 
-    document.getElementById("foundCount").textContent = foundCount;
+
+    document.getElementById(
+        "foundCount"
+    ).textContent = foundCount;
+
 
     // Tampilkan popup
-    const popup = document.getElementById("specialPopup");
 
-    popup.classList.add("show");
+    document
+        .getElementById("specialPopup")
+        .classList
+        .add("show");
+
 }
 
 
@@ -79,31 +105,39 @@ function findSpecial(person) {
 
 function closeSpecial() {
 
-    const popup = document.getElementById("specialPopup");
+    document
+        .getElementById("specialPopup")
+        .classList
+        .remove("show");
 
-    popup.classList.remove("show");
 
+    // Ubah orang yang baru ditemukan
+    // menjadi black & white
 
-    // Ubah Special Person menjadi B&W
     if (currentSpecial) {
 
         currentSpecial.classList.add("found");
 
         currentSpecial = null;
+
     }
 
 
     // Kalau semua 18 sudah ditemukan
+
     if (foundCount === totalSpecial) {
 
         setTimeout(() => {
 
             document
                 .getElementById("completePopup")
-                .classList.add("show");
+                .classList
+                .add("show");
 
         }, 500);
+
     }
+
 }
 
 
@@ -113,9 +147,14 @@ function closeSpecial() {
 
 function closeOutside(event) {
 
-    if (event.target === event.currentTarget) {
+    if (
+        event.target === event.currentTarget
+    ) {
 
-        event.currentTarget.classList.remove("show");
+        event.currentTarget
+            .classList
+            .remove("show");
 
     }
+
 }
