@@ -5,7 +5,7 @@
 
 
 /* =====================================================
-   CHARACTERS
+   PEOPLE
 ===================================================== */
 
 const people = [
@@ -158,18 +158,16 @@ const people = [
 
 
 /* =====================================================
-   GAME STATE
+   GAME VARIABLES
 ===================================================== */
-
-let cards = [];
 
 let firstCard = null;
 
 let secondCard = null;
 
-let lockBoard = false;
+let locked = false;
 
-let matchedPairs = 0;
+let pairsFound = 0;
 
 let moves = 0;
 
@@ -178,55 +176,60 @@ let moves = 0;
    ELEMENTS
 ===================================================== */
 
+const intro =
+    document.getElementById(
+        "intro"
+    );
+
+const game =
+    document.getElementById(
+        "game"
+    );
+
+const startButton =
+    document.getElementById(
+        "startButton"
+    );
+
 const gameBoard =
-    document.getElementById("gameBoard");
+    document.getElementById(
+        "gameBoard"
+    );
 
 const pairCount =
-    document.getElementById("pairCount");
+    document.getElementById(
+        "pairCount"
+    );
 
 const moveCount =
-    document.getElementById("moveCount");
+    document.getElementById(
+        "moveCount"
+    );
 
 const matchPopup =
-    document.getElementById("matchPopup");
+    document.getElementById(
+        "matchPopup"
+    );
 
 const matchName =
-    document.getElementById("matchName");
+    document.getElementById(
+        "matchName"
+    );
 
 const matchMessage =
-    document.getElementById("matchMessage");
+    document.getElementById(
+        "matchMessage"
+    );
 
 const continueButton =
-    document.getElementById("continueButton");
+    document.getElementById(
+        "continueButton"
+    );
 
 const completePopup =
-    document.getElementById("completePopup");
-
-
-/* =====================================================
-   CREATE DECK
-===================================================== */
-
-function createDeck() {
-
-    const deck = [];
-
-    people.forEach(function (person) {
-
-        deck.push({
-            ...person,
-            cardId: person.id + "-1"
-        });
-
-        deck.push({
-            ...person,
-            cardId: person.id + "-2"
-        });
-
-    });
-
-    return shuffle(deck);
-}
+    document.getElementById(
+        "completePopup"
+    );
 
 
 /* =====================================================
@@ -235,114 +238,226 @@ function createDeck() {
 
 function shuffle(array) {
 
-    const shuffled = [...array];
+    const result =
+        [...array];
+
 
     for (
-        let i = shuffled.length - 1;
+        let i = result.length - 1;
         i > 0;
         i--
     ) {
 
         const j =
             Math.floor(
-                Math.random() * (i + 1)
+                Math.random() *
+                (i + 1)
             );
 
+
         [
-            shuffled[i],
-            shuffled[j]
+            result[i],
+            result[j]
         ] =
         [
-            shuffled[j],
-            shuffled[i]
+            result[j],
+            result[i]
         ];
 
     }
 
-    return shuffled;
+
+    return result;
+
 }
 
 
 /* =====================================================
-   BUILD BOARD
+   CREATE CARDS
 ===================================================== */
 
-function buildBoard() {
+function createCards() {
+
+    const deck = [];
+
+
+    people.forEach(
+        function (person) {
+
+            deck.push(person);
+
+            deck.push(person);
+
+        }
+    );
+
+
+    return shuffle(deck);
+
+}
+
+
+/* =====================================================
+   START GAME
+===================================================== */
+
+startButton.addEventListener(
+    "click",
+    function () {
+
+        intro.classList.add(
+            "hidden"
+        );
+
+        game.classList.remove(
+            "hidden"
+        );
+
+        createBoard();
+
+    }
+);
+
+
+/* =====================================================
+   CREATE BOARD
+===================================================== */
+
+function createBoard() {
 
     gameBoard.innerHTML = "";
 
-    cards = createDeck();
 
-    cards.forEach(function (person) {
-
-        const card =
-            document.createElement("button");
-
-        card.type = "button";
-
-        card.classList.add("memory-card");
-
-        card.dataset.id =
-            person.id;
-
-        card.dataset.cardId =
-            person.cardId;
+    const deck =
+        createCards();
 
 
-        /* CARD BACK */
+    deck.forEach(
+        function (person, index) {
 
-        const back =
-            document.createElement("div");
-
-        back.classList.add("card-back");
-
-        back.innerHTML =
-            "<span>♡</span>";
-
-
-        /* CARD FRONT */
-
-        const front =
-            document.createElement("div");
-
-        front.classList.add("card-front");
-
-
-        const image =
-            document.createElement("img");
-
-        image.src =
-            person.image;
-
-        image.alt =
-            person.name;
-
-
-        front.appendChild(image);
-
-        card.appendChild(back);
-
-        card.appendChild(front);
-
-
-        /* CLICK */
-
-        card.addEventListener(
-            "click",
-            function () {
-
-                flipCard(
-                    card,
-                    person
+            const card =
+                document.createElement(
+                    "button"
                 );
 
-            }
-        );
+
+            card.type =
+                "button";
 
 
-        gameBoard.appendChild(card);
+            card.classList.add(
+                "memory-card"
+            );
 
-    });
+
+            card.dataset.id =
+                person.id;
+
+
+            /* -----------------------------------------
+               INNER
+            ----------------------------------------- */
+
+            const inner =
+                document.createElement(
+                    "div"
+                );
+
+
+            inner.classList.add(
+                "card-inner"
+            );
+
+
+            /* -----------------------------------------
+               BACK
+            ----------------------------------------- */
+
+            const back =
+                document.createElement(
+                    "div"
+                );
+
+
+            back.classList.add(
+                "card-back"
+            );
+
+
+            back.innerHTML =
+                "<span>♡</span>";
+
+
+            /* -----------------------------------------
+               FRONT
+            ----------------------------------------- */
+
+            const front =
+                document.createElement(
+                    "div"
+                );
+
+
+            front.classList.add(
+                "card-front"
+            );
+
+
+            const image =
+                document.createElement(
+                    "img"
+                );
+
+
+            image.src =
+                person.image;
+
+
+            image.alt =
+                person.name;
+
+
+            front.appendChild(
+                image
+            );
+
+
+            inner.appendChild(
+                back
+            );
+
+            inner.appendChild(
+                front
+            );
+
+
+            card.appendChild(
+                inner
+            );
+
+
+            /* -----------------------------------------
+               CLICK
+            ----------------------------------------- */
+
+            card.addEventListener(
+                "click",
+                function () {
+
+                    flipCard(
+                        card
+                    );
+
+                }
+            );
+
+
+            gameBoard.appendChild(
+                card
+            );
+
+        }
+    );
 
 }
 
@@ -351,15 +466,16 @@ function buildBoard() {
    FLIP CARD
 ===================================================== */
 
-function flipCard(
-    card,
-    person
-) {
+function flipCard(card) {
 
     if (
-        lockBoard ||
-        card.classList.contains("flipped") ||
-        card.classList.contains("matched")
+        locked ||
+        card.classList.contains(
+            "flipped"
+        ) ||
+        card.classList.contains(
+            "matched"
+        )
     ) {
 
         return;
@@ -367,25 +483,23 @@ function flipCard(
     }
 
 
-    card.classList.add("flipped");
+    card.classList.add(
+        "flipped"
+    );
 
 
     if (!firstCard) {
 
-        firstCard = {
-            card: card,
-            person: person
-        };
+        firstCard =
+            card;
 
         return;
 
     }
 
 
-    secondCard = {
-        card: card,
-        person: person
-    };
+    secondCard =
+        card;
 
 
     moves++;
@@ -394,37 +508,38 @@ function flipCard(
         moves;
 
 
-    checkMatch();
+    checkCards();
 
 }
 
 
 /* =====================================================
-   CHECK MATCH
+   CHECK CARDS
 ===================================================== */
 
-function checkMatch() {
+function checkCards() {
 
-    lockBoard = true;
-
-
-    const isMatch =
-        firstCard.person.id ===
-        secondCard.person.id;
+    locked = true;
 
 
-    if (isMatch) {
+    const firstId =
+        firstCard.dataset.id;
 
-        handleMatch();
+
+    const secondId =
+        secondCard.dataset.id;
+
+
+    if (
+        firstId === secondId
+    ) {
+
+        matchCards();
 
     } else {
 
         setTimeout(
-            function () {
-
-                unflipCards();
-
-            },
+            hideCards,
             900
         );
 
@@ -437,30 +552,40 @@ function checkMatch() {
    MATCH
 ===================================================== */
 
-function handleMatch() {
+function matchCards() {
 
-    firstCard.card.classList.add(
+    firstCard.classList.add(
         "matched"
     );
 
-    secondCard.card.classList.add(
+    secondCard.classList.add(
         "matched"
     );
 
 
-    matchedPairs++;
+    pairsFound++;
 
 
     pairCount.textContent =
-        matchedPairs;
+        pairsFound;
 
 
     const person =
-        firstCard.person;
+        people.find(
+            function (item) {
+
+                return (
+                    item.id ===
+                    firstCard.dataset.id
+                );
+
+            }
+        );
 
 
     matchName.textContent =
         person.name;
+
 
     matchMessage.textContent =
         person.message;
@@ -474,61 +599,59 @@ function handleMatch() {
 
 
 /* =====================================================
-   CONTINUE AFTER MATCH
+   CONTINUE
 ===================================================== */
 
-function continueAfterMatch() {
+continueButton.addEventListener(
+    "click",
+    function () {
 
-    matchPopup.classList.add(
-        "hidden"
-    );
-
-
-    resetTurn();
-
-
-    lockBoard = false;
-
-
-    if (
-        matchedPairs ===
-        people.length
-    ) {
-
-        setTimeout(
-            function () {
-
-                completePopup.classList.remove(
-                    "hidden"
-                );
-
-            },
-            400
+        matchPopup.classList.add(
+            "hidden"
         );
 
-    }
 
-}
+        resetTurn();
+
+
+        if (
+            pairsFound ===
+            people.length
+        ) {
+
+            setTimeout(
+                function () {
+
+                    completePopup.classList.remove(
+                        "hidden"
+                    );
+
+                },
+                400
+            );
+
+        }
+
+    }
+);
 
 
 /* =====================================================
-   WRONG MATCH
+   WRONG CARDS
 ===================================================== */
 
-function unflipCards() {
+function hideCards() {
 
-    firstCard.card.classList.remove(
+    firstCard.classList.remove(
         "flipped"
     );
 
-    secondCard.card.classList.remove(
+    secondCard.classList.remove(
         "flipped"
     );
 
 
     resetTurn();
-
-    lockBoard = false;
 
 }
 
@@ -543,21 +666,6 @@ function resetTurn() {
 
     secondCard = null;
 
+    locked = false;
+
 }
-
-
-/* =====================================================
-   CONTINUE BUTTON
-===================================================== */
-
-continueButton.addEventListener(
-    "click",
-    continueAfterMatch
-);
-
-
-/* =====================================================
-   START
-===================================================== */
-
-buildBoard();
