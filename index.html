@@ -1,97 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Where Your Eyes Find Me</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
 </head>
+
 
 <body>
 
-    <div class="intro">
-        <p>A LITTLE GAME FOR YOU</p>
 
-        <h1>
-            Where Your<br>
-            <i>Eyes Find Me</i>
-        </h1>
+    <!-- =========================
+         OPENING
+    ========================== -->
 
-        <p>
-            There are people in this room.<br>
-            But there's only one you're looking for.
-        </p>
+    <section
+        class="intro"
+        id="intro"
+    >
 
-        <button onclick="enterRoom()">
-            ENTER THE ROOM
-        </button>
-    </div>
+        <div class="intro-content">
 
-    <div id="room" class="room">
+            <p class="eyebrow">
+                A LITTLE GAME FOR YOU
+            </p>
 
-        <h2>Find me.</h2>
 
-        <div class="people">
+            <h1>
 
-            <!-- Pengecoh -->
-            <img src="Pengecoh1.png" class="person person1" onclick="wrongPerson()">
+                Where Your<br>
 
-            <img src="Pengecoh2.png" class="person person2" onclick="wrongPerson()">
+                <i>Eyes Find Me</i>
 
-            <img src="Pengecoh3.png" class="person person3" onclick="wrongPerson()">
+            </h1>
 
-            <!-- Arum -->
-            <img src="Arum.png" class="person arum" onclick="foundArum()">
+
+            <p class="intro-text">
+
+                There are people in this room.<br>
+
+                But there are only a few you're looking for.
+
+            </p>
+
+
+            <button
+                class="enter-button"
+                onclick="enterRoom()"
+            >
+
+                ENTER THE ROOM
+
+            </button>
 
         </div>
 
-    </div>
+    </section>
 
 
-    <!-- POPUP PENGECEOH -->
 
-    <div id="wrongPopup" class="popup">
+    <!-- =========================
+         ROOM
+    ========================== -->
+
+    <section
+        class="room"
+        id="room"
+    >
+
+
+        <div class="room-top">
+
+            <div>
+
+                <p class="eyebrow">
+                    FINDUS
+                </p>
+
+                <h2>
+                    Find them.
+                </h2>
+
+            </div>
+
+
+            <div class="counter">
+
+                <span id="foundCount">
+                    0
+                </span>
+
+                / 18
+
+            </div>
+
+        </div>
+
+
+
+        <div class="people">
+
+
+            <!-- =====================
+                 DECOYS
+            ====================== -->
+
+
+            <img
+                src="Pengecoh1.png"
+                class="person decoy decoy1"
+                onclick="clickDecoy()"
+            >
+
+
+            <img
+                src="Pengecoh2.png"
+                class="person decoy decoy2"
+                onclick="clickDecoy()"
+            >
+
+
+            <img
+                src="Pengecoh3.png"
+                class="person decoy decoy3"
+                onclick="clickDecoy()"
+            >
+
+
+
+            <!-- =====================
+                 SPECIAL PERSON
+            ====================== -->
+
+
+            <img
+                src="Arum.png"
+                class="person special arum"
+                onclick="findSpecial(this)"
+            >
+
+        </div>
+
+
+        <p class="room-hint">
+
+            Look closely.
+            Someone here is waiting to be found.
+
+        </p>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         DECOY POPUP
+    ========================== -->
+
+    <div
+        class="popup"
+        id="decoyPopup"
+    >
+
         <div class="popup-box">
 
-            <button onclick="closeWrong()">×</button>
 
-            <h3>Siapa ya?</h3>
+            <button
+                class="popup-close"
+                onclick="closeDecoy()"
+            >
+
+                ×
+
+            </button>
+
+
+            <p class="popup-label">
+                EXCUSE ME?
+            </p>
+
+
+            <h3>
+                Siapa ya?
+            </h3>
+
 
             <p>
                 Aduh jangan colek-colek!! 😭
             </p>
 
-            <button onclick="closeWrong()">
-                OKE DEH
-            </button>
 
         </div>
+
     </div>
 
 
-    <!-- POPUP ARUM -->
 
-    <div id="foundPopup" class="popup">
+    <!-- =========================
+         SPECIAL POPUP
+    ========================== -->
+
+    <div
+        class="popup"
+        id="specialPopup"
+    >
+
         <div class="popup-box">
 
-            <h3>Halooooo! 👋🏻</h3>
 
-            <p>
-                Terima kasih sudah menemukankuu 🥹
+            <button
+                class="popup-close"
+                onclick="closeSpecial()"
+            >
+
+                ×
+
+            </button>
+
+
+            <p class="popup-label">
+                YOU FOUND ME ♡
             </p>
 
+
+            <h3>
+                You found me!
+            </h3>
+
+
             <p>
-                Even in a room full of people,
-                I wish you always set your eyes on me.
+                Thank you for finding me. 🥹
             </p>
+
 
         </div>
+
     </div>
+
+
+
+    <!-- =========================
+         COMPLETE POPUP
+    ========================== -->
+
+    <div
+        class="popup"
+        id="completePopup"
+    >
+
+        <div class="popup-box complete">
+
+
+            <p class="popup-label">
+                18 / 18 FOUND
+            </p>
+
+
+            <h3>
+                You found them all.
+            </h3>
+
+
+            <p>
+                But there is still something waiting for you...
+            </p>
+
+
+        </div>
+
+    </div>
+
 
 
     <script src="script.js"></script>
 
+
 </body>
+
 </html>
