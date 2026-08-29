@@ -1,32 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500&display=swap');
+
+
+/* =================================
+   RESET
+================================= */
+
 * {
     box-sizing: border-box;
 }
 
 html,
 body {
-    margin: 0;
     width: 100%;
-    min-height: 100%;
+    height: 100%;
+    margin: 0;
 }
 
 body {
-    font-family: Georgia, "Times New Roman", serif;
-    background: #181411;
-    color: #fff;
+    overflow: hidden;
+
+    background: #1d1714;
+    color: white;
+
+    font-family: "DM Sans", sans-serif;
 }
 
 
-/* =========================
-   INTRO
-========================= */
+/* =================================
+   OPENING
+================================= */
 
 .intro {
     position: fixed;
+
     inset: 0;
-    z-index: 10;
+
+    z-index: 100;
 
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 
@@ -34,396 +45,523 @@ body {
 
     background:
         linear-gradient(
-            rgba(20, 14, 10, 0.58),
-            rgba(20, 14, 10, 0.72)
+            rgba(25, 18, 13, 0.52),
+            rgba(25, 18, 13, 0.68)
         ),
-        url("Background.jpg") center / cover;
+        url("Background.jpg")
+        center / cover
+        no-repeat;
 
-    padding: 30px;
+    transition:
+        opacity 0.7s ease,
+        visibility 0.7s ease;
 }
 
-.intro > p:first-child {
-    font-family: Arial, sans-serif;
-    font-size: 10px;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    opacity: 0.7;
-    margin-bottom: 18px;
+
+.intro.hide {
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
 }
 
-.intro h1 {
+
+.intro-content {
+    width: min(800px, 90%);
+}
+
+
+.eyebrow {
     margin: 0;
 
-    font-size: clamp(48px, 10vw, 90px);
-    line-height: 0.92;
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    opacity: 0.7;
+}
+
+
+.intro h1 {
+    margin: 18px 0 25px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(55px, 9vw, 100px);
+
+    line-height: 0.9;
+
     font-weight: 400;
+
     letter-spacing: -3px;
+
+    text-shadow:
+        0 8px 30px rgba(0,0,0,0.35);
 }
 
-.intro h1 i {
-    font-weight: 400;
-}
 
-.intro > p:not(:first-child) {
-    margin: 28px 0;
-    font-family: Arial, sans-serif;
+.intro-text {
     font-size: 13px;
+
     line-height: 1.8;
+
     opacity: 0.75;
 }
 
-.intro button {
-    margin-top: 10px;
-}
 
+/* =================================
+   ENTER BUTTON
+================================= */
 
-/* =========================
-   BUTTON
-========================= */
+.enter-button {
+    margin-top: 18px;
 
-button {
+    padding: 14px 28px;
+
     border: 1px solid rgba(255,255,255,0.35);
-    background: rgba(255,255,255,0.12);
+
+    border-radius: 999px;
+
+    background: rgba(255,255,255,0.08);
+
     color: white;
 
-    padding: 13px 24px;
+    font-family: "DM Sans", sans-serif;
 
-    border-radius: 50px;
+    font-size: 10px;
 
-    font-family: Arial, sans-serif;
-    font-size: 11px;
     letter-spacing: 2px;
 
     cursor: pointer;
 
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(8px);
 
     transition:
-        background 0.25s ease,
-        transform 0.25s ease;
+        transform 0.2s ease,
+        background 0.2s ease;
 }
 
-button:hover {
-    background: rgba(255,255,255,0.22);
+
+.enter-button:hover {
     transform: translateY(-2px);
+
+    background: rgba(255,255,255,0.16);
 }
 
 
-/* =========================
+/* =================================
    ROOM
-========================= */
+================================= */
 
 .room {
-    display: none;
-
     position: fixed;
+
     inset: 0;
 
-    width: 100vw;
-    height: 100vh;
-
-    overflow: hidden;
+    display: none;
 
     background:
+        linear-gradient(
+            rgba(30,18,12,0.03),
+            rgba(30,18,12,0.15)
+        ),
         url("Background.jpg")
-        center center /
-        cover
+        center / cover
         no-repeat;
 }
 
 
-/*
-   Sedikit warm overlay supaya
-   orang-orang terasa menyatu
-   dengan foto.
-*/
-
-.room::after {
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(20, 10, 5, 0.08),
-            rgba(20, 10, 5, 0.18)
-        );
-
-    pointer-events: none;
+.room.show {
+    display: block;
 }
 
 
-/* =========================
-   TITLE DALAM ROOM
-========================= */
+/* =================================
+   TOP BAR
+================================= */
 
-.room h2 {
+.room-top {
     position: absolute;
 
-    z-index: 5;
+    top: 22px;
+    left: 28px;
+    right: 28px;
 
-    top: 25px;
-    left: 50%;
+    z-index: 20;
 
-    transform: translateX(-50%);
+    display: flex;
 
-    margin: 0;
+    justify-content: space-between;
 
-    font-size: 20px;
+    align-items: center;
+}
+
+
+.room-top h2 {
+    margin: 5px 0 0;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 30px;
+
     font-weight: 400;
 
-    letter-spacing: 2px;
-
-    text-shadow: 0 2px 15px rgba(0,0,0,0.5);
+    text-shadow:
+        0 4px 15px rgba(0,0,0,0.45);
 }
 
 
-/* =========================
+.counter {
+    padding: 9px 15px;
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    border-radius: 999px;
+
+    background: rgba(20,15,12,0.35);
+
+    backdrop-filter: blur(8px);
+
+    font-size: 12px;
+}
+
+
+/* =================================
    PEOPLE
-========================= */
+================================= */
 
 .people {
     position: absolute;
+
     inset: 0;
 
     width: 100%;
     height: 100%;
-
-    pointer-events: none;
 }
 
 
-/* Semua orang */
+/* =================================
+   PERSON
+================================= */
 
 .person {
     position: absolute;
-
-    z-index: 2;
 
     width: auto;
 
     cursor: pointer;
 
-    pointer-events: auto;
-
-    object-fit: contain;
+    transform-origin: bottom center;
 
     filter:
-        drop-shadow(0 8px 8px rgba(0,0,0,0.35));
+        drop-shadow(
+            0 8px 8px rgba(0,0,0,0.28)
+        );
 
     transition:
         transform 0.2s ease,
-        filter 0.2s ease;
+        filter 0.5s ease,
+        opacity 0.5s ease;
 }
+
 
 .person:hover {
-    transform: scale(1.04);
-
-    filter:
-        drop-shadow(0 10px 12px rgba(0,0,0,0.45));
+    transform:
+        translateY(-4px)
+        scale(1.025);
 }
 
 
-/* =========================
-   POSISI DUMMY
-========================= */
+/* =================================
+   DECOY POSITIONS
+================================= */
 
+.decoy1 {
+    width: 10vw;
+    max-width: 120px;
 
-/* belakang kiri */
-
-.person1 {
     left: 10%;
-    bottom: 43%;
-
-    height: 22vh;
-}
-
-
-/* belakang tengah */
-
-.person2 {
-    left: 39%;
-    bottom: 47%;
-
-    height: 19vh;
-}
-
-
-/* depan kanan */
-
-.person3 {
-    right: 9%;
     bottom: 22%;
-
-    height: 34vh;
 }
 
 
-/* ARUM */
+.decoy2 {
+    width: 9vw;
+    max-width: 110px;
+
+    left: 34%;
+    bottom: 25%;
+}
+
+
+.decoy3 {
+    width: 11vw;
+    max-width: 130px;
+
+    right: 10%;
+    bottom: 21%;
+}
+
+
+/* =================================
+   ARUM
+================================= */
 
 .arum {
-    left: 63%;
-    bottom: 18%;
+    width: 15vw;
+    max-width: 180px;
 
-    height: 39vh;
-
-    z-index: 4;
+    left: 54%;
+    bottom: 11%;
 }
 
 
-/* =========================
+/* =================================
+   FOUND = BLACK & WHITE
+================================= */
+
+.person.found {
+
+    filter:
+        grayscale(100%)
+        drop-shadow(
+            0 8px 8px rgba(0,0,0,0.28)
+        );
+
+    opacity: 0.72;
+
+    cursor: default;
+}
+
+
+.person.found:hover {
+    transform: none;
+}
+
+
+/* =================================
+   HINT
+================================= */
+
+.room-hint {
+    position: absolute;
+
+    left: 50%;
+    bottom: 15px;
+
+    z-index: 20;
+
+    transform: translateX(-50%);
+
+    margin: 0;
+
+    width: 90%;
+
+    text-align: center;
+
+    font-size: 11px;
+
+    opacity: 0.65;
+
+    text-shadow:
+        0 3px 12px rgba(0,0,0,0.5);
+}
+
+
+/* =================================
    POPUP
-========================= */
+================================= */
 
 .popup {
-    display: none;
-
     position: fixed;
+
     inset: 0;
 
-    z-index: 100;
+    z-index: 200;
 
-    align-items: center;
+    display: none;
+
     justify-content: center;
+    align-items: center;
 
     padding: 25px;
 
-    background: rgba(15, 10, 7, 0.48);
+    background:
+        rgba(15,10,7,0.48);
 
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(7px);
 }
+
+
+.popup.show {
+    display: flex;
+}
+
 
 .popup-box {
     position: relative;
 
     width: min(390px, 100%);
 
-    padding: 42px 30px 34px;
+    padding: 45px 30px 35px;
 
-    background: #f6f0e7;
+    border-radius: 25px;
 
-    color: #29221d;
+    background: #f7f1e9;
 
-    border-radius: 3px;
+    color: #332923;
 
     text-align: center;
 
     box-shadow:
-        0 25px 80px rgba(0,0,0,0.3);
+        0 30px 90px rgba(0,0,0,0.35);
 
-    animation: popupIn 0.3s ease;
+    animation:
+        popupIn 0.3s ease;
 }
 
-.popup-box h3 {
-    margin: 8px 0 12px;
 
-    font-size: 32px;
+.popup-label {
+    margin: 0 0 10px;
+
+    color: #8a7669;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+
+.popup-box h3 {
+    margin: 5px 0 12px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 34px;
+
     font-weight: 400;
 }
 
-.popup-box p {
-    margin: 10px 0 24px;
 
-    font-family: Arial, sans-serif;
-    font-size: 13px;
+.popup-box p:not(.popup-label) {
+    color: #766960;
+
+    font-size: 14px;
 
     line-height: 1.7;
-
-    color: #75695f;
-}
-
-.popup-box button:last-child {
-    background: #29221d;
-    border: none;
-
-    color: white;
 }
 
 
-/* tombol X */
-
-.popup-box button:first-child {
+.popup-close {
     position: absolute;
 
     top: 10px;
-    right: 12px;
+    right: 14px;
 
-    padding: 4px 9px;
+    padding: 4px 8px;
+
+    border: 0;
 
     background: transparent;
 
-    border: none;
-
-    color: #75695f;
-
-    font-family: Arial, sans-serif;
+    color: #766960;
 
     font-size: 25px;
+
+    cursor: pointer;
 }
 
 
-/* =========================
-   ANIMATION
-========================= */
+.popup-close:hover {
+    background: transparent;
+
+    transform: none;
+}
+
 
 @keyframes popupIn {
 
     from {
         opacity: 0;
-        transform: translateY(15px) scale(0.96);
+
+        transform:
+            translateY(15px)
+            scale(0.96);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0) scale(1);
+
+        transform:
+            translateY(0)
+            scale(1);
     }
 
 }
 
 
-/* =========================
+/* =================================
    MOBILE
-========================= */
+================================= */
 
 @media (max-width: 600px) {
 
     .intro h1 {
-        font-size: 50px;
+        font-size: 52px;
     }
 
-    .room {
-        background-position: center center;
-    }
 
-    .room h2 {
+    .room-top {
         top: 18px;
-        font-size: 17px;
+
+        left: 18px;
+        right: 18px;
     }
 
-    .person1 {
-        left: 3%;
-        bottom: 43%;
-        height: 17vh;
+
+    .room-top h2 {
+        font-size: 24px;
     }
 
-    .person2 {
-        left: 34%;
-        bottom: 48%;
-        height: 15vh;
+
+    .decoy1 {
+        width: 23vw;
+
+        left: 5%;
+
+        bottom: 20%;
     }
 
-    .person3 {
-        right: 2%;
-        bottom: 25%;
-        height: 26vh;
+
+    .decoy2 {
+        width: 20vw;
+
+        left: 31%;
+
+        bottom: 22%;
     }
+
+
+    .decoy3 {
+        width: 23vw;
+
+        right: 4%;
+
+        bottom: 19%;
+    }
+
 
     .arum {
-        left: 55%;
-        bottom: 20%;
-        height: 31vh;
+        width: 35vw;
+
+        left: 46%;
+
+        bottom: 7%;
     }
 
 }
