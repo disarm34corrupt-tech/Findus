@@ -293,41 +293,57 @@ body {
 }
 
 
-/* ================================
-   FRONT LAYER (PALING DEPAN)
-   Urutan: 7 | 5 | 4 | 8
-================================ */
+/* =================================
+   FRONT LAYER
+   LEFT → RIGHT
+   7 | 5 | 4 | 8
+================================= */
 
 .front {
     position: absolute;
     z-index: 20;
-    bottom: 1%;
+
+    height: auto;
+
     cursor: pointer;
 }
 
+
 /* Pengecoh 7 */
+
 .front1 {
-    width: 20%;
-    left: 2%;
+    width: 18%;
+    left: 3%;
+    bottom: 1%;
 }
+
 
 /* Pengecoh 5 */
+
 .front2 {
-    width: 25%;
-    left: 25%;
+    width: 16%;
+    left: 27%;
+    bottom: 2%;
 }
+
 
 /* Pengecoh 4 */
+
 .front3 {
-    width: 16%;
-    left: 47%;
+    width: 18%;
+    left: 49%;
+    bottom: 1%;
 }
 
+
 /* Pengecoh 8 */
+
 .front4 {
-    width: 15%;
-    left: 69%;
+    width: 16%;
+    left: 73%;
+    bottom: 2%;
 }
+
 /* ================================
    ARUM
 ================================ */
