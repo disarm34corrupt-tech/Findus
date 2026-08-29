@@ -506,3 +506,29 @@ body {
     }
 
 }
+/* =========================================
+   FOUND SPECIAL PERSON
+========================================= */
+
+.person.found {
+    filter:
+        grayscale(100%)
+        drop-shadow(
+            0 8px 8px rgba(0, 0, 0, .28)
+        );
+
+    opacity: 0.72;
+
+    cursor: default;
+}
+
+
+.person.found:hover {
+    filter:
+        grayscale(100%)
+        drop-shadow(
+            0 8px 8px rgba(0, 0, 0, .28)
+        );
+
+    transform: none;
+}
