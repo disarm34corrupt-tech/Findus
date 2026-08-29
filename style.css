@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500&display=swap');
 
 
-/* =================================
+/* ================================
    RESET
-================================= */
+================================ */
 
 * {
     box-sizing: border-box;
@@ -19,16 +19,17 @@ body {
 body {
     overflow: hidden;
 
-    background: #1d1714;
+    background: #211916;
+
     color: white;
 
     font-family: "DM Sans", sans-serif;
 }
 
 
-/* =================================
+/* ================================
    OPENING
-================================= */
+================================ */
 
 .intro {
     position: fixed;
@@ -38,23 +39,23 @@ body {
     z-index: 100;
 
     display: flex;
-    justify-content: center;
+
     align-items: center;
+    justify-content: center;
 
     text-align: center;
 
     background:
         linear-gradient(
-            rgba(25, 18, 13, 0.52),
-            rgba(25, 18, 13, 0.68)
+            rgba(25, 18, 13, .52),
+            rgba(25, 18, 13, .68)
         ),
         url("Background.jpg")
-        center / cover
-        no-repeat;
+        center / cover no-repeat;
 
     transition:
-        opacity 0.7s ease,
-        visibility 0.7s ease;
+        opacity .7s ease,
+        visibility .7s ease;
 }
 
 
@@ -81,7 +82,7 @@ body {
 
     text-transform: uppercase;
 
-    opacity: 0.7;
+    opacity: .7;
 }
 
 
@@ -92,14 +93,16 @@ body {
 
     font-size: clamp(55px, 9vw, 100px);
 
-    line-height: 0.9;
-
     font-weight: 400;
 
-    letter-spacing: -3px;
+    line-height: .9;
 
-    text-shadow:
-        0 8px 30px rgba(0,0,0,0.35);
+    letter-spacing: -3px;
+}
+
+
+.intro h1 i {
+    font-weight: 400;
 }
 
 
@@ -108,28 +111,22 @@ body {
 
     line-height: 1.8;
 
-    opacity: 0.75;
+    opacity: .75;
 }
 
 
-/* =================================
-   ENTER BUTTON
-================================= */
-
 .enter-button {
-    margin-top: 18px;
+    margin-top: 20px;
 
     padding: 14px 28px;
 
-    border: 1px solid rgba(255,255,255,0.35);
+    border: 1px solid rgba(255,255,255,.35);
 
     border-radius: 999px;
 
-    background: rgba(255,255,255,0.08);
+    background: rgba(255,255,255,.08);
 
     color: white;
-
-    font-family: "DM Sans", sans-serif;
 
     font-size: 10px;
 
@@ -139,22 +136,20 @@ body {
 
     backdrop-filter: blur(8px);
 
-    transition:
-        transform 0.2s ease,
-        background 0.2s ease;
+    transition: .25s ease;
 }
 
 
 .enter-button:hover {
-    transform: translateY(-2px);
+    background: rgba(255,255,255,.18);
 
-    background: rgba(255,255,255,0.16);
+    transform: translateY(-2px);
 }
 
 
-/* =================================
+/* ================================
    ROOM
-================================= */
+================================ */
 
 .room {
     position: fixed;
@@ -163,14 +158,7 @@ body {
 
     display: none;
 
-    background:
-        linear-gradient(
-            rgba(30,18,12,0.03),
-            rgba(30,18,12,0.15)
-        ),
-        url("Background.jpg")
-        center / cover
-        no-repeat;
+    background: #211916;
 }
 
 
@@ -179,76 +167,81 @@ body {
 }
 
 
-/* =================================
-   TOP BAR
-================================= */
+/* ================================
+   COUNTER
+================================ */
 
 .room-top {
     position: absolute;
 
-    top: 22px;
-    left: 28px;
-    right: 28px;
+    top: 25px;
 
-    z-index: 20;
+    left: 50%;
 
-    display: flex;
+    z-index: 30;
 
-    justify-content: space-between;
+    transform: translateX(-50%);
 
-    align-items: center;
+    text-align: center;
 }
 
 
-.room-top h2 {
-    margin: 5px 0 0;
-
-    font-family: "Playfair Display", serif;
-
-    font-size: 30px;
-
-    font-weight: 400;
-
-    text-shadow:
-        0 4px 15px rgba(0,0,0,0.45);
+.room-top > div:first-child {
+    display: none;
 }
 
 
 .counter {
-    padding: 9px 15px;
+    font-size: 11px;
 
-    border: 1px solid rgba(255,255,255,0.2);
+    letter-spacing: 3px;
 
-    border-radius: 999px;
+    color: rgba(255,255,255,.85);
 
-    background: rgba(20,15,12,0.35);
-
-    backdrop-filter: blur(8px);
-
-    font-size: 12px;
+    text-shadow:
+        0 2px 12px rgba(0,0,0,.5);
 }
 
 
-/* =================================
-   PEOPLE
-================================= */
+/* ================================
+   BALLROOM FRAME
+================================ */
 
 .people {
     position: absolute;
 
-    inset: 0;
+    left: 50%;
+    top: 52%;
 
-    width: 100%;
-    height: 100%;
+    width: min(92vw, 1200px);
+
+    aspect-ratio: 16 / 9;
+
+    transform: translate(-50%, -50%);
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    background:
+        url("Background.jpg")
+        center / cover no-repeat;
+
+    border: 1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.45);
 }
 
 
-/* =================================
-   PERSON
-================================= */
+/* ================================
+   PEOPLE
+================================ */
 
 .person {
     position: absolute;
+
+    z-index: 5;
 
     width: auto;
 
@@ -258,13 +251,13 @@ body {
 
     filter:
         drop-shadow(
-            0 8px 8px rgba(0,0,0,0.28)
+            0 8px 8px rgba(0,0,0,.28)
         );
 
     transition:
-        transform 0.2s ease,
-        filter 0.5s ease,
-        opacity 0.5s ease;
+        transform .2s ease,
+        filter .5s ease,
+        opacity .5s ease;
 }
 
 
@@ -275,63 +268,63 @@ body {
 }
 
 
-/* =================================
-   DECOY POSITIONS
-================================= */
+/* ================================
+   DUMMY DECOYS
+================================ */
 
 .decoy1 {
-    width: 10vw;
-    max-width: 120px;
+    width: 10%;
 
     left: 10%;
-    bottom: 22%;
+
+    bottom: 10%;
 }
 
 
 .decoy2 {
-    width: 9vw;
-    max-width: 110px;
+    width: 9%;
 
     left: 34%;
-    bottom: 25%;
+
+    bottom: 12%;
 }
 
 
 .decoy3 {
-    width: 11vw;
-    max-width: 130px;
+    width: 11%;
 
     right: 10%;
-    bottom: 21%;
+
+    bottom: 10%;
 }
 
 
-/* =================================
+/* ================================
    ARUM
-================================= */
+================================ */
 
 .arum {
-    width: 15vw;
-    max-width: 180px;
+    width: 15%;
 
     left: 54%;
-    bottom: 11%;
+
+    bottom: 6%;
 }
 
 
-/* =================================
-   FOUND = BLACK & WHITE
-================================= */
+/* ================================
+   FOUND
+================================ */
 
 .person.found {
 
     filter:
         grayscale(100%)
         drop-shadow(
-            0 8px 8px rgba(0,0,0,0.28)
+            0 8px 8px rgba(0,0,0,.28)
         );
 
-    opacity: 0.72;
+    opacity: .72;
 
     cursor: default;
 }
@@ -342,38 +335,9 @@ body {
 }
 
 
-/* =================================
-   HINT
-================================= */
-
-.room-hint {
-    position: absolute;
-
-    left: 50%;
-    bottom: 15px;
-
-    z-index: 20;
-
-    transform: translateX(-50%);
-
-    margin: 0;
-
-    width: 90%;
-
-    text-align: center;
-
-    font-size: 11px;
-
-    opacity: 0.65;
-
-    text-shadow:
-        0 3px 12px rgba(0,0,0,0.5);
-}
-
-
-/* =================================
+/* ================================
    POPUP
-================================= */
+================================ */
 
 .popup {
     position: fixed;
@@ -384,13 +348,13 @@ body {
 
     display: none;
 
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
     padding: 25px;
 
     background:
-        rgba(15,10,7,0.48);
+        rgba(15,10,7,.48);
 
     backdrop-filter: blur(7px);
 }
@@ -417,10 +381,10 @@ body {
     text-align: center;
 
     box-shadow:
-        0 30px 90px rgba(0,0,0,0.35);
+        0 30px 90px rgba(0,0,0,.35);
 
     animation:
-        popupIn 0.3s ease;
+        popupIn .3s ease;
 }
 
 
@@ -484,6 +448,10 @@ body {
 }
 
 
+/* ================================
+   ANIMATION
+================================ */
+
 @keyframes popupIn {
 
     from {
@@ -491,7 +459,7 @@ body {
 
         transform:
             translateY(15px)
-            scale(0.96);
+            scale(.96);
     }
 
     to {
@@ -501,192 +469,26 @@ body {
             translateY(0)
             scale(1);
     }
-
 }
 
 
-/* =================================
+/* ================================
    MOBILE
-================================= */
+================================ */
 
 @media (max-width: 600px) {
-
-    .intro h1 {
-        font-size: 52px;
-    }
-
 
     .room-top {
         top: 18px;
-
-        left: 18px;
-        right: 18px;
     }
 
 
-    .room-top h2 {
-        font-size: 24px;
+    .counter {
+        font-size: 9px;
+
+        letter-spacing: 2px;
     }
 
-
-    .decoy1 {
-        width: 23vw;
-
-        left: 5%;
-
-        bottom: 20%;
-    }
-
-
-    .decoy2 {
-        width: 20vw;
-
-        left: 31%;
-
-        bottom: 22%;
-    }
-
-
-    .decoy3 {
-        width: 23vw;
-
-        right: 4%;
-
-        bottom: 19%;
-    }
-
-
-    .arum {
-        width: 35vw;
-
-        left: 46%;
-
-        bottom: 7%;
-    }
-
-}
-/* =========================================
-   ROOM FRAME
-   ========================================= */
-
-.room {
-    background: #211916;
-    
-    display: none;
-
-    padding: 0;
-}
-
-
-/* bagian room yang menampung ballroom */
-
-.people {
-    position: absolute;
-
-    width: min(92vw, 1200px);
-
-    aspect-ratio: 16 / 9;
-
-    left: 50%;
-    top: 52%;
-
-    transform: translate(-50%, -50%);
-
-    overflow: hidden;
-
-    border-radius: 18px;
-
-    background-image: url("Background.jpg");
-
-    background-size: cover;
-    background-position: center;
-
-    box-shadow:
-        0 25px 70px rgba(0, 0, 0, 0.38);
-
-    border: 1px solid rgba(255,255,255,0.12);
-}
-
-
-/* =========================================
-   COUNTER DI ATAS FRAME
-   ========================================= */
-
-.room-top {
-    position: absolute;
-
-    z-index: 50;
-
-    top: 25px;
-
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    width: min(92vw, 1200px);
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-}
-
-
-/* tulisan FINDUS + Find them disembunyikan dulu */
-
-.room-top > div:first-child {
-    display: none;
-}
-
-
-.counter {
-    padding: 0;
-
-    border: none;
-
-    background: transparent;
-
-    backdrop-filter: none;
-
-    font-family: "DM Sans", sans-serif;
-
-    font-size: 11px;
-
-    letter-spacing: 3px;
-
-    text-transform: uppercase;
-
-    color: rgba(255,255,255,0.85);
-
-    text-shadow:
-        0 2px 12px rgba(0,0,0,0.45);
-}
-
-
-/* =========================================
-   ORANG-ORANG SEKARANG RELATIF KE FRAME
-   ========================================= */
-
-.person {
-    z-index: 5;
-}
-
-
-/* =========================================
-   HILANGKAN HINT DULU
-   ========================================= */
-
-.room-hint {
-    display: none;
-}
-
-
-/* =========================================
-   MOBILE
-   ========================================= */
-
-@media (max-width: 600px) {
 
     .people {
         width: 94vw;
@@ -699,17 +501,39 @@ body {
     }
 
 
-    .room-top {
-        top: 22px;
+    .decoy1 {
+        width: 23%;
 
-        width: 94vw;
+        left: 5%;
+
+        bottom: 10%;
     }
 
 
-    .counter {
-        font-size: 9px;
+    .decoy2 {
+        width: 20%;
 
-        letter-spacing: 2.5px;
+        left: 31%;
+
+        bottom: 12%;
+    }
+
+
+    .decoy3 {
+        width: 23%;
+
+        right: 4%;
+
+        bottom: 10%;
+    }
+
+
+    .arum {
+        width: 35%;
+
+        left: 46%;
+
+        bottom: 6%;
     }
 
 }
