@@ -234,7 +234,6 @@ const decoyPeople = [
 ===================================================== */
 
 const layout = {
-const layout = {
 
     /* =================================================
        BARIS BELAKANG (crowd jauh)
