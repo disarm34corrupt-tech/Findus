@@ -545,3 +545,372 @@ function createCharacter(
 
 
     image
+    image.alt =
+        person.name || "person";
+
+
+    image.classList.add(
+        "person"
+    );
+
+
+    if (isSpecial) {
+
+        image.classList.add(
+            "special"
+        );
+
+    } else {
+
+        image.classList.add(
+            "decoy"
+        );
+
+    }
+
+
+    /* ================================
+       POSITION
+    ================================ */
+
+    const position =
+        layout[person.id];
+
+
+    if (position) {
+
+        image.style.left =
+            position.left;
+
+        image.style.bottom =
+            position.bottom;
+
+        image.style.width =
+            position.width;
+
+        image.style.zIndex =
+            position.z;
+
+    }
+
+
+    /* ================================
+       CLICK
+    ================================ */
+
+    image.addEventListener(
+        "click",
+        function () {
+
+            if (isSpecial) {
+
+                findSpecial(
+                    person,
+                    image
+                );
+
+            } else {
+
+                clickDecoy(
+                    person
+                );
+
+            }
+
+        }
+    );
+
+
+    gameArea.appendChild(
+        image
+    );
+
+}
+
+
+/* =====================================================
+   FIND SPECIAL
+===================================================== */
+
+function findSpecial(
+    person,
+    element
+) {
+
+    if (
+        element.classList.contains(
+            "found"
+        )
+    ) {
+
+        return;
+
+    }
+
+
+    activePerson = {
+
+        person:
+            person,
+
+        element:
+            element
+
+    };
+
+
+    foundTitle.textContent =
+        person.name;
+
+
+    foundMessage.textContent =
+        person.message;
+
+
+    popup.classList.remove(
+        "hidden"
+    );
+
+}
+
+
+/* =====================================================
+   CLOSE SPECIAL POPUP
+===================================================== */
+
+function closeFoundPopup() {
+
+    popup.classList.add(
+        "hidden"
+    );
+
+
+    if (!activePerson) {
+
+        return;
+
+    }
+
+
+    const element =
+        activePerson.element;
+
+
+    if (
+        !element.classList.contains(
+            "found"
+        )
+    ) {
+
+        element.classList.add(
+            "found"
+        );
+
+
+        foundCount++;
+
+
+        counter.textContent =
+            foundCount;
+
+    }
+
+
+    activePerson = null;
+
+
+    /* ================================
+       ALL 18 FOUND
+    ================================ */
+
+    if (
+        foundCount ===
+        specialPeople.length
+    ) {
+
+        setTimeout(
+            function () {
+
+                completePopup.classList.remove(
+                    "hidden"
+                );
+
+            },
+            500
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   DECOY
+===================================================== */
+
+function clickDecoy(
+    person
+) {
+
+    const messageElement =
+        document.getElementById(
+            "decoyMessage"
+        );
+
+
+    if (messageElement) {
+
+        messageElement.textContent =
+            person.message;
+
+    }
+
+
+    decoyPopup.classList.remove(
+        "hidden"
+    );
+
+}
+
+
+/* =====================================================
+   CLOSE DECOY
+===================================================== */
+
+function closeDecoyPopup() {
+
+    decoyPopup.classList.add(
+        "hidden"
+    );
+
+}
+
+
+/* =====================================================
+   BUTTON EVENTS
+===================================================== */
+
+if (enterButton) {
+
+    enterButton.addEventListener(
+        "click",
+        enterRoom
+    );
+
+}
+
+
+if (closeFound) {
+
+    closeFound.addEventListener(
+        "click",
+        closeFoundPopup
+    );
+
+}
+
+
+if (closeDecoy) {
+
+    closeDecoy.addEventListener(
+        "click",
+        closeDecoyPopup
+    );
+
+}
+
+
+/* =====================================================
+   CLICK OUTSIDE SPECIAL POPUP
+===================================================== */
+
+if (popup) {
+
+    popup.addEventListener(
+        "click",
+        function (event) {
+
+            if (
+                event.target === popup
+            ) {
+
+                closeFoundPopup();
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   CLICK OUTSIDE DECOY POPUP
+===================================================== */
+
+if (decoyPopup) {
+
+    decoyPopup.addEventListener(
+        "click",
+        function (event) {
+
+            if (
+                event.target === decoyPopup
+            ) {
+
+                closeDecoyPopup();
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   BUILD GAME
+===================================================== */
+
+function buildGame() {
+
+
+    /* ================================
+       18 SPECIAL PEOPLE
+    ================================ */
+
+    specialPeople.forEach(
+        function (person) {
+
+            createCharacter(
+                person,
+                true
+            );
+
+        }
+    );
+
+
+    /* ================================
+       9 DECOYS
+    ================================ */
+
+    decoyPeople.forEach(
+        function (person) {
+
+            createCharacter(
+                person,
+                false
+            );
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   START GAME
+===================================================== */
+
+buildGame();
