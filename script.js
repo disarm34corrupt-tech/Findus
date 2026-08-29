@@ -227,218 +227,251 @@ const decoyPeople = [
 
 ];
 
+
 /* =====================================================
-   POSITION & SIZE
-   COMPACT MIXED CROWD
+   LAYOUT
+   27 PEOPLE
+   MIXED + COMPACT
 ===================================================== */
 
 const layout = {
 
-    /* =================================================
-       BACK ROW
-    ================================================= */
+    /* -------------------------------
+       FAR CROWD
+    ------------------------------- */
 
     atlas: {
-        left: "1%",
+        left: "2%",
         bottom: "45%",
         width: "8%",
         z: 2
     },
 
     decoy6: {
-        left: "8%",
-        bottom: "50%",
+        left: "9%",
+        bottom: "49%",
         width: "8%",
         z: 3
     },
 
     sanly: {
-        left: "15%",
-        bottom: "43%",
+        left: "16%",
+        bottom: "42%",
         width: "8%",
         z: 2
     },
 
-    kartein: {
+    decoy9: {
         left: "23%",
-        bottom: "49%",
+        bottom: "47%",
         width: "8%",
-        z: 4
+        z: 3
     },
 
-    decoy9: {
-        left: "31%",
+    kartein: {
+        left: "30%",
         bottom: "43%",
         width: "8%",
         z: 2
     },
 
     josh: {
-        left: "39%",
-        bottom: "50%",
+        left: "37%",
+        bottom: "49%",
         width: "8%",
         z: 3
     },
 
     decoy3: {
-        left: "47%",
+        left: "44%",
         bottom: "42%",
         width: "8%",
         z: 2
     },
 
     hana: {
-        left: "55%",
-        bottom: "48%",
-        width: "8%",
-        z: 4
-    },
-
-    leon: {
-        left: "64%",
-        bottom: "44%",
+        left: "51%",
+        bottom: "46%",
         width: "8%",
         z: 3
     },
 
-    /* =================================================
-       MIDDLE ROW
-    ================================================= */
-
-    amora: {
-        left: "2%",
-        bottom: "25%",
-        width: "10%",
-        z: 7
-    },
-
-    decoy1: {
-        left: "11%",
-        bottom: "29%",
+    leon: {
+        left: "59%",
+        bottom: "42%",
         width: "8%",
-        z: 8
-    },
-
-    rendy: {
-        left: "19%",
-        bottom: "23%",
-        width: "9%",
-        z: 6
-    },
-
-    ayes: {
-        left: "28%",
-        bottom: "28%",
-        width: "9%",
-        z: 8
-    },
-
-    decoy2: {
-        left: "37%",
-        bottom: "22%",
-        width: "8%",
-        z: 6
-    },
-
-    arga: {
-        left: "45%",
-        bottom: "29%",
-        width: "10%",
-        z: 8
-    },
-
-    jemi: {
-        left: "55%",
-        bottom: "23%",
-        width: "9%",
-        z: 6
+        z: 2
     },
 
     decoy10: {
-        left: "64%",
-        bottom: "29%",
+        left: "67%",
+        bottom: "48%",
         width: "8%",
+        z: 3
+    },
+
+
+    /* -------------------------------
+       MIDDLE CROWD
+    ------------------------------- */
+
+    amora: {
+        left: "1%",
+        bottom: "27%",
+        width: "9%",
         z: 8
     },
 
-    jevan: {
-        left: "72%",
-        bottom: "22%",
+    decoy1: {
+        left: "8%",
+        bottom: "31%",
+        width: "8%",
+        z: 7
+    },
+
+    rendy: {
+        left: "16%",
+        bottom: "24%",
         width: "9%",
-        z: 6
+        z: 8
+    },
+
+    ayes: {
+        left: "24%",
+        bottom: "29%",
+        width: "9%",
+        z: 9
+    },
+
+    decoy2: {
+        left: "32%",
+        bottom: "23%",
+        width: "8%",
+        z: 7
+    },
+
+    arga: {
+        left: "40%",
+        bottom: "30%",
+        width: "9%",
+        z: 9
+    },
+
+    jemi: {
+        left: "48%",
+        bottom: "24%",
+        width: "9%",
+        z: 8
+    },
+
+    decoy7: {
+        left: "56%",
+        bottom: "29%",
+        width: "8%",
+        z: 7
+    },
+
+    jevan: {
+        left: "64%",
+        bottom: "23%",
+        width: "9%",
+        z: 9
     },
 
     sana: {
-        left: "81%",
+        left: "72%",
         bottom: "28%",
         width: "9%",
         z: 8
     },
 
-    /* =================================================
-       FRONT ROW
-    ================================================= */
-
-    decoy7: {
-        left: "-2%",
-        bottom: "0%",
-        width: "15%",
-        z: 20
+    juan: {
+        left: "80%",
+        bottom: "23%",
+        width: "9%",
+        z: 9
     },
 
-    vel: {
-        left: "11%",
-        bottom: "1%",
-        width: "12%",
-        z: 22
+    kyungie: {
+        left: "88%",
+        bottom: "29%",
+        width: "7%",
+        z: 8
     },
+
+
+    /* -------------------------------
+       FRONT CROWD
+    ------------------------------- */
 
     decoy5: {
-        left: "22%",
+        left: "-2%",
         bottom: "-1%",
         width: "14%",
         z: 20
     },
 
-    arum: {
-        left: "35%",
-        bottom: "3%",
+    vel: {
+        left: "10%",
+        bottom: "1%",
         width: "12%",
-        z: 25
-    },
-
-    jivan: {
-        left: "47%",
-        bottom: "0%",
-        width: "13%",
         z: 23
     },
 
-    decoy4: {
-        left: "60%",
+    jivan: {
+        left: "22%",
+        bottom: "-1%",
+        width: "12%",
+        z: 21
+    },
+
+    arum: {
+        left: "34%",
         bottom: "2%",
-        width: "15%",
+        width: "11%",
+        z: 24
+    },
+
+    decoy4: {
+        left: "46%",
+        bottom: "0%",
+        width: "14%",
         z: 20
     },
 
     juan: {
-        left: "74%",
+        left: "59%",
         bottom: "1%",
-        width: "11%",
+        width: "10%",
         z: 22
     },
 
     kyungie: {
-        left: "85%",
-        bottom: "4%",
+        left: "70%",
+        bottom: "2%",
         width: "8%",
         z: 21
+    },
+
+    rendy: {
+        left: "79%",
+        bottom: "0%",
+        width: "10%",
+        z: 22
     }
 
 };
 
+
 /* =====================================================
-   GAME VARIABLES
+   NOTE:
+   Some people above are intentionally moved again
+   in front so they appear closer.
+===================================================== */
+
+
+/* =====================================================
+   GAME
 ===================================================== */
 
 let foundCount = 0;
@@ -447,377 +480,386 @@ let activePerson = null;
 
 
 /* =====================================================
-   ELEMENTS
+   INITIALIZE
 ===================================================== */
 
-const intro =
-    document.getElementById("intro");
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
 
-const room =
-    document.getElementById("room");
+        const intro =
+            document.getElementById("intro");
 
-const gameArea =
-    document.getElementById("gameArea");
+        const room =
+            document.getElementById("room");
 
-const counter =
-    document.getElementById("foundCount");
+        const gameArea =
+            document.getElementById("gameArea");
 
-const popup =
-    document.getElementById("foundPopup");
+        const counter =
+            document.getElementById("foundCount");
 
-const decoyPopup =
-    document.getElementById("decoyPopup");
+        const popup =
+            document.getElementById("foundPopup");
 
-const completePopup =
-    document.getElementById("completePopup");
+        const decoyPopup =
+            document.getElementById("decoyPopup");
 
-const foundTitle =
-    document.getElementById("foundTitle");
+        const completePopup =
+            document.getElementById("completePopup");
 
-const foundMessage =
-    document.getElementById("foundMessage");
+        const foundTitle =
+            document.getElementById("foundTitle");
 
-const decoyMessage =
-    document.getElementById("decoyMessage");
+        const foundMessage =
+            document.getElementById("foundMessage");
 
-const enterButton =
-    document.getElementById("enterButton");
+        const decoyMessage =
+            document.getElementById("decoyMessage");
 
-const closeFound =
-    document.getElementById("closeFound");
+        const enterButton =
+            document.getElementById("enterButton");
 
-const closeDecoy =
-    document.getElementById("closeDecoy");
+        const closeFound =
+            document.getElementById("closeFound");
 
-
-/* =====================================================
-   ENTER ROOM
-===================================================== */
-
-function enterRoom() {
-
-    intro.classList.add("hidden");
-
-    room.classList.remove("hidden");
-
-}
+        const closeDecoy =
+            document.getElementById("closeDecoy");
 
 
-/* =====================================================
-   CREATE CHARACTER
-===================================================== */
+        /* =================================================
+           ENTER ROOM
+        ================================================= */
 
-function createCharacter(person, isSpecial) {
+        enterButton.addEventListener(
+            "click",
+            function () {
 
-    const image =
-        document.createElement("img");
-
-
-    /* IMAGE */
-
-    image.src = person.image;
-
-    image.alt =
-        person.name || "person";
-
-
-    /* CLASS */
-
-    image.classList.add("person");
-
-    image.classList.add(
-        isSpecial ? "special" : "decoy"
-    );
-
-
-    /* POSITION */
-
-    const position =
-        layout[person.id];
-
-
-    if (position) {
-
-        image.style.left =
-            position.left;
-
-        image.style.bottom =
-            position.bottom;
-
-        image.style.width =
-            position.width;
-
-        image.style.zIndex =
-            position.z;
-
-    }
-
-
-    /* CLICK */
-
-    image.addEventListener(
-        "click",
-        function () {
-
-            if (isSpecial) {
-
-                findSpecial(
-                    person,
-                    image
+                intro.classList.add(
+                    "hidden"
                 );
 
-            } else {
+                room.classList.remove(
+                    "hidden"
+                );
 
-                clickDecoy(
-                    person
+            }
+        );
+
+
+        /* =================================================
+           CREATE CHARACTER
+        ================================================= */
+
+        function createCharacter(
+            person,
+            isSpecial
+        ) {
+
+            const image =
+                document.createElement("img");
+
+
+            image.src =
+                person.image;
+
+            image.alt =
+                person.name ||
+                "person";
+
+
+            image.classList.add(
+                "person"
+            );
+
+
+            image.classList.add(
+                isSpecial
+                    ? "special"
+                    : "decoy"
+            );
+
+
+            const position =
+                layout[person.id];
+
+
+            if (position) {
+
+                image.style.left =
+                    position.left;
+
+                image.style.bottom =
+                    position.bottom;
+
+                image.style.width =
+                    position.width;
+
+                image.style.zIndex =
+                    position.z;
+
+            }
+
+
+            /* ---------------------------------------------
+               CLICK / TOUCH
+            --------------------------------------------- */
+
+            image.addEventListener(
+                "click",
+                function (event) {
+
+                    event.preventDefault();
+
+                    event.stopPropagation();
+
+
+                    if (isSpecial) {
+
+                        findSpecial(
+                            person,
+                            image
+                        );
+
+                    } else {
+
+                        clickDecoy(
+                            person
+                        );
+
+                    }
+
+                }
+            );
+
+
+            gameArea.appendChild(
+                image
+            );
+
+        }
+
+
+        /* =================================================
+           FIND SPECIAL
+        ================================================= */
+
+        function findSpecial(
+            person,
+            element
+        ) {
+
+            if (
+                element.classList.contains(
+                    "found"
+                )
+            ) {
+
+                return;
+
+            }
+
+
+            activePerson = {
+
+                person: person,
+
+                element: element
+
+            };
+
+
+            foundTitle.textContent =
+                person.name;
+
+            foundMessage.textContent =
+                person.message;
+
+
+            popup.classList.remove(
+                "hidden"
+            );
+
+        }
+
+
+        /* =================================================
+           CLOSE FOUND POPUP
+        ================================================= */
+
+        function closeFoundPopup() {
+
+            popup.classList.add(
+                "hidden"
+            );
+
+
+            if (!activePerson) {
+
+                return;
+
+            }
+
+
+            const element =
+                activePerson.element;
+
+
+            if (
+                !element.classList.contains(
+                    "found"
+                )
+            ) {
+
+                element.classList.add(
+                    "found"
+                );
+
+
+                foundCount++;
+
+
+                counter.textContent =
+                    foundCount;
+
+            }
+
+
+            activePerson = null;
+
+
+            if (
+                foundCount ===
+                specialPeople.length
+            ) {
+
+                setTimeout(
+                    function () {
+
+                        completePopup.classList.remove(
+                            "hidden"
+                        );
+
+                    },
+                    400
                 );
 
             }
 
         }
-    );
 
 
-    /* ADD TO GAME */
+        /* =================================================
+           DECOY
+        ================================================= */
 
-    gameArea.appendChild(image);
+        function clickDecoy(
+            person
+        ) {
 
-}
-
-
-/* =====================================================
-   FIND SPECIAL
-===================================================== */
-
-function findSpecial(
-    person,
-    element
-) {
-
-    if (
-        element.classList.contains("found")
-    ) {
-
-        return;
-
-    }
+            decoyMessage.textContent =
+                person.message;
 
 
-    activePerson = {
+            decoyPopup.classList.remove(
+                "hidden"
+            );
 
-        person: person,
-
-        element: element
-
-    };
+        }
 
 
-    foundTitle.textContent =
-        person.name;
+        /* =================================================
+           CLOSE DECOY
+        ================================================= */
 
-    foundMessage.textContent =
-        person.message;
+        function closeDecoyPopup() {
 
+            decoyPopup.classList.add(
+                "hidden"
+            );
 
-    popup.classList.remove(
-        "hidden"
-    );
-
-}
-
-
-/* =====================================================
-   CLOSE SPECIAL POPUP
-===================================================== */
-
-function closeFoundPopup() {
-
-    popup.classList.add(
-        "hidden"
-    );
+        }
 
 
-    if (!activePerson) {
+        /* =================================================
+           CLOSE BUTTONS
+        ================================================= */
 
-        return;
-
-    }
-
-
-    const element =
-        activePerson.element;
-
-
-    if (
-        !element.classList.contains("found")
-    ) {
-
-        element.classList.add(
-            "found"
+        closeFound.addEventListener(
+            "click",
+            closeFoundPopup
         );
 
-        foundCount++;
 
-        counter.textContent =
-            foundCount;
-
-    }
-
-
-    activePerson = null;
+        closeDecoy.addEventListener(
+            "click",
+            closeDecoyPopup
+        );
 
 
-    /* ALL SPECIAL PEOPLE FOUND */
+        /* =================================================
+           CLICK OUTSIDE POPUPS
+        ================================================= */
 
-    if (
-        foundCount ===
-        specialPeople.length
-    ) {
+        popup.addEventListener(
+            "click",
+            function (event) {
 
-        setTimeout(
-            function () {
+                if (
+                    event.target === popup
+                ) {
 
-                completePopup.classList.remove(
-                    "hidden"
+                    closeFoundPopup();
+
+                }
+
+            }
+        );
+
+
+        decoyPopup.addEventListener(
+            "click",
+            function (event) {
+
+                if (
+                    event.target === decoyPopup
+                ) {
+
+                    closeDecoyPopup();
+
+                }
+
+            }
+        );
+
+
+        /* =================================================
+           BUILD GAME
+        ================================================= */
+
+        specialPeople.forEach(
+            function (person) {
+
+                createCharacter(
+                    person,
+                    true
                 );
 
-            },
-            500
+            }
         );
 
-    }
 
-}
+        decoyPeople.forEach(
+            function (person) {
 
+                createCharacter(
+                    person,
+                    false
+                );
 
-/* =====================================================
-   DECOY CLICK
-===================================================== */
+            }
+        );
 
-function clickDecoy(person) {
-
-    decoyMessage.textContent =
-        person.message;
-
-    decoyPopup.classList.remove(
-        "hidden"
-    );
-
-}
-
-
-/* =====================================================
-   CLOSE DECOY POPUP
-===================================================== */
-
-function closeDecoyPopup() {
-
-    decoyPopup.classList.add(
-        "hidden"
-    );
-
-}
-
-
-/* =====================================================
-   EVENTS
-===================================================== */
-
-enterButton.addEventListener(
-    "click",
-    enterRoom
-);
-
-closeFound.addEventListener(
-    "click",
-    closeFoundPopup
-);
-
-closeDecoy.addEventListener(
-    "click",
-    closeDecoyPopup
-);
-
-
-/* =====================================================
-   CLICK OUTSIDE SPECIAL POPUP
-===================================================== */
-
-popup.addEventListener(
-    "click",
-    function (event) {
-
-        if (
-            event.target === popup
-        ) {
-
-            closeFoundPopup();
-
-        }
 
     }
 );
-
-
-/* =====================================================
-   CLICK OUTSIDE DECOY POPUP
-===================================================== */
-
-decoyPopup.addEventListener(
-    "click",
-    function (event) {
-
-        if (
-            event.target === decoyPopup
-        ) {
-
-            closeDecoyPopup();
-
-        }
-
-    }
-);
-
-
-/* =====================================================
-   BUILD GAME
-===================================================== */
-
-function buildGame() {
-
-
-    /* CREATE SPECIAL PEOPLE */
-
-    specialPeople.forEach(
-        function (person) {
-
-            createCharacter(
-                person,
-                true
-            );
-
-        }
-    );
-
-
-    /* CREATE DECOYS */
-
-    decoyPeople.forEach(
-        function (person) {
-
-            createCharacter(
-                person,
-                false
-            );
-
-        }
-    );
-
-}
-
-
-/* =====================================================
-   START
-===================================================== */
-
-buildGame();
