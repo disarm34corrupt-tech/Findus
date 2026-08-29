@@ -565,3 +565,151 @@ body {
     }
 
 }
+/* =========================================
+   ROOM FRAME
+   ========================================= */
+
+.room {
+    background: #211916;
+    
+    display: none;
+
+    padding: 0;
+}
+
+
+/* bagian room yang menampung ballroom */
+
+.people {
+    position: absolute;
+
+    width: min(92vw, 1200px);
+
+    aspect-ratio: 16 / 9;
+
+    left: 50%;
+    top: 52%;
+
+    transform: translate(-50%, -50%);
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    background-image: url("Background.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.38);
+
+    border: 1px solid rgba(255,255,255,0.12);
+}
+
+
+/* =========================================
+   COUNTER DI ATAS FRAME
+   ========================================= */
+
+.room-top {
+    position: absolute;
+
+    z-index: 50;
+
+    top: 25px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: min(92vw, 1200px);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+/* tulisan FINDUS + Find them disembunyikan dulu */
+
+.room-top > div:first-child {
+    display: none;
+}
+
+
+.counter {
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    backdrop-filter: none;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color: rgba(255,255,255,0.85);
+
+    text-shadow:
+        0 2px 12px rgba(0,0,0,0.45);
+}
+
+
+/* =========================================
+   ORANG-ORANG SEKARANG RELATIF KE FRAME
+   ========================================= */
+
+.person {
+    z-index: 5;
+}
+
+
+/* =========================================
+   HILANGKAN HINT DULU
+   ========================================= */
+
+.room-hint {
+    display: none;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .people {
+        width: 94vw;
+
+        aspect-ratio: 16 / 9;
+
+        top: 52%;
+
+        border-radius: 12px;
+    }
+
+
+    .room-top {
+        top: 22px;
+
+        width: 94vw;
+    }
+
+
+    .counter {
+        font-size: 9px;
+
+        letter-spacing: 2.5px;
+    }
+
+}
