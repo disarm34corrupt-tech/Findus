@@ -17,7 +17,6 @@ body {
 
 
 body {
-
     font-family:
         Georgia,
         "Times New Roman",
@@ -31,9 +30,13 @@ body {
 }
 
 
-/* =====================================================
-   GENERAL
-===================================================== */
+button {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
 
 .hidden {
     display: none !important;
@@ -45,7 +48,6 @@ body {
 ===================================================== */
 
 .intro {
-
     min-height: 100vh;
 
     display: flex;
@@ -56,12 +58,12 @@ body {
 
     text-align: center;
 
-    position: relative;
+    padding: 30px;
 
     background:
         linear-gradient(
-            rgba(15, 15, 15, 0.45),
-            rgba(15, 15, 15, 0.7)
+            rgba(15,15,15,.45),
+            rgba(15,15,15,.7)
         ),
         url("Background.jpg");
 
@@ -71,40 +73,12 @@ body {
 }
 
 
-.intro::before {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        radial-gradient(
-            circle,
-            transparent 20%,
-            rgba(0, 0, 0, 0.55)
-        );
-
-    pointer-events: none;
-}
-
-
 .intro-content {
-
-    position: relative;
-
-    z-index: 2;
-
-    width: min(
-        90%,
-        700px
-    );
+    width: min(90%, 700px);
 }
 
 
 .eyebrow {
-
     font-family:
         Arial,
         Helvetica,
@@ -114,18 +88,17 @@ body {
 
     font-weight: 600;
 
-    letter-spacing: 0.25em;
+    letter-spacing: .25em;
 
     text-transform: uppercase;
 
-    opacity: 0.65;
+    opacity: .65;
 
     margin-bottom: 18px;
 }
 
 
 .intro h1 {
-
     font-size:
         clamp(
             48px,
@@ -133,11 +106,11 @@ body {
             88px
         );
 
-    line-height: 0.95;
-
     font-weight: 400;
 
-    letter-spacing: -0.04em;
+    line-height: .95;
+
+    letter-spacing: -.04em;
 
     margin-bottom: 28px;
 }
@@ -149,7 +122,6 @@ body {
 
 
 .intro-text {
-
     font-family:
         Arial,
         Helvetica,
@@ -159,7 +131,7 @@ body {
 
     line-height: 1.7;
 
-    opacity: 0.75;
+    opacity: .75;
 
     margin-bottom: 35px;
 }
@@ -183,7 +155,7 @@ body {
             245,
             241,
             232,
-            0.55
+            .55
         );
 
     background:
@@ -191,24 +163,18 @@ body {
             255,
             255,
             255,
-            0.08
+            .08
         );
 
     color: #f5f1e8;
 
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
     font-size: 10px;
 
-    letter-spacing: 0.2em;
+    letter-spacing: .2em;
 
     cursor: pointer;
 
-    transition:
-        0.2s ease;
+    transition: .2s ease;
 }
 
 
@@ -222,13 +188,13 @@ body {
 
 .dark-button {
 
-    border-color: #222;
+    margin-top: 25px;
 
     background: #222;
 
-    color: #f5f1e8;
+    border-color: #222;
 
-    margin-top: 25px;
+    color: #f5f1e8;
 }
 
 
@@ -255,8 +221,8 @@ body {
 
     background:
         linear-gradient(
-            rgba(10, 10, 10, 0.25),
-            rgba(10, 10, 10, 0.5)
+            rgba(10,10,10,.25),
+            rgba(10,10,10,.5)
         ),
         url("Background.jpg");
 
@@ -267,7 +233,7 @@ body {
 
 
 /* =====================================================
-   GAME HEADER
+   HEADER
 ===================================================== */
 
 .game-header {
@@ -328,9 +294,9 @@ body {
 
     font-size: 9px;
 
-    letter-spacing: 0.15em;
+    letter-spacing: .15em;
 
-    opacity: 0.6;
+    opacity: .6;
 }
 
 
@@ -344,7 +310,7 @@ body {
 
     font-size: 11px;
 
-    opacity: 0.6;
+    opacity: .6;
 }
 
 
@@ -358,8 +324,7 @@ body {
 
     max-width: 1000px;
 
-    margin:
-        0 auto;
+    margin: 0 auto;
 
     display: grid;
 
@@ -393,9 +358,10 @@ body {
 
     cursor: pointer;
 
-    perspective: 800px;
+    perspective: 900px;
 
-    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color:
+        transparent;
 }
 
 
@@ -409,14 +375,15 @@ body {
 
     height: 100%;
 
-    transition:
-        transform 0.45s ease;
-
     transform-style: preserve-3d;
+
+    transition:
+        transform .45s ease;
 }
 
 
-.memory-card.flipped .card-inner {
+.memory-card.flipped
+.card-inner {
 
     transform:
         rotateY(180deg);
@@ -436,9 +403,10 @@ body {
 
     backface-visibility: hidden;
 
-    -webkit-backface-visibility: hidden;
+    -webkit-backface-visibility:
+        hidden;
 
-    border-radius: 5px;
+    border-radius: 6px;
 
     overflow: hidden;
 }
@@ -461,7 +429,7 @@ body {
             245,
             241,
             232,
-            0.9
+            .92
         );
 
     border:
@@ -470,7 +438,7 @@ body {
             20,
             20,
             20,
-            0.3
+            .3
         );
 
     color: #222;
@@ -481,7 +449,7 @@ body {
 
 .card-back span {
 
-    opacity: 0.35;
+    opacity: .35;
 }
 
 
@@ -498,7 +466,7 @@ body {
 
     display: flex;
 
-    align-items: flex-end;
+    align-items: center;
 
     justify-content: center;
 }
@@ -511,8 +479,6 @@ body {
     height: 100%;
 
     object-fit: contain;
-
-    object-position: center bottom;
 }
 
 
@@ -526,7 +492,8 @@ body {
 }
 
 
-.memory-card.matched .card-front {
+.memory-card.matched
+.card-front {
 
     box-shadow:
         0 0 0 2px
@@ -534,7 +501,7 @@ body {
             245,
             241,
             232,
-            0.8
+            .8
         );
 }
 
@@ -564,7 +531,7 @@ body {
             0,
             0,
             0,
-            0.7
+            .72
         );
 
     backdrop-filter: blur(5px);
@@ -595,7 +562,7 @@ body {
             0,
             0,
             0,
-            0.4
+            .4
         );
 }
 
@@ -609,9 +576,9 @@ body {
 
     font-size: 10px;
 
-    letter-spacing: 0.2em;
+    letter-spacing: .2em;
 
-    opacity: 0.5;
+    opacity: .5;
 
     margin-bottom: 15px;
 }
@@ -638,7 +605,7 @@ body {
 
     line-height: 1.7;
 
-    opacity: 0.7;
+    opacity: .7;
 }
 
 
@@ -671,7 +638,7 @@ body {
 
     .stats {
 
-        gap: 12px;
+        gap: 8px;
 
         flex-direction: column;
 
@@ -695,6 +662,7 @@ body {
 
         gap: 8px;
     }
+
 }
 
 
@@ -708,7 +676,7 @@ body {
                 1fr
             );
 
-        gap: 8px;
+        gap: 7px;
     }
 
 
@@ -716,4 +684,13 @@ body {
 
         font-size: 22px;
     }
+
+
+    .popup-box {
+
+        padding:
+            40px
+            24px;
+    }
+
 }
