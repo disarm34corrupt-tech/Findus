@@ -1,6 +1,6 @@
-/* =========================================
+/* =====================================================
    RESET
-========================================= */
+===================================================== */
 
 * {
     margin: 0;
@@ -8,43 +8,52 @@
     box-sizing: border-box;
 }
 
+
 html,
 body {
     width: 100%;
     min-height: 100%;
 }
 
+
 body {
     font-family: Georgia, "Times New Roman", serif;
+
     background: #111;
+
     color: #f5f1e8;
+
     overflow-x: hidden;
 }
 
 
-/* =========================================
+/* =====================================================
    GENERAL
-========================================= */
+===================================================== */
 
 .screen {
     width: 100%;
     min-height: 100vh;
 }
 
+
 .hidden {
     display: none !important;
 }
 
 
-/* =========================================
+/* =====================================================
    INTRO
-========================================= */
+===================================================== */
 
 .intro {
+
     min-height: 100vh;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     position: relative;
@@ -57,13 +66,17 @@ body {
         url("Background.jpg");
 
     background-size: cover;
+
     background-position: center;
 }
 
+
 .intro::before {
+
     content: "";
 
     position: absolute;
+
     inset: 0;
 
     background:
@@ -76,21 +89,27 @@ body {
     pointer-events: none;
 }
 
+
 .intro-content {
+
     width: min(90%, 700px);
 
     text-align: center;
 
     position: relative;
+
     z-index: 2;
 
     padding: 40px 20px;
 }
 
+
 .eyebrow {
+
     font-family: Arial, Helvetica, sans-serif;
 
     font-size: 11px;
+
     font-weight: 600;
 
     letter-spacing: 0.28em;
@@ -102,7 +121,9 @@ body {
     margin-bottom: 18px;
 }
 
+
 .intro h1 {
+
     font-size: clamp(48px, 8vw, 88px);
 
     line-height: 0.95;
@@ -114,11 +135,14 @@ body {
     margin-bottom: 30px;
 }
 
+
 .intro h1 i {
     font-weight: 400;
 }
 
+
 .intro-text {
+
     font-family: Arial, Helvetica, sans-serif;
 
     font-size: 14px;
@@ -131,14 +155,17 @@ body {
 }
 
 
-/* =========================================
+/* =====================================================
    ENTER BUTTON
-========================================= */
+===================================================== */
 
 .enter-button {
-    border: 1px solid rgba(245, 241, 232, 0.55);
 
-    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid
+        rgba(245, 241, 232, 0.55);
+
+    background:
+        rgba(255, 255, 255, 0.08);
 
     color: #f5f1e8;
 
@@ -158,7 +185,9 @@ body {
         transform 0.25s ease;
 }
 
+
 .enter-button:hover {
+
     background: #f5f1e8;
 
     color: #111;
@@ -166,45 +195,57 @@ body {
     transform: translateY(-2px);
 }
 
+
 .enter-button:active {
+
     transform: translateY(0);
 }
 
 
-/* =========================================
-   GAME ROOM
-========================================= */
+/* =====================================================
+   ROOM
+===================================================== */
 
 .room {
+
     position: relative;
 
     width: 100%;
-    min-height: 100vh;
+
+    height: 100vh;
+
+    min-height: 650px;
 
     background:
         linear-gradient(
-            rgba(10, 10, 10, 0.25),
-            rgba(10, 10, 10, 0.45)
+            rgba(10, 10, 10, 0.22),
+            rgba(10, 10, 10, 0.42)
         ),
         url("Background.jpg");
 
     background-size: cover;
+
     background-position: center;
 
     overflow: hidden;
 }
 
 
-/* =========================================
-   ROOM TOP
-========================================= */
+/* =====================================================
+   TOP BAR
+===================================================== */
 
 .room-top {
-    position: relative;
 
-    z-index: 90;
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
 
     width: 100%;
+
+    z-index: 500;
 
     display: flex;
 
@@ -212,78 +253,97 @@ body {
 
     align-items: flex-start;
 
-    padding: 30px 35px;
+    padding: 25px 35px;
 
     pointer-events: none;
 }
+
 
 .room-title,
 .counter {
     pointer-events: auto;
 }
 
+
 .room-title .eyebrow {
-    margin-bottom: 8px;
+    margin-bottom: 7px;
 }
 
+
 .room-title h2 {
-    font-size: clamp(28px, 4vw, 46px);
+
+    font-size: clamp(
+        28px,
+        4vw,
+        46px
+    );
 
     font-weight: 400;
 
     line-height: 1;
 }
 
+
 .counter {
-    font-family: Arial, Helvetica, sans-serif;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
     font-size: 14px;
 
     letter-spacing: 0.12em;
 
-    padding-top: 5px;
+    padding-top: 4px;
 
-    opacity: 0.85;
+    opacity: 0.9;
 }
 
+
 #foundCount {
+
     font-size: 24px;
 
     font-weight: 600;
 }
 
 
-/* =========================================
+/* =====================================================
    GAME AREA
-========================================= */
+===================================================== */
 
 .game-area {
+
     position: absolute;
 
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-    top: 105px;
+    inset: 0;
 
     width: 100%;
+
+    height: 100%;
 
     overflow: hidden;
 }
 
 
-/* =========================================
+/* =====================================================
    CHARACTERS
-========================================= */
+===================================================== */
 
 .person {
+
     position: absolute;
 
     display: block;
 
     height: auto;
 
-    max-height: none;
+    max-width: none;
+
+    margin: 0;
+
+    padding: 0;
 
     cursor: pointer;
 
@@ -291,57 +351,78 @@ body {
 
     -webkit-user-drag: none;
 
+    -webkit-tap-highlight-color: transparent;
+
+    touch-action: manipulation;
+
     transform-origin: center bottom;
 
     transition:
-        transform 0.2s ease,
-        filter 0.2s ease;
+        transform 0.18s ease,
+        filter 0.18s ease;
 }
+
 
 .person:hover {
-    filter: brightness(1.08);
 
-    transform: scale(1.03);
+    transform:
+        scale(1.035);
+
+    filter:
+        brightness(1.08);
 }
 
 
-/* =========================================
-   FOUND SPECIAL PERSON
-========================================= */
+.person:active {
+
+    transform:
+        scale(0.99);
+}
+
+
+/* =====================================================
+   FOUND
+===================================================== */
 
 .person.found {
+
     filter:
         grayscale(100%)
         drop-shadow(
-            0 8px 8px rgba(0, 0, 0, 0.28)
+            0 6px 7px
+            rgba(0, 0, 0, 0.3)
         );
 
-    opacity: 0.72;
+    opacity: 0.65;
 
     cursor: default;
 }
 
+
 .person.found:hover {
+
     filter:
         grayscale(100%)
         drop-shadow(
-            0 8px 8px rgba(0, 0, 0, 0.28)
+            0 6px 7px
+            rgba(0, 0, 0, 0.3)
         );
 
     transform: none;
 }
 
 
-/* =========================================
+/* =====================================================
    POPUP
-========================================= */
+===================================================== */
 
 .popup {
+
     position: fixed;
 
     inset: 0;
 
-    z-index: 100;
+    z-index: 99999;
 
     display: flex;
 
@@ -351,15 +432,25 @@ body {
 
     padding: 20px;
 
-    background: rgba(0, 0, 0, 0.68);
+    background:
+        rgba(0, 0, 0, 0.68);
 
     backdrop-filter: blur(5px);
+
+    -webkit-backdrop-filter: blur(5px);
+
+    pointer-events: auto;
 }
 
+
 .popup-box {
-    width: min(90%, 430px);
 
     position: relative;
+
+    width: min(
+        90%,
+        430px
+    );
 
     text-align: center;
 
@@ -367,14 +458,25 @@ body {
 
     color: #181818;
 
-    padding: 48px 35px 42px;
+    padding:
+        48px
+        35px
+        42px;
 
     box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.35);
+        0 20px 60px
+        rgba(0, 0, 0, 0.35);
+
+    pointer-events: auto;
 }
 
+
 .popup-label {
-    font-family: Arial, Helvetica, sans-serif;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
     font-size: 10px;
 
@@ -387,7 +489,9 @@ body {
     margin-bottom: 18px;
 }
 
+
 .popup-box h3 {
+
     font-size: 32px;
 
     font-weight: 400;
@@ -395,8 +499,13 @@ body {
     margin-bottom: 15px;
 }
 
+
 .popup-box p:last-child {
-    font-family: Arial, Helvetica, sans-serif;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
     font-size: 13px;
 
@@ -405,10 +514,13 @@ body {
     opacity: 0.7;
 }
 
+
 .popup-close {
+
     position: absolute;
 
     top: 12px;
+
     right: 15px;
 
     border: none;
@@ -424,90 +536,89 @@ body {
     cursor: pointer;
 
     line-height: 1;
+
+    padding: 5px;
+
+    z-index: 2;
 }
 
 
-/* =========================================
+/* =====================================================
    MOBILE
-========================================= */
+===================================================== */
 
 @media (max-width: 600px) {
 
-    .intro-content {
-        padding: 30px 18px;
+    .room {
+
+        min-height: 600px;
     }
 
-    .intro h1 {
-        font-size: clamp(42px, 13vw, 64px);
-
-        margin-bottom: 25px;
-    }
-
-    .intro-text {
-        font-size: 13px;
-
-        line-height: 1.7;
-    }
-
-    .enter-button {
-        padding: 14px 22px;
-
-        font-size: 10px;
-    }
 
     .room-top {
-        padding: 20px 18px;
+
+        padding:
+            18px
+            18px;
     }
 
+
     .room-title h2 {
+
         font-size: 30px;
     }
 
+
     .counter {
-        font-size: 12px;
+
+        font-size: 11px;
     }
 
+
     #foundCount {
+
         font-size: 20px;
     }
 
-    .game-area {
-        top: 90px;
-    }
 
     .popup-box {
-        padding: 42px 25px 35px;
+
+        padding:
+            42px
+            25px
+            35px;
     }
 
+
     .popup-box h3 {
+
         font-size: 27px;
     }
 }
 
 
-/* =========================================
-   VERY SMALL PHONES
-========================================= */
+/* =====================================================
+   VERY SMALL PHONE
+===================================================== */
 
 @media (max-width: 380px) {
 
     .room-top {
-        padding: 18px 15px;
+
+        padding:
+            16px
+            14px;
     }
 
+
     .room-title h2 {
+
         font-size: 26px;
     }
 
-    .counter {
-        font-size: 10px;
-    }
 
     #foundCount {
+
         font-size: 18px;
     }
-
-    .game-area {
-        top: 85px;
-    }
-       }
+}
