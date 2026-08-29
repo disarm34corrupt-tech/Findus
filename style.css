@@ -294,36 +294,40 @@ body {
 
 
 /* ================================
-   DUMMY DECOYS
+   FRONT LAYER (PALING DEPAN)
+   Urutan: 7 | 5 | 4 | 8
 ================================ */
 
-.decoy1 {
-    width: 10%;
-
-    left: 10%;
-
-    bottom: 10%;
+.front {
+    position: absolute;
+    z-index: 20;
+    bottom: 1%;
+    cursor: pointer;
 }
 
-
-.decoy2 {
-    width: 9%;
-
-    left: 34%;
-
-    bottom: 12%;
+/* Pengecoh 7 */
+.front1 {
+    width: 16%;
+    left: 2%;
 }
 
-
-.decoy3 {
-    width: 11%;
-
-    right: 10%;
-
-    bottom: 10%;
+/* Pengecoh 5 */
+.front2 {
+    width: 15%;
+    left: 25%;
 }
 
+/* Pengecoh 4 */
+.front3 {
+    width: 16%;
+    left: 47%;
+}
 
+/* Pengecoh 8 */
+.front4 {
+    width: 15%;
+    left: 69%;
+}
 /* ================================
    ARUM
 ================================ */
