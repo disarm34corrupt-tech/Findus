@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500&display=swap');
 
-
 /* ================================
    RESET
 ================================ */
@@ -18,11 +17,8 @@ body {
 
 body {
     overflow: hidden;
-
     background: #211916;
-
     color: white;
-
     font-family: "DM Sans", sans-serif;
 }
 
@@ -33,13 +29,10 @@ body {
 
 .intro {
     position: fixed;
-
     inset: 0;
-
     z-index: 100;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
@@ -58,33 +51,26 @@ body {
         visibility .7s ease;
 }
 
-
 .intro.hide {
     opacity: 0;
-
     visibility: hidden;
-
     pointer-events: none;
 }
-
 
 .intro-content {
     width: min(800px, 90%);
 }
 
-
 .eyebrow {
     margin: 0;
 
     font-size: 10px;
-
     letter-spacing: 4px;
 
     text-transform: uppercase;
 
     opacity: .7;
 }
-
 
 .intro h1 {
     margin: 18px 0 25px;
@@ -94,7 +80,6 @@ body {
     font-size: clamp(55px, 9vw, 100px);
 
     font-weight: 400;
-
     line-height: .9;
 
     letter-spacing: -3px;
@@ -103,17 +88,13 @@ body {
         0 8px 30px rgba(0, 0, 0, .35);
 }
 
-
 .intro h1 i {
     font-weight: 400;
 }
 
-
 .intro-text {
     font-size: 13px;
-
     line-height: 1.8;
-
     opacity: .75;
 }
 
@@ -128,7 +109,6 @@ body {
     padding: 14px 28px;
 
     border: 1px solid rgba(255, 255, 255, .35);
-
     border-radius: 999px;
 
     background: rgba(255, 255, 255, .08);
@@ -136,9 +116,7 @@ body {
     color: white;
 
     font-family: "DM Sans", sans-serif;
-
     font-size: 10px;
-
     letter-spacing: 2px;
 
     cursor: pointer;
@@ -148,10 +126,8 @@ body {
     transition: .25s ease;
 }
 
-
 .enter-button:hover {
     background: rgba(255, 255, 255, .18);
-
     transform: translateY(-2px);
 }
 
@@ -162,14 +138,12 @@ body {
 
 .room {
     position: fixed;
-
     inset: 0;
 
     display: none;
 
     background: #211916;
 }
-
 
 .room.show {
     display: block;
@@ -184,7 +158,6 @@ body {
     position: absolute;
 
     top: 24px;
-
     left: 50%;
 
     z-index: 30;
@@ -194,15 +167,12 @@ body {
     display: flex;
 
     justify-content: center;
-
     align-items: center;
 }
-
 
 .room-top > div:first-child {
     display: none;
 }
-
 
 .counter {
     min-width: 95px;
@@ -210,7 +180,6 @@ body {
     padding: 8px 18px;
 
     border: 1px solid rgba(255, 255, 255, .45);
-
     border-radius: 6px;
 
     background: rgba(30, 22, 18, .35);
@@ -220,7 +189,6 @@ body {
     color: rgba(255, 255, 255, .95);
 
     font-family: "DM Sans", sans-serif;
-
     font-size: 11px;
 
     letter-spacing: 2px;
@@ -289,7 +257,6 @@ body {
         opacity .5s ease;
 }
 
-
 .person:hover {
     transform:
         translateY(-4px)
@@ -314,18 +281,23 @@ body {
 }
 
 
-/* Pengecoh 7 */
+/* ================================
+   PENGECOH 7
+   ================================ */
 
 .front1 {
     width: 28%;
 
+    /* DIGESER LEBIH KE KIRI */
     left: -3%;
 
     bottom: 1%;
 }
 
 
-/* Pengecoh 5 */
+/* ================================
+   PENGECOH 5
+================================ */
 
 .front2 {
     width: 25%;
@@ -336,7 +308,9 @@ body {
 }
 
 
-/* JIVAN */
+/* ================================
+   JIVAN
+================================ */
 
 .jivan {
     position: absolute;
@@ -353,7 +327,9 @@ body {
 }
 
 
-/* Pengecoh 4 */
+/* ================================
+   PENGECOH 4
+================================ */
 
 .front3 {
     width: 28%;
@@ -364,7 +340,9 @@ body {
 }
 
 
-/* Pengecoh 8 */
+/* ================================
+   PENGECOH 8
+================================ */
 
 .front4 {
     width: 18%;
@@ -406,7 +384,6 @@ body {
     cursor: default;
 }
 
-
 .person.found:hover {
     transform: none;
 }
@@ -418,7 +395,6 @@ body {
 
 .popup {
     position: fixed;
-
     inset: 0;
 
     z-index: 200;
@@ -436,11 +412,9 @@ body {
     backdrop-filter: blur(7px);
 }
 
-
 .popup.show {
     display: flex;
 }
-
 
 .popup-box {
     position: relative;
@@ -464,7 +438,6 @@ body {
         popupIn .3s ease;
 }
 
-
 .popup-label {
     margin: 0 0 10px;
 
@@ -477,7 +450,6 @@ body {
     text-transform: uppercase;
 }
 
-
 .popup-box h3 {
     margin: 5px 0 12px;
 
@@ -488,7 +460,6 @@ body {
     font-weight: 400;
 }
 
-
 .popup-box p:not(.popup-label) {
     color: #766960;
 
@@ -497,155 +468,4 @@ body {
     line-height: 1.7;
 }
 
-
 .popup-close {
-    position: absolute;
-
-    top: 10px;
-    right: 14px;
-
-    padding: 4px 8px;
-
-    border: 0;
-
-    background: transparent;
-
-    color: #766960;
-
-    font-size: 25px;
-
-    cursor: pointer;
-}
-
-
-.popup-close:hover {
-    background: transparent;
-
-    transform: none;
-}
-
-
-/* ================================
-   ANIMATION
-================================ */
-
-@keyframes popupIn {
-
-    from {
-        opacity: 0;
-
-        transform:
-            translateY(15px)
-            scale(.96);
-    }
-
-    to {
-        opacity: 1;
-
-        transform:
-            translateY(0)
-            scale(1);
-    }
-
-}
-
-
-/* ================================
-   MOBILE
-================================ */
-
-@media (max-width: 600px) {
-
-    .room-top {
-        top: 18px;
-    }
-
-
-    .counter {
-        min-width: 85px;
-
-        padding: 7px 14px;
-
-        font-size: 9px;
-
-        letter-spacing: 2px;
-    }
-
-
-    .people {
-        width: 94vw;
-
-        aspect-ratio: 16 / 9;
-
-        top: 52%;
-
-        border-radius: 12px;
-    }
-
-
-    /* Pengecoh 7 */
-
-    .front1 {
-        width: 28%;
-
-        left: 1%;
-
-        bottom: 1%;
-    }
-
-
-    /* Pengecoh 5 */
-
-    .front2 {
-        width: 20%;
-
-        left: 25%;
-
-        bottom: 2%;
-    }
-
-
-    /* Jivan */
-
-    .jivan {
-        width: 28%;
-
-        left: 36%;
-
-        bottom: 1%;
-
-        z-index: 21;
-    }
-
-
-    /* Pengecoh 4 */
-
-    .front3 {
-        width: 28%;
-
-        left: 48%;
-
-        bottom: 1%;
-    }
-
-
-    /* Pengecoh 8 */
-
-    .front4 {
-        width: 18%;
-
-        left: 74%;
-
-        bottom: 2%;
-    }
-
-
-    .arum {
-        width: 35%;
-
-        left: 46%;
-
-        bottom: 6%;
-    }
-
-}
