@@ -19,7 +19,7 @@ const specialPeople = [
 
     {
         id: "amora",
-        name: "amora",
+        name: "Amora",
         image: "amora.png",
         message:
             "EH KETEMU AKU?! 😭 Makasih udah nyariin aku. Ayo cari yang lain, jangan berhenti di aku ajaa~"
@@ -27,7 +27,7 @@ const specialPeople = [
 
     {
         id: "arga",
-        name: "arga",
+        name: "Arga",
         image: "arga.png",
         message:
             "WOI KOK BISA NEMUIN GUE?! 😭 Yaudah, satu ketemu. Sekarang lanjut cari yang lainnya!"
@@ -35,7 +35,7 @@ const specialPeople = [
 
     {
         id: "atlas",
-        name: "atlas",
+        name: "Atlas",
         image: "atlas.png",
         message:
             "Udah belanja di palamart belum? 😭 Oh iya, makasih udah nemuin gue!"
@@ -43,7 +43,7 @@ const specialPeople = [
 
     {
         id: "ayes",
-        name: "ayes",
+        name: "Ayes",
         image: "ayes.png",
         message:
             "Huft. Memang hidup kadang kidding. 😔 Tapi setidaknya kamu berhasil nemuin aku."
@@ -51,7 +51,7 @@ const specialPeople = [
 
     {
         id: "hana",
-        name: "hana",
+        name: "Hana",
         image: "hana.png",
         message:
             "Hiiii! ♡ Akhirnya ketemu juga aku. Sekarang lanjut cari yang lain yaa!"
@@ -59,7 +59,7 @@ const specialPeople = [
 
     {
         id: "jemi",
-        name: "jemi",
+        name: "Jemi",
         image: "jemi.png",
         message:
             "Anjay kok bisa temuin gue? Gas cari yang lain, see you Taka, Nael, Val!"
@@ -67,7 +67,7 @@ const specialPeople = [
 
     {
         id: "jevan",
-        name: "jevan",
+        name: "Jevan",
         image: "jevan.png",
         message:
             "Lah ketemu juga gue 😭 Kirain masih aman. Yaudah, lanjut cari yang lainnya!"
@@ -75,7 +75,7 @@ const specialPeople = [
 
     {
         id: "jivan",
-        name: "jivan",
+        name: "Jivan",
         image: "jivan.png",
         message:
             "Lahhh ketemu juga akhirnya 😭 Gue kira bakal lolos dari pencarian. Gas cari yang lain!"
@@ -83,7 +83,7 @@ const specialPeople = [
 
     {
         id: "josh",
-        name: "josh",
+        name: "Josh",
         image: "josh.png",
         message:
             "YAHHH ketahuan 😭 Padahal gue udah diem banget. Oke deh, lanjut cari yang lain sana!"
@@ -91,7 +91,7 @@ const specialPeople = [
 
     {
         id: "juan",
-        name: "juan",
+        name: "Juan",
         image: "juan.png",
         message:
             "HAHAHA ketemu juga gue! 😭 Mantap. Tapi jangan seneng dulu, masih banyak yang belum ketemu!"
@@ -99,7 +99,7 @@ const specialPeople = [
 
     {
         id: "kartein",
-        name: "kartein",
+        name: "Kartein",
         image: "kartein.png",
         message:
             "Oalah, ternyata mata kamu masih jeli juga 😌 Sekarang coba cari siapa lagi yang bersembunyi."
@@ -107,7 +107,7 @@ const specialPeople = [
 
     {
         id: "kyungie",
-        name: "kyungie",
+        name: "Kyungie",
         image: "kyungie.png",
         message:
             "EHHH?! Kok bisa nemuin aku?! 😭 Oke oke, aku kalah. Good luck cari yang lainnya! ♡"
@@ -115,7 +115,7 @@ const specialPeople = [
 
     {
         id: "leon",
-        name: "leon",
+        name: "Leon",
         image: "leon.png",
         message:
             "Oh, you found me. Not bad. 😏 Sekarang lanjut, gue penasaran siapa yang bakal kamu temuin berikutnya."
@@ -123,7 +123,7 @@ const specialPeople = [
 
     {
         id: "rendy",
-        name: "rendy",
+        name: "Rendy",
         image: "rendy.png",
         message:
             "Yah ketemu gue 😭 Kirain masih aman. Yaudah, lanjutkan misi kamu!"
@@ -131,7 +131,7 @@ const specialPeople = [
 
     {
         id: "sana",
-        name: "sana",
+        name: "Sana",
         image: "sana.png",
         message:
             "Hehehe akhirnya ketemu juga! ♡ Jangan berhenti di sini yaa, masih banyak yang ngumpet."
@@ -139,7 +139,7 @@ const specialPeople = [
 
     {
         id: "sanly",
-        name: "sanly",
+        name: "Sanly",
         image: "sanly.png",
         message:
             "Cieee nemu aku~ 👀 Sekarang lanjut ya, jangan sampai ada yang masih sembunyi!"
@@ -147,7 +147,7 @@ const specialPeople = [
 
     {
         id: "vel",
-        name: "vel",
+        name: "Vel",
         image: "vel.png",
         message:
             "Dor! Cieeee ketemu aku~ tebak siapa?? Vel di sini—! Ayo cari member yang lain ♡"
@@ -158,7 +158,7 @@ const specialPeople = [
 
 /* =====================================================
    DECOYS
-   ===================================================== */
+===================================================== */
 
 const decoyPeople = [
 
@@ -230,386 +230,206 @@ const decoyPeople = [
 
 /* =====================================================
    POSITION & SIZE
+   COMPACT MIXED CROWD
 ===================================================== */
 
 const layout = {
 
-
-    /* =================================================
-       BACK LAYER
-    ================================================= */
+    /* ---------------- BACK ROW ---------------- */
 
     atlas: {
-
-        left: "3%",
-
-        bottom: "42%",
-
-        width: "10%",
-
-        z: 2
-
-    },
-
-
-    sanly: {
-
-        left: "17%",
-
-        bottom: "42%",
-
-        width: "9%",
-
-        z: 2
-
-    },
-
-
-    kartein: {
-
-        left: "32%",
-
-        bottom: "44%",
-
-        width: "9%",
-
-        z: 2
-
-    },
-
-
-    leon: {
-
-        left: "72%",
-
-        bottom: "43%",
-
-        width: "10%",
-
-        z: 2
-
-    },
-
-
-    josh: {
-
-        left: "45%",
-
-        bottom: "42%",
-
-        width: "9%",
-
-        z: 3
-
-    },
-
-
-    hana: {
-
-        left: "56%",
-
-        bottom: "40%",
-
-        width: "9%",
-
-        z: 3
-
-    },
-
-
-    /* =================================================
-       MIDDLE LAYER
-    ================================================= */
-
-    amora: {
-
-        left: "6%",
-
-        bottom: "20%",
-
-        width: "11%",
-
-        z: 7
-
-    },
-
-
-    ayes: {
-
-        left: "25%",
-
-        bottom: "22%",
-
-        width: "11%",
-
-        z: 7
-
-    },
-
-
-    arga: {
-
-        left: "40%",
-
-        bottom: "21%",
-
-        width: "11%",
-
-        z: 7
-
-    },
-
-
-    jevan: {
-
-        left: "60%",
-
-        bottom: "22%",
-
-        width: "11%",
-
-        z: 7
-
-    },
-
-
-    sana: {
-
-        left: "80%",
-
-        bottom: "20%",
-
-        width: "10%",
-
-        z: 7
-
-    },
-
-
-    jemi: {
-
-        left: "13%",
-
-        bottom: "31%",
-
-        width: "10%",
-
-        z: 8
-
-    },
-
-
-    juan: {
-
-        left: "69%",
-
-        bottom: "30%",
-
-        width: "10%",
-
-        z: 8
-
-    },
-
-
-    rendy: {
-
         left: "2%",
-
-        bottom: "31%",
-
+        bottom: "43%",
         width: "9%",
-
-        z: 6
-
+        z: 2
     },
-
-
-    kyungie: {
-
-        left: "86%",
-
-        bottom: "31%",
-
-        width: "8%",
-
-        z: 6
-
-    },
-
-
-    /* =================================================
-       FRONT
-       LEFT → RIGHT
-
-       Pengecoh 7
-       Vel
-       Pengecoh 5
-       Jivan
-       Pengecoh 4
-    ================================================= */
-
-    decoy7: {
-
-        left: "-4%",
-
-        bottom: "0%",
-
-        width: "20%",
-
-        z: 20
-
-    },
-
-
-    vel: {
-
-        left: "17%",
-
-        bottom: "0%",
-
-        width: "14%",
-
-        z: 22
-
-    },
-
-
-    decoy5: {
-
-        left: "31%",
-
-        bottom: "0%",
-
-        width: "19%",
-
-        z: 20
-
-    },
-
-
-    jivan: {
-
-        left: "52%",
-
-        bottom: "0%",
-
-        width: "14%",
-
-        z: 23
-
-    },
-
-
-    decoy4: {
-
-        left: "68%",
-
-        bottom: "0%",
-
-        width: "19%",
-
-        z: 20
-
-    },
-
-
-    /* =================================================
-       ARUM
-    ================================================= */
-
-    arum: {
-
-        left: "46%",
-
-        bottom: "7%",
-
-        width: "13%",
-
-        z: 25
-
-    },
-
-
-    /* =================================================
-       OTHER DECOYS
-    ================================================= */
-
-    decoy1: {
-
-        left: "15%",
-
-        bottom: "17%",
-
-        width: "10%",
-
-        z: 7
-
-    },
-
-
-    decoy2: {
-
-        left: "29%",
-
-        bottom: "17%",
-
-        width: "9%",
-
-        z: 7
-
-    },
-
-
-    decoy3: {
-
-        left: "70%",
-
-        bottom: "17%",
-
-        width: "10%",
-
-        z: 7
-
-    },
-
-
-    decoy6: {
-
-        left: "77%",
-
-        bottom: "33%",
-
-        width: "9%",
-
-        z: 5
-
-    },
-
 
     decoy9: {
+        left: "10%",
+        bottom: "40%",
+        width: "8%",
+        z: 3
+    },
 
-        left: "42%",
-
-        bottom: "38%",
-
+    sanly: {
+        left: "18%",
+        bottom: "43%",
         width: "9%",
+        z: 2
+    },
 
-        z: 4
+    kartein: {
+        left: "27%",
+        bottom: "41%",
+        width: "9%",
+        z: 3
+    },
 
+    decoy6: {
+        left: "36%",
+        bottom: "43%",
+        width: "8%",
+        z: 2
+    },
+
+    josh: {
+        left: "44%",
+        bottom: "41%",
+        width: "9%",
+        z: 3
+    },
+
+    hana: {
+        left: "53%",
+        bottom: "43%",
+        width: "9%",
+        z: 2
+    },
+
+    leon: {
+        left: "63%",
+        bottom: "41%",
+        width: "9%",
+        z: 3
+    },
+
+    decoy10: {
+        left: "73%",
+        bottom: "42%",
+        width: "9%",
+        z: 2
     },
 
 
-    decoy10: {
+    /* ---------------- MIDDLE ROW ---------------- */
 
-        left: "87%",
-
-        bottom: "17%",
-
+    amora: {
+        left: "1%",
+        bottom: "22%",
         width: "10%",
+        z: 7
+    },
 
+    decoy1: {
+        left: "10%",
+        bottom: "24%",
+        width: "9%",
+        z: 6
+    },
+
+    ayes: {
+        left: "19%",
+        bottom: "21%",
+        width: "10%",
         z: 8
+    },
 
+    decoy2: {
+        left: "29%",
+        bottom: "24%",
+        width: "9%",
+        z: 7
+    },
+
+    arga: {
+        left: "38%",
+        bottom: "20%",
+        width: "10%",
+        z: 9
+    },
+
+    decoy3: {
+        left: "48%",
+        bottom: "24%",
+        width: "9%",
+        z: 7
+    },
+
+    jevan: {
+        left: "57%",
+        bottom: "21%",
+        width: "10%",
+        z: 8
+    },
+
+    decoy7: {
+        left: "67%",
+        bottom: "24%",
+        width: "9%",
+        z: 7
+    },
+
+    sana: {
+        left: "76%",
+        bottom: "20%",
+        width: "10%",
+        z: 9
+    },
+
+    decoy5: {
+        left: "86%",
+        bottom: "23%",
+        width: "10%",
+        z: 7
+    },
+
+
+    /* ---------------- FRONT ROW ---------------- */
+
+    rendy: {
+        left: "0%",
+        bottom: "3%",
+        width: "11%",
+        z: 15
+    },
+
+    jemi: {
+        left: "10%",
+        bottom: "1%",
+        width: "11%",
+        z: 17
+    },
+
+    kyungie: {
+        left: "21%",
+        bottom: "5%",
+        width: "9%",
+        z: 15
+    },
+
+    vel: {
+        left: "30%",
+        bottom: "0%",
+        width: "13%",
+        z: 20
+    },
+
+    decoy4: {
+        left: "42%",
+        bottom: "3%",
+        width: "12%",
+        z: 18
+    },
+
+    jivan: {
+        left: "53%",
+        bottom: "0%",
+        width: "13%",
+        z: 21
+    },
+
+    juan: {
+        left: "65%",
+        bottom: "3%",
+        width: "11%",
+        z: 17
+    },
+
+    arum: {
+        left: "77%",
+        bottom: "1%",
+        width: "13%",
+        z: 22
     }
 
 };
@@ -629,81 +449,43 @@ let activePerson = null;
 ===================================================== */
 
 const intro =
-    document.getElementById(
-        "intro"
-    );
-
+    document.getElementById("intro");
 
 const room =
-    document.getElementById(
-        "room"
-    );
-
+    document.getElementById("room");
 
 const gameArea =
-    document.getElementById(
-        "gameArea"
-    );
-
+    document.getElementById("gameArea");
 
 const counter =
-    document.getElementById(
-        "foundCount"
-    );
-
+    document.getElementById("foundCount");
 
 const popup =
-    document.getElementById(
-        "foundPopup"
-    );
-
+    document.getElementById("foundPopup");
 
 const decoyPopup =
-    document.getElementById(
-        "decoyPopup"
-    );
-
+    document.getElementById("decoyPopup");
 
 const completePopup =
-    document.getElementById(
-        "completePopup"
-    );
-
+    document.getElementById("completePopup");
 
 const foundTitle =
-    document.getElementById(
-        "foundTitle"
-    );
-
+    document.getElementById("foundTitle");
 
 const foundMessage =
-    document.getElementById(
-        "foundMessage"
-    );
-
+    document.getElementById("foundMessage");
 
 const decoyMessage =
-    document.getElementById(
-        "decoyMessage"
-    );
-
+    document.getElementById("decoyMessage");
 
 const enterButton =
-    document.getElementById(
-        "enterButton"
-    );
-
+    document.getElementById("enterButton");
 
 const closeFound =
-    document.getElementById(
-        "closeFound"
-    );
-
+    document.getElementById("closeFound");
 
 const closeDecoy =
-    document.getElementById(
-        "closeDecoy"
-    );
+    document.getElementById("closeDecoy");
 
 
 /* =====================================================
@@ -712,14 +494,9 @@ const closeDecoy =
 
 function enterRoom() {
 
-    intro.classList.add(
-        "hidden"
-    );
+    intro.classList.add("hidden");
 
-
-    room.classList.remove(
-        "hidden"
-    );
+    room.classList.remove("hidden");
 
 }
 
@@ -728,48 +505,27 @@ function enterRoom() {
    CREATE CHARACTER
 ===================================================== */
 
-function createCharacter(
-    person,
-    isSpecial
-) {
+function createCharacter(person, isSpecial) {
 
     const image =
-        document.createElement(
-            "img"
-        );
+        document.createElement("img");
 
 
     /* IMAGE */
 
-    image.src =
-        person.image;
-
+    image.src = person.image;
 
     image.alt =
-        person.name ||
-        "person";
+        person.name || "person";
 
 
     /* CLASS */
 
+    image.classList.add("person");
+
     image.classList.add(
-        "person"
+        isSpecial ? "special" : "decoy"
     );
-
-
-    if (isSpecial) {
-
-        image.classList.add(
-            "special"
-        );
-
-    } else {
-
-        image.classList.add(
-            "decoy"
-        );
-
-    }
 
 
     /* POSITION */
@@ -783,14 +539,11 @@ function createCharacter(
         image.style.left =
             position.left;
 
-
         image.style.bottom =
             position.bottom;
 
-
         image.style.width =
             position.width;
-
 
         image.style.zIndex =
             position.z;
@@ -823,11 +576,9 @@ function createCharacter(
     );
 
 
-    /* ADD */
+    /* ADD TO GAME */
 
-    gameArea.appendChild(
-        image
-    );
+    gameArea.appendChild(image);
 
 }
 
@@ -842,9 +593,7 @@ function findSpecial(
 ) {
 
     if (
-        element.classList.contains(
-            "found"
-        )
+        element.classList.contains("found")
     ) {
 
         return;
@@ -854,18 +603,15 @@ function findSpecial(
 
     activePerson = {
 
-        person:
-            person,
+        person: person,
 
-        element:
-            element
+        element: element
 
     };
 
 
     foundTitle.textContent =
         person.name;
-
 
     foundMessage.textContent =
         person.message;
@@ -901,18 +647,14 @@ function closeFoundPopup() {
 
 
     if (
-        !element.classList.contains(
-            "found"
-        )
+        !element.classList.contains("found")
     ) {
 
         element.classList.add(
             "found"
         );
 
-
         foundCount++;
-
 
         counter.textContent =
             foundCount;
@@ -923,7 +665,7 @@ function closeFoundPopup() {
     activePerson = null;
 
 
-    /* ALL FOUND */
+    /* ALL SPECIAL PEOPLE FOUND */
 
     if (
         foundCount ===
@@ -950,13 +692,10 @@ function closeFoundPopup() {
    DECOY CLICK
 ===================================================== */
 
-function clickDecoy(
-    person
-) {
+function clickDecoy(person) {
 
     decoyMessage.textContent =
         person.message;
-
 
     decoyPopup.classList.remove(
         "hidden"
@@ -966,7 +705,7 @@ function clickDecoy(
 
 
 /* =====================================================
-   CLOSE DECOY
+   CLOSE DECOY POPUP
 ===================================================== */
 
 function closeDecoyPopup() {
@@ -987,12 +726,10 @@ enterButton.addEventListener(
     enterRoom
 );
 
-
 closeFound.addEventListener(
     "click",
     closeFoundPopup
 );
-
 
 closeDecoy.addEventListener(
     "click",
@@ -1047,7 +784,7 @@ decoyPopup.addEventListener(
 function buildGame() {
 
 
-    /* SPECIAL PEOPLE */
+    /* CREATE SPECIAL PEOPLE */
 
     specialPeople.forEach(
         function (person) {
@@ -1061,7 +798,7 @@ function buildGame() {
     );
 
 
-    /* DECOYS */
+    /* CREATE DECOYS */
 
     decoyPeople.forEach(
         function (person) {
