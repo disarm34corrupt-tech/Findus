@@ -158,8 +158,7 @@ const specialPeople = [
 
 /* =====================================================
    DECOYS
-   HANYA YANG BENAR-BENAR ADA
-===================================================== */
+   ===================================================== */
 
 const decoyPeople = [
 
@@ -235,122 +234,211 @@ const decoyPeople = [
 
 const layout = {
 
-    /* ================================
+
+    /* =================================================
        BACK LAYER
-    ================================ */
+    ================================================= */
 
     atlas: {
+
         left: "3%",
+
         bottom: "42%",
+
         width: "10%",
+
         z: 2
+
     },
+
 
     sanly: {
+
         left: "17%",
+
         bottom: "42%",
+
         width: "9%",
+
         z: 2
+
     },
+
 
     kartein: {
+
         left: "32%",
+
         bottom: "44%",
+
         width: "9%",
+
         z: 2
+
     },
+
 
     leon: {
+
         left: "72%",
+
         bottom: "43%",
+
         width: "10%",
+
         z: 2
+
     },
+
 
     josh: {
+
         left: "45%",
+
         bottom: "42%",
+
         width: "9%",
+
         z: 3
+
     },
+
 
     hana: {
+
         left: "56%",
+
         bottom: "40%",
+
         width: "9%",
+
         z: 3
+
     },
 
 
-    /* ================================
+    /* =================================================
        MIDDLE LAYER
-    ================================ */
+    ================================================= */
 
     amora: {
+
         left: "6%",
+
         bottom: "20%",
+
         width: "11%",
+
         z: 7
+
     },
+
 
     ayes: {
+
         left: "25%",
+
         bottom: "22%",
+
         width: "11%",
+
         z: 7
+
     },
+
 
     arga: {
+
         left: "40%",
+
         bottom: "21%",
+
         width: "11%",
+
         z: 7
+
     },
+
 
     jevan: {
+
         left: "60%",
+
         bottom: "22%",
+
         width: "11%",
+
         z: 7
+
     },
+
 
     sana: {
+
         left: "80%",
+
         bottom: "20%",
+
         width: "10%",
+
         z: 7
+
     },
+
 
     jemi: {
+
         left: "13%",
+
         bottom: "31%",
+
         width: "10%",
+
         z: 8
+
     },
+
 
     juan: {
+
         left: "69%",
+
         bottom: "30%",
+
         width: "10%",
+
         z: 8
+
     },
+
 
     rendy: {
+
         left: "2%",
+
         bottom: "31%",
+
         width: "9%",
+
         z: 6
+
     },
+
 
     kyungie: {
+
         left: "86%",
+
         bottom: "31%",
+
         width: "8%",
+
         z: 6
+
     },
 
 
-    /* ================================
+    /* =================================================
        FRONT
        LEFT → RIGHT
 
@@ -359,106 +447,169 @@ const layout = {
        Pengecoh 5
        Jivan
        Pengecoh 4
-       Pengecoh 8 ❌
-       
-       CATATAN:
-       Pengecoh 8 SUDAH DIHAPUS.
-       Jadi posisi terakhir hanya sampai
-       Pengecoh 4.
-    ================================ */
+    ================================================= */
 
     decoy7: {
+
         left: "-4%",
+
         bottom: "0%",
+
         width: "20%",
+
         z: 20
+
     },
+
 
     vel: {
+
         left: "17%",
+
         bottom: "0%",
+
         width: "14%",
+
         z: 22
+
     },
+
 
     decoy5: {
+
         left: "31%",
+
         bottom: "0%",
+
         width: "19%",
+
         z: 20
+
     },
+
 
     jivan: {
+
         left: "52%",
+
         bottom: "0%",
+
         width: "14%",
+
         z: 23
+
     },
+
 
     decoy4: {
+
         left: "68%",
+
         bottom: "0%",
+
         width: "19%",
+
         z: 20
+
     },
 
 
-    /* ================================
+    /* =================================================
        ARUM
-    ================================ */
+    ================================================= */
 
     arum: {
+
         left: "46%",
+
         bottom: "7%",
+
         width: "13%",
+
         z: 25
+
     },
 
 
-    /* ================================
+    /* =================================================
        OTHER DECOYS
-    ================================ */
+    ================================================= */
 
     decoy1: {
+
         left: "15%",
+
         bottom: "17%",
+
         width: "10%",
+
         z: 7
+
     },
+
 
     decoy2: {
+
         left: "29%",
+
         bottom: "17%",
+
         width: "9%",
+
         z: 7
+
     },
+
 
     decoy3: {
+
         left: "70%",
+
         bottom: "17%",
+
         width: "10%",
+
         z: 7
+
     },
+
 
     decoy6: {
+
         left: "77%",
+
         bottom: "33%",
+
         width: "9%",
+
         z: 5
+
     },
+
 
     decoy9: {
+
         left: "42%",
+
         bottom: "38%",
+
         width: "9%",
+
         z: 4
+
     },
 
+
     decoy10: {
+
         left: "87%",
+
         bottom: "17%",
+
         width: "10%",
+
         z: 8
+
     }
 
 };
@@ -478,40 +629,81 @@ let activePerson = null;
 ===================================================== */
 
 const intro =
-    document.getElementById("intro");
+    document.getElementById(
+        "intro"
+    );
+
 
 const room =
-    document.getElementById("room");
+    document.getElementById(
+        "room"
+    );
+
 
 const gameArea =
-    document.getElementById("gameArea");
+    document.getElementById(
+        "gameArea"
+    );
+
 
 const counter =
-    document.getElementById("foundCount");
+    document.getElementById(
+        "foundCount"
+    );
+
 
 const popup =
-    document.getElementById("foundPopup");
+    document.getElementById(
+        "foundPopup"
+    );
+
 
 const decoyPopup =
-    document.getElementById("decoyPopup");
+    document.getElementById(
+        "decoyPopup"
+    );
+
 
 const completePopup =
-    document.getElementById("completePopup");
+    document.getElementById(
+        "completePopup"
+    );
+
 
 const foundTitle =
-    document.getElementById("foundTitle");
+    document.getElementById(
+        "foundTitle"
+    );
+
 
 const foundMessage =
-    document.getElementById("foundMessage");
+    document.getElementById(
+        "foundMessage"
+    );
+
+
+const decoyMessage =
+    document.getElementById(
+        "decoyMessage"
+    );
+
 
 const enterButton =
-    document.getElementById("enterButton");
+    document.getElementById(
+        "enterButton"
+    );
+
 
 const closeFound =
-    document.getElementById("closeFound");
+    document.getElementById(
+        "closeFound"
+    );
+
 
 const closeDecoy =
-    document.getElementById("closeDecoy");
+    document.getElementById(
+        "closeDecoy"
+    );
 
 
 /* =====================================================
@@ -520,9 +712,14 @@ const closeDecoy =
 
 function enterRoom() {
 
-    intro.classList.add("hidden");
+    intro.classList.add(
+        "hidden"
+    );
 
-    room.classList.remove("hidden");
+
+    room.classList.remove(
+        "hidden"
+    );
 
 }
 
@@ -537,17 +734,23 @@ function createCharacter(
 ) {
 
     const image =
-        document.createElement("img");
+        document.createElement(
+            "img"
+        );
 
+
+    /* IMAGE */
 
     image.src =
         person.image;
 
 
-    image
     image.alt =
-        person.name || "person";
+        person.name ||
+        "person";
 
+
+    /* CLASS */
 
     image.classList.add(
         "person"
@@ -569,9 +772,7 @@ function createCharacter(
     }
 
 
-    /* ================================
-       POSITION
-    ================================ */
+    /* POSITION */
 
     const position =
         layout[person.id];
@@ -582,11 +783,14 @@ function createCharacter(
         image.style.left =
             position.left;
 
+
         image.style.bottom =
             position.bottom;
 
+
         image.style.width =
             position.width;
+
 
         image.style.zIndex =
             position.z;
@@ -594,9 +798,7 @@ function createCharacter(
     }
 
 
-    /* ================================
-       CLICK
-    ================================ */
+    /* CLICK */
 
     image.addEventListener(
         "click",
@@ -620,6 +822,8 @@ function createCharacter(
         }
     );
 
+
+    /* ADD */
 
     gameArea.appendChild(
         image
@@ -719,9 +923,7 @@ function closeFoundPopup() {
     activePerson = null;
 
 
-    /* ================================
-       ALL 18 FOUND
-    ================================ */
+    /* ALL FOUND */
 
     if (
         foundCount ===
@@ -745,25 +947,15 @@ function closeFoundPopup() {
 
 
 /* =====================================================
-   DECOY
+   DECOY CLICK
 ===================================================== */
 
 function clickDecoy(
     person
 ) {
 
-    const messageElement =
-        document.getElementById(
-            "decoyMessage"
-        );
-
-
-    if (messageElement) {
-
-        messageElement.textContent =
-            person.message;
-
-    }
+    decoyMessage.textContent =
+        person.message;
 
 
     decoyPopup.classList.remove(
@@ -787,85 +979,65 @@ function closeDecoyPopup() {
 
 
 /* =====================================================
-   BUTTON EVENTS
+   EVENTS
 ===================================================== */
 
-if (enterButton) {
-
-    enterButton.addEventListener(
-        "click",
-        enterRoom
-    );
-
-}
+enterButton.addEventListener(
+    "click",
+    enterRoom
+);
 
 
-if (closeFound) {
-
-    closeFound.addEventListener(
-        "click",
-        closeFoundPopup
-    );
-
-}
+closeFound.addEventListener(
+    "click",
+    closeFoundPopup
+);
 
 
-if (closeDecoy) {
-
-    closeDecoy.addEventListener(
-        "click",
-        closeDecoyPopup
-    );
-
-}
+closeDecoy.addEventListener(
+    "click",
+    closeDecoyPopup
+);
 
 
 /* =====================================================
    CLICK OUTSIDE SPECIAL POPUP
 ===================================================== */
 
-if (popup) {
+popup.addEventListener(
+    "click",
+    function (event) {
 
-    popup.addEventListener(
-        "click",
-        function (event) {
+        if (
+            event.target === popup
+        ) {
 
-            if (
-                event.target === popup
-            ) {
-
-                closeFoundPopup();
-
-            }
+            closeFoundPopup();
 
         }
-    );
 
-}
+    }
+);
 
 
 /* =====================================================
    CLICK OUTSIDE DECOY POPUP
 ===================================================== */
 
-if (decoyPopup) {
+decoyPopup.addEventListener(
+    "click",
+    function (event) {
 
-    decoyPopup.addEventListener(
-        "click",
-        function (event) {
+        if (
+            event.target === decoyPopup
+        ) {
 
-            if (
-                event.target === decoyPopup
-            ) {
-
-                closeDecoyPopup();
-
-            }
+            closeDecoyPopup();
 
         }
-    );
 
-}
+    }
+);
 
 
 /* =====================================================
@@ -875,9 +1047,7 @@ if (decoyPopup) {
 function buildGame() {
 
 
-    /* ================================
-       18 SPECIAL PEOPLE
-    ================================ */
+    /* SPECIAL PEOPLE */
 
     specialPeople.forEach(
         function (person) {
@@ -891,9 +1061,7 @@ function buildGame() {
     );
 
 
-    /* ================================
-       9 DECOYS
-    ================================ */
+    /* DECOYS */
 
     decoyPeople.forEach(
         function (person) {
@@ -910,7 +1078,7 @@ function buildGame() {
 
 
 /* =====================================================
-   START GAME
+   START
 ===================================================== */
 
 buildGame();
